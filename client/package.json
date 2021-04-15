@@ -1,0 +1,21 @@
+{
+  "name": "next_boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Alistair Quinn",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.24.0",
+    "eslint-plugin-react": "^7.23.2",
+    "next": "^10.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.2.3",
+    "styled-normalize": "^8.0.7"
+  }
+}
