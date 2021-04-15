@@ -4,12 +4,12 @@ const Home = () => {
     return (
         <div>
             <Head>
-                <title>Alistair Quinn Next Boilerplate</title>
+                <title>Richard Catty</title>
                 <link rel="icon" href="/static/favicon.ico" />
             </Head>
 
             <main>
-                <p>Next Boilerplate Body</p>
+                <p>Main body for Catty&apos;s website</p>
             </main>
         </div>
     );
