@@ -7,6 +7,7 @@ const HeaderStyles = styled.header`
     border: 2px solid black;
     padding: 2rem;
     h1 {
+        font-family: 'MajorMono';
         letter-spacing: 0.4rem;
     }
 `;
@@ -14,7 +15,7 @@ const HeaderStyles = styled.header`
 const Header = () => {
     return (
         <HeaderStyles>
-            <h1>Richard Catty</h1>
+            <h1>RicHARd cAtty</h1>
         </HeaderStyles>
     );
 };

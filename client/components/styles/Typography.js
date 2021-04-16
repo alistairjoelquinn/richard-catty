@@ -2,11 +2,25 @@ import { createGlobalStyle } from 'styled-components';
 
 const Typography = createGlobalStyle`
     @font-face {
-        font-family: Roboto;
-        src: url('/static/Roboto-Regular.ttf') format('ttf');
+        font-family: 'Cutive';
+        src: url('/static/CutiveMono-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Roboto';
+        src: url('/static/Roboto-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'MajorMono';
+        src: url('/static/MajorMonoDisplay-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-display: swap;
     }
     html {
-        font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 10px;
     }
     body {
