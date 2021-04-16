@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import Page from "../components/Page";
+import Page from '../components/Page';
 
 const App = ({ Component, pageProps }) => {
     return (
@@ -21,7 +21,7 @@ App.getInitialProps = async ({ Component, ctx }) => {
 
 App.propTypes = {
     Component: PropTypes.any,
-    pageProps: PropTypes.any
+    pageProps: PropTypes.any,
 };
 
 export default App;

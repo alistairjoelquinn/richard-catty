@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const HeaderStyles = styled.header`
     display: flex;
@@ -6,12 +6,15 @@ const HeaderStyles = styled.header`
     justify-content: center;
     border: 2px solid black;
     padding: 2rem;
+    h1 {
+        letter-spacing: 0.4rem;
+    }
 `;
 
 const Header = () => {
     return (
         <HeaderStyles>
-            <h1>Project Header</h1>
+            <h1>Richard Catty</h1>
         </HeaderStyles>
     );
 };

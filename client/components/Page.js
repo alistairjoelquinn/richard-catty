@@ -9,7 +9,7 @@ const Page = ({ children }) => {
     return (
         <div>
             <Normalize />
-            <GlobalStyles /> 
+            <GlobalStyles />
             <Typography />
             <Header />
             {children}
@@ -18,7 +18,7 @@ const Page = ({ children }) => {
 };
 
 Page.propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
 };
 
 export default Page;
