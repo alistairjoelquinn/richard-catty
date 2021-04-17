@@ -25,7 +25,6 @@ const Typography = createGlobalStyle`
     }
     body {
         font-size: 1.5rem;
-        line-height: 2;
     }
     p, li {
         letter-spacing: 0.5px;
