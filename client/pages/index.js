@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import styled from 'styled-components';
 
 const HomePageStyles = styled.div`
@@ -10,11 +9,6 @@ const HomePageStyles = styled.div`
         background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1618683003/IMG_7997_dgi6hf.jpg');
         background-position: bottom right;
         background-size: cover;
-        /* img {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        } */
     }
 `;
 
@@ -27,14 +21,7 @@ const Home = () => {
             </Head>
 
             <HomePageStyles>
-                <div className="image-container">
-                    {/* <Image
-                        src="https://res.cloudinary.com/dtirfwiy8/image/upload/v1618683003/IMG_7997_dgi6hf.jpg"
-                        layout="fill"
-                        objectFit="cover"
-                        alt="Pine Cone"
-                    /> */}
-                </div>
+                <div className="image-container"></div>
             </HomePageStyles>
         </div>
     );
