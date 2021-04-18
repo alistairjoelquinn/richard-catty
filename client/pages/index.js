@@ -4,17 +4,17 @@ import styled from 'styled-components';
 
 const HomePageStyles = styled.div`
     .image-container {
-        position: relative;
+        position: absolute;
         height: 100vh;
         width: 100vw;
-        overflow: hidden;
-        div {
+        background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1618683003/IMG_7997_dgi6hf.jpg');
+        background-position: bottom right;
+        background-size: cover;
+        /* img {
             position: absolute;
             bottom: 0;
             right: 0;
-            height: 110vh;
-            width: 100vw;
-        }
+        } */
     }
 `;
 
@@ -28,12 +28,12 @@ const Home = () => {
 
             <HomePageStyles>
                 <div className="image-container">
-                    <Image
+                    {/* <Image
                         src="https://res.cloudinary.com/dtirfwiy8/image/upload/v1618683003/IMG_7997_dgi6hf.jpg"
                         layout="fill"
                         objectFit="cover"
                         alt="Pine Cone"
-                    />
+                    /> */}
                 </div>
             </HomePageStyles>
         </div>
