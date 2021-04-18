@@ -6,7 +6,7 @@ const HomePageStyles = styled.div`
         position: absolute;
         height: 100vh;
         width: 100vw;
-        background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1618683003/IMG_7997_dgi6hf.jpg');
+        background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_20/v1618683003/IMG_7997_dgi6hf.jpg');
         background-position: bottom right;
         background-size: cover;
     }

@@ -9,7 +9,7 @@ const HeaderStyles = styled.header`
     padding: 2rem;
     h1 {
         font-family: 'MajorMono';
-        font-size: 4rem;
+        font-size: 5rem;
         letter-spacing: 0.4rem;
         padding-left: 3rem;
     }
