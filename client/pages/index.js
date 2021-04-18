@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import Typist from 'react-typist';
+import { Instagram, Linkedin, Mail } from 'grommet-icons';
 
 const HomePageStyles = styled.div`
     .image-container {
@@ -12,12 +13,22 @@ const HomePageStyles = styled.div`
         background-size: cover;
         div {
             position: absolute;
-            top: 15vh;
+            top: 20vh;
             left: 5rem;
             z-index: 10;
             color: black;
             font-family: Cutive;
             font-size: 3rem;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 4rem;
         }
     }
 `;
@@ -39,11 +50,11 @@ const Home = () => {
                         <br></br>
                         <br></br>
                         <Typist.Delay ms={700} />
-                        As an environment, conservation and sustainability focused
+                        As an environment, conservation and sustainability
                         <br></br>
                         <br></br>
                         <Typist.Delay ms={300} />
-                        copywriter, my drive to protect the planet
+                        focused copywriter, my drive to protect the planet
                         <br></br>
                         <br></br>
                         <Typist.Delay ms={600} />
@@ -57,6 +68,11 @@ const Home = () => {
                         <Typist.Delay ms={200} />
                         copy, content and articles...
                     </Typist>
+                    <footer>
+                        <Instagram />
+                        <Linkedin />
+                        <Mail />
+                    </footer>
                 </div>
             </HomePageStyles>
         </div>

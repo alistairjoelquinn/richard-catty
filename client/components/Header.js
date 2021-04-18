@@ -28,7 +28,7 @@ const Header = () => {
         <HeaderStyles>
             <h1>RicHARd cAtty</h1>
             <div>
-                <Menu size="large" />
+                <Menu />
             </div>
         </HeaderStyles>
     );
