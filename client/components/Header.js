@@ -11,7 +11,9 @@ const HeaderStyles = styled.header`
         font-family: 'MajorMono';
         font-size: 5rem;
         letter-spacing: 0.4rem;
+        padding-top: 2rem;
         padding-left: 3rem;
+        padding-bottom: 1rem;
     }
 `;
 
