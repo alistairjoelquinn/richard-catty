@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
+import { MenuStateProvider } from '../components/contexts/MenuProvider';
 
 import Page from '../components/Page';
 
 const App = ({ Component, pageProps }) => {
     return (
-        <Page>
-            <Component {...pageProps} />
-        </Page>
+        <MenuStateProvider>
+            <Page>
+                <Component {...pageProps} />
+            </Page>
+        </MenuStateProvider>
     );
 };
 
