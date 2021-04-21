@@ -17,6 +17,10 @@ const SideMenuStyles = styled.div`
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
     z-index: 100;
     ${p => p.open && `transform: translateX(0);`};
+    span {
+        font-size: 3rem;
+        cursor: pointer;
+    }
 `;
 
 const SideMenu = () => {
