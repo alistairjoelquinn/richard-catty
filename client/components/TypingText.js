@@ -23,11 +23,11 @@ const TypingText = () => {
                 <br></br>
                 <br></br>
                 <Typist.Delay ms={700} />
-                As an environment, conservation and sustainability focused
+                As an environment, conservation and sustainability
                 <br></br>
                 <br></br>
                 <Typist.Delay ms={300} />
-                copywriter, my drive to protect the planet
+                focused copywriter, my drive to protect the planet
                 <br></br>
                 <br></br>
                 <Typist.Delay ms={600} />
