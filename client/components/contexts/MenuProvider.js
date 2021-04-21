@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const MenuStateContext = createContext();
 
 const MenuStateProvider = ({ children }) => {
+    console.log('hi');
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
