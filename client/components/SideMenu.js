@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { useMenu } from './contexts/MenuProvider';
+import Link from 'next/link';
 
 const SideMenuStyles = styled.div`
     font-family: Cutive;
-    font-size: 1.6rem;
     padding: 9rem 20px 6rem 20px;
     background: white;
     position: fixed;
@@ -28,8 +28,9 @@ const SideMenuStyles = styled.div`
     .menu-item {
         width: 100%;
         &:hover {
-        background-color: lightgrey;
-        color: white;
+            background-color: lightgrey;
+            color: white;
+        }
     }
 `;
 
@@ -38,21 +39,31 @@ const SideMenu = () => {
 
     return (
         <SideMenuStyles open={menuOpen}>
-            <div className="menu-item">
-                <span>Projects</span>
-            </div>
-            <div className="menu-item">
-                <span>Portfolio</span>
-            </div>
-            <div className="menu-item">
-                <span>Services</span>
-            </div>
-            <div className="menu-item">
-                <span>Testimonials</span>
-            </div>
-            <div className="menu-item">
-                <span>Contact</span>
-            </div>
+            <Link href="/projects">
+                <div className="menu-item">
+                    <span>Projects</span>
+                </div>
+            </Link>
+            <Link href="portfolio" className="menu-item">
+                <div className="menu-item">
+                    <span>Portfolio</span>
+                </div>
+            </Link>
+            <Link href="services" className="menu-item">
+                <div className="menu-item">
+                    <span>Services</span>
+                </div>
+            </Link>
+            <Link href="testimonials" className="menu-item">
+                <div className="menu-item">
+                    <span>Testimonials</span>
+                </div>
+            </Link>
+            <Link href="contact" className="menu-item">
+                <div className="menu-item">
+                    <span>Contact</span>
+                </div>
+            </Link>
         </SideMenuStyles>
     );
 };
