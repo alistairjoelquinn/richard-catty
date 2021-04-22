@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Menu } from 'grommet-icons';
 import { useMenu } from './contexts/MenuProvider';
 import SideMenu from './SideMenu';
+import HeaderIcon from './HeaderIcon';
 
 const HeaderStyles = styled.header`
     position: absolute;
@@ -35,7 +36,8 @@ const Header = () => {
         <HeaderStyles>
             <h1>RicHARd cAtty</h1>
             <div onClick={openMenu}>
-                <Menu />
+                {/* <Menu /> */}
+                <HeaderIcon />
             </div>
             <SideMenu />
         </HeaderStyles>
