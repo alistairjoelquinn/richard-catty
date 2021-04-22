@@ -8,12 +8,6 @@ const Typography = createGlobalStyle`
         font-display: swap;
     }
     @font-face {
-        font-family: 'Roboto';
-        src: url('/static/Roboto-Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-display: swap;
-    }
-    @font-face {
         font-family: 'MajorMono';
         src: url('/static/MajorMonoDisplay-Regular.ttf') format('truetype');
         font-weight: normal;

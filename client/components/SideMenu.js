@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const SideMenuStyles = styled.div`
     font-family: Cutive;
-    padding: 9rem 20px 6rem 20px;
+    padding: 10rem 20px 5rem 20px;
     background: white;
     position: fixed;
     height: 100%;
@@ -27,6 +27,10 @@ const SideMenuStyles = styled.div`
     }
     .menu-item {
         width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &:hover {
             background-color: lightgrey;
             color: white;

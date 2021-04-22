@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Menu } from 'grommet-icons';
 import { useMenu } from './contexts/MenuProvider';
 import SideMenu from './SideMenu';
 import HeaderIcon from './HeaderIcon';
@@ -13,12 +12,22 @@ const HeaderStyles = styled.header`
     align-items: center;
     justify-content: space-between;
     padding: 2rem 5rem;
+    div.headerText {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            font-family: Cutive;
+            /* font-weight: bold; */
+            font-size: 3.5rem;
+            padding-left: 0.3rem;
+        }
+    }
     h1 {
         font-family: 'MajorMono';
         font-size: 5rem;
         letter-spacing: 0.4rem;
     }
-    div {
+    div.icon {
         height: 100%;
         width: auto;
         display: flex;
@@ -35,10 +44,13 @@ const Header = () => {
 
     return (
         <HeaderStyles>
-            <Link href="/">
-                <h1>RicHARd cAtty</h1>
-            </Link>
-            <div onClick={toggleMenu}>
+            <div className="headerText">
+                <Link href="/">
+                    <h1>RicHARd cAtty - WRiteR</h1>
+                </Link>
+                {/* <h2>Eco-conscious Writer</h2> */}
+            </div>
+            <div className="icon" onClick={toggleMenu}>
                 <HeaderIcon />
             </div>
             <SideMenu />
