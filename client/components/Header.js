@@ -3,6 +3,7 @@ import { Menu } from 'grommet-icons';
 import { useMenu } from './contexts/MenuProvider';
 import SideMenu from './SideMenu';
 import HeaderIcon from './HeaderIcon';
+import Link from 'next/link';
 
 const HeaderStyles = styled.header`
     position: absolute;
@@ -34,7 +35,9 @@ const Header = () => {
 
     return (
         <HeaderStyles>
-            <h1>RicHARd cAtty</h1>
+            <Link href="/">
+                <h1>RicHARd cAtty</h1>
+            </Link>
             <div onClick={toggleMenu}>
                 <HeaderIcon />
             </div>
