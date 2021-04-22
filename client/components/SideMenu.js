@@ -25,11 +25,7 @@ const SideMenuStyles = styled.div`
 const SideMenu = () => {
     const { menuOpen, closeMenu } = useMenu();
 
-    return (
-        <SideMenuStyles open={menuOpen}>
-            <span onClick={closeMenu}>x</span>
-        </SideMenuStyles>
-    );
+    return <SideMenuStyles open={menuOpen}></SideMenuStyles>;
 };
 
 export default SideMenu;

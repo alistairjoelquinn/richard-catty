@@ -9,7 +9,7 @@ const TypingStyles = styled.div`
         z-index: 10;
         color: black;
         font-family: Cutive;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 `;
 
