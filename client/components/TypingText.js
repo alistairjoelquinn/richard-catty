@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const TypingStyles = styled.div`
     div {
         position: absolute;
-        top: 15vh;
+        top: 20vh;
         left: 5rem;
         z-index: 10;
         color: black;
@@ -27,19 +27,23 @@ const TypingText = () => {
                 <br></br>
                 <br></br>
                 <Typist.Delay ms={300} />
-                focused copywriter, my drive to protect the planet
+                focused copywriter, my drive to protect
                 <br></br>
                 <br></br>
                 <Typist.Delay ms={600} />
-                is translated into well researched,
+                the planet is translated into
                 <br></br>
                 <br></br>
                 <Typist.Delay ms={300} />
-                engaging and SEO optimised
+                well researched, engaging
                 <br></br>
                 <br></br>
                 <Typist.Delay ms={200} />
-                copy, content and articles...
+                and SEO optimised copy,
+                <br></br>
+                <br></br>
+                <Typist.Delay ms={200} />
+                content and articles...
             </Typist>
         </TypingStyles>
     );
