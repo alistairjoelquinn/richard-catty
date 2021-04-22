@@ -6,6 +6,7 @@ import TypingText from '../components/TypingText';
 
 const HomePageStyles = styled.div`
     .image-container {
+        z-index: 3;
         position: absolute;
         height: 100vh;
         width: 100vw;
