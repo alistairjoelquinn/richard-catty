@@ -30,13 +30,12 @@ const HeaderStyles = styled.header`
 `;
 
 const Header = () => {
-    const { openMenu } = useMenu();
+    const { toggleMenu } = useMenu();
 
     return (
         <HeaderStyles>
             <h1>RicHARd cAtty</h1>
-            <div onClick={openMenu}>
-                {/* <Menu /> */}
+            <div onClick={toggleMenu}>
                 <HeaderIcon />
             </div>
             <SideMenu />
