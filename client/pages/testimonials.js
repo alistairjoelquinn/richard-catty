@@ -6,14 +6,13 @@ const TestimonialsPageStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1619200424/IMG_8148_kxvkm8.jpg');
+    background-position: top left;
+    background-size: cover;
 `;
 
 const TestimonialsPage = () => {
-    return (
-        <TestimonialsPageStyles>
-            <p>Testimonials Page</p>
-        </TestimonialsPageStyles>
-    );
+    return <TestimonialsPageStyles></TestimonialsPageStyles>;
 };
 
 export default TestimonialsPage;

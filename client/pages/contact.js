@@ -6,14 +6,13 @@ const ContactPageStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1619200418/IMG_8063_uvjyzf.jpg');
+    background-position: top left;
+    background-size: cover;
 `;
 
 const ContactPage = () => {
-    return (
-        <ContactPageStyles>
-            <p>Contact Page</p>
-        </ContactPageStyles>
-    );
+    return <ContactPageStyles></ContactPageStyles>;
 };
 
 export default ContactPage;

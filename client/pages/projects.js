@@ -6,14 +6,13 @@ const ProjectsPageStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1619200431/IMG_8101-3_rpodzj.jpg');
+    background-position: right;
+    background-size: cover;
 `;
 
 const ProjectsPage = () => {
-    return (
-        <ProjectsPageStyles>
-            <p>Projects Page</p>
-        </ProjectsPageStyles>
-    );
+    return <ProjectsPageStyles></ProjectsPageStyles>;
 };
 
 export default ProjectsPage;
