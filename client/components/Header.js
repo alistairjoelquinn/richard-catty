@@ -26,6 +26,7 @@ const HeaderStyles = styled.header`
         font-family: 'MajorMono';
         font-size: 5rem;
         letter-spacing: 0.4rem;
+        cursor: pointer;
     }
     div.icon {
         height: 100%;
@@ -40,15 +41,20 @@ const HeaderStyles = styled.header`
 `;
 
 const Header = () => {
-    const { toggleMenu } = useMenu();
+    const { toggleMenu, closeMenu, menuOpen } = useMenu();
+
+    const headerClickHandler = () => {
+        if (menuOpen) {
+            closeMenu();
+        }
+    };
 
     return (
         <HeaderStyles>
             <div className="headerText">
                 <Link href="/">
-                    <h1>RicHARd cAtty - WRiteR</h1>
+                    <h1 onClick={headerClickHandler}>RicHARd cAtty - WRiteR</h1>
                 </Link>
-                {/* <h2>Eco-conscious Writer</h2> */}
             </div>
             <div className="icon" onClick={toggleMenu}>
                 <HeaderIcon />

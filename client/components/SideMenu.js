@@ -5,7 +5,7 @@ import Link from 'next/link';
 const SideMenuStyles = styled.div`
     font-family: Cutive;
     padding: 10rem 20px 5rem 20px;
-    background: white;
+    background: #f5f5f5;
     position: fixed;
     height: 100%;
     top: 0;
@@ -32,40 +32,39 @@ const SideMenuStyles = styled.div`
         align-items: center;
         justify-content: center;
         &:hover {
-            background-color: lightgrey;
-            color: white;
+            background-color: rgba(217, 163, 143, 0.2);
         }
     }
 `;
 
 const SideMenu = () => {
-    const { menuOpen } = useMenu();
+    const { menuOpen, closeMenu } = useMenu();
 
     return (
         <SideMenuStyles open={menuOpen}>
+            <Link href="/services" className="menu-item">
+                <div className="menu-item">
+                    <span onClick={closeMenu}>Services</span>
+                </div>
+            </Link>
             <Link href="/projects">
                 <div className="menu-item">
-                    <span>Projects</span>
+                    <span onClick={closeMenu}>Projects</span>
                 </div>
             </Link>
-            <Link href="portfolio" className="menu-item">
+            <Link href="/portfolio" className="menu-item">
                 <div className="menu-item">
-                    <span>Portfolio</span>
+                    <span onClick={closeMenu}>Portfolio</span>
                 </div>
             </Link>
-            <Link href="services" className="menu-item">
+            <Link href="/testimonials" className="menu-item">
                 <div className="menu-item">
-                    <span>Services</span>
+                    <span onClick={closeMenu}>Testimonials</span>
                 </div>
             </Link>
-            <Link href="testimonials" className="menu-item">
+            <Link href="/contact" className="menu-item">
                 <div className="menu-item">
-                    <span>Testimonials</span>
-                </div>
-            </Link>
-            <Link href="contact" className="menu-item">
-                <div className="menu-item">
-                    <span>Contact</span>
+                    <span onClick={closeMenu}>Contact</span>
                 </div>
             </Link>
         </SideMenuStyles>

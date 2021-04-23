@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const TypingStyles = styled.div`
     div {
         position: absolute;
-        top: 20vh;
+        top: 25vh;
         left: 5rem;
         z-index: 10;
         color: black;
@@ -16,34 +16,29 @@ const TypingStyles = styled.div`
 const TypingText = () => {
     return (
         <TypingStyles>
-            <Typist>
-                <Typist.Delay ms={1000} />
-                I only work on projects
-                <Typist.Delay ms={400} /> I&apos;m passionate about.
+            <Typist avgTypingDelay={50}>
+                <Typist.Delay ms={1000} />I only work on projects I&apos;m passionate
                 <br></br>
                 <br></br>
-                <Typist.Delay ms={700} />
-                As an environment, conservation and sustainability
-                <br></br>
-                <br></br>
-                <Typist.Delay ms={300} />
-                focused copywriter, my drive to protect
-                <br></br>
-                <br></br>
-                <Typist.Delay ms={600} />
-                the planet is translated into
+                about.
+                <Typist.Delay ms={400} /> As an environment, conservation and
                 <br></br>
                 <br></br>
                 <Typist.Delay ms={300} />
-                well researched, engaging
+                sustainability focused copywriter,
+                <Typist.Delay ms={500} /> my drive
                 <br></br>
                 <br></br>
-                <Typist.Delay ms={200} />
-                and SEO optimised copy,
+                to protect the planet is translated into
                 <br></br>
                 <br></br>
-                <Typist.Delay ms={200} />
-                content and articles...
+                <Typist.Delay ms={300} />
+                well researched,
+                <Typist.Delay ms={500} /> engaging and SEO optimised
+                <br></br>
+                <br></br>
+                copy,
+                <Typist.Delay ms={300} /> content and articles...
             </Typist>
         </TypingStyles>
     );

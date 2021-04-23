@@ -22,13 +22,13 @@ const App = props => {
 
     return (
         <MenuStateProvider>
-            {transition.map(({ item: { Component, pageProps }, key, props }) => (
-                <animated.h1 key={key} style={props}>
-                    <Page>
+            <Page>
+                {transition.map(({ item: { Component, pageProps }, key, props }) => (
+                    <animated.h1 key={key} style={props}>
                         <Component {...pageProps} />
-                    </Page>
-                </animated.h1>
-            ))}
+                    </animated.h1>
+                ))}
+            </Page>
         </MenuStateProvider>
     );
 };
