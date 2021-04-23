@@ -16,7 +16,7 @@ const HeaderStyles = styled.header`
         display: flex;
         flex-direction: column;
         h2 {
-            font-family: Cutive;
+            font-family: CutiveMono;
             /* font-weight: bold; */
             font-size: 3.5rem;
             padding-left: 0.3rem;

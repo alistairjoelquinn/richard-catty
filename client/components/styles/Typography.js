@@ -5,13 +5,13 @@ const Typography = createGlobalStyle`
         font-family: 'Cutive';
         src: url('/static/CutiveMono-Regular.ttf') format('truetype');
         font-weight: normal;
-        font-display: swap;
+        font-display: block;
     }
     @font-face {
         font-family: 'MajorMono';
         src: url('/static/MajorMonoDisplay-Regular.ttf') format('truetype');
         font-weight: normal;
-        font-display: swap;
+        font-display: block;
     }
     html {
         font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

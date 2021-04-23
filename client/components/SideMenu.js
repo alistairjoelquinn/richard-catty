@@ -42,31 +42,31 @@ const SideMenu = () => {
 
     return (
         <SideMenuStyles open={menuOpen}>
-            <Link href="/services" className="menu-item">
-                <div className="menu-item" onClick={closeMenu}>
-                    <span>Services</span>
-                </div>
-            </Link>
-            <Link href="/projects">
-                <div className="menu-item" onClick={closeMenu}>
-                    <span>Projects</span>
-                </div>
-            </Link>
-            <Link href="/portfolio" className="menu-item">
-                <div className="menu-item" onClick={closeMenu}>
-                    <span>Portfolio</span>
-                </div>
-            </Link>
-            <Link href="/testimonials" className="menu-item">
-                <div className="menu-item" onClick={closeMenu}>
-                    <span>Testimonials</span>
-                </div>
-            </Link>
-            <Link href="/contact" className="menu-item">
-                <div className="menu-item" onClick={closeMenu}>
+            <div className="menu-item">
+                <Link href="/services" className="menu-item">
+                    <span onClick={closeMenu}>Services</span>
+                </Link>
+            </div>
+            <div className="menu-item">
+                <Link href="/projects">
+                    <span onClick={closeMenu}>Projects</span>
+                </Link>
+            </div>
+            <div className="menu-item">
+                <Link href="/portfolio" className="menu-item">
+                    <span onClick={closeMenu}>Portfolio</span>
+                </Link>
+            </div>
+            <div className="menu-item">
+                <Link href="/testimonials" className="menu-item">
+                    <span onClick={closeMenu}>Testimonials</span>
+                </Link>
+            </div>
+            <div className="menu-item">
+                <Link href="/contact" className="menu-item">
                     <span>Contact</span>
-                </div>
-            </Link>
+                </Link>
+            </div>
         </SideMenuStyles>
     );
 };
