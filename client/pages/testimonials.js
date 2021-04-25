@@ -1,7 +1,7 @@
-import { Button, Card, CardBody, CardFooter, CardHeader } from 'grommet';
-import { Favorite, ShareOption } from 'grommet-icons';
 import styled from 'styled-components';
-import Image from 'next/image';
+import Testimonial from '../components/Testimonial';
+
+import testimonials from '../content/testimonials.json';
 
 const TestimonialsPageStyles = styled.div`
     height: 100vh;
@@ -9,6 +9,8 @@ const TestimonialsPageStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5vw;
+    padding: 0 5vw;
     font-family: Cutive;
     font-size: 2.1rem;
     background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1619200424/IMG_8148_kxvkm8.jpg');
@@ -23,21 +25,9 @@ const TestimonialsPageStyles = styled.div`
 const TestimonialsPage = () => {
     return (
         <TestimonialsPageStyles>
-            <Card height="45vh" width="50vw" background="light-1">
-                <CardHeader pad="medium">
-                    Virunga National Park
-                    <Image src="/images/logo_fr@2-1.png" height="30" width="30" />
-                </CardHeader>
-                <CardBody pad="small">
-                    &quot;Richard is a very talented writer. His passion for conservation and wildlife is evident
-                    through his work. He is a pleasure to work with - enthusiastic, flexible, and patient - I would
-                    highly recommend him.&quot;
-                </CardBody>
-                <CardFooter pad={{ horizontal: 'small' }} background="light-2">
-                    <Button icon={<Favorite color="red" />} hoverIndicator />
-                    <Button icon={<ShareOption color="plain" />} hoverIndicator />
-                </CardFooter>
-            </Card>
+            {testimonials.map(testimonial => (
+                <Testimonial key={testimonial.title} testimonial={testimonial} />
+            ))}
         </TestimonialsPageStyles>
     );
 };
