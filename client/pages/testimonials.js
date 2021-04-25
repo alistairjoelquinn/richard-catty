@@ -4,7 +4,15 @@ import Testimonial from '../components/Testimonial';
 import testimonials from '../content/testimonials.json';
 
 const TestimonialGridStyles = styled.div`
+    padding-top: 7vh;
     display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    grid-auto-rows: 36vh;
+    gap: 2.5vw;
+    div:nth-child(2) {
+        grid-row: 1 / 3;
+        grid-column: 2 / 3;
+    }
 `;
 
 const TestimonialsPageStyles = styled.div`
@@ -16,7 +24,7 @@ const TestimonialsPageStyles = styled.div`
     gap: 5vw;
     padding: 0 5vw;
     font-family: Cutive;
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1619200424/IMG_8148_kxvkm8.jpg');
     background-position: top left;
     div > header {

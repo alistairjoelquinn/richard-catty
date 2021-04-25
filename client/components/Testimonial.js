@@ -8,7 +8,7 @@ const Testimonial = ({ testimonial }) => {
         <Card background="light-1">
             <CardHeader pad="medium">
                 {testimonial.title}
-                <Image src={testimonial.imageUrl} height="30" width="100%" />
+                <Image src={testimonial.imageUrl} height="30" width={testimonial.squareImage ? '30' : '100%'} />
             </CardHeader>
             <CardBody pad="small">&quot;{testimonial.content}&quot;</CardBody>
             <CardFooter pad={{ horizontal: 'small' }} background="light-2">
