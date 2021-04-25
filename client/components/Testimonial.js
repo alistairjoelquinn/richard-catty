@@ -10,7 +10,7 @@ const Testimonial = ({ testimonial }) => {
                 {testimonial.title}
                 <Image src={testimonial.imageUrl} height="30" width="100%" />
             </CardHeader>
-            <CardBody pad="small">{testimonial.content}</CardBody>
+            <CardBody pad="small">&quot;{testimonial.content}&quot;</CardBody>
             <CardFooter pad={{ horizontal: 'small' }} background="light-2">
                 <Button icon={<Favorite color="red" />} hoverIndicator />
                 <Button icon={<ShareOption color="plain" />} hoverIndicator />
