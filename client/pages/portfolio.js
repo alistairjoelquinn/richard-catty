@@ -6,7 +6,7 @@ const PortfolioPageStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1619200424/IMG_8020_bhuyxi.jpg');
+    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg');
     background-position: center;
     background-size: cover;
 `;

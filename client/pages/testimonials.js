@@ -8,7 +8,7 @@ const TestimonialGridStyles = styled.div`
     display: grid;
     grid-template-columns: 1.8fr 1fr;
     grid-auto-rows: 36vh;
-    gap: 2.5vw;
+    gap: 3vw;
     div:nth-child(2) {
         grid-row: 1 / 3;
         grid-column: 2 / 3;
@@ -25,10 +25,11 @@ const TestimonialsPageStyles = styled.div`
     padding: 0 5vw;
     font-family: Cutive;
     font-size: 2.2rem;
-    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/v1619200424/IMG_8148_kxvkm8.jpg');
-    background-position: top left;
+    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8148_kxvkm8.jpg');
+    background-position: center;
+    background-size: cover;
     div > header {
-        font-size: 2.5rem;
+        font-size: 2.7rem;
         font-weight: bold;
     }
 `;

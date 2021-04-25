@@ -6,7 +6,7 @@ const ServicesPageStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_20/v1619200419/IMG_8033-2_g3bw8f.jpg');
+    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200419/IMG_8033-2_g3bw8f.jpg');
     background-position: top right;
     background-size: cover;
 `;

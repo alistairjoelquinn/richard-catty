@@ -10,7 +10,7 @@ const HomePageStyles = styled.div`
         position: absolute;
         height: 100vh;
         width: 100vw;
-        background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_20/v1619116465/IMG_7997-3_rw78qh.jpg');
+        background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619116465/IMG_7997-3_rw78qh.jpg');
         background-position: bottom right;
         background-size: cover;
         footer {
