@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Testimonial from '../components/Testimonial';
 
+import CardComponent from '../components/CardComponent';
 import testimonials from '../content/testimonials.json';
 
 const TestimonialGridStyles = styled.div`
@@ -39,7 +39,7 @@ const TestimonialsPage = () => {
         <TestimonialsPageStyles>
             <TestimonialGridStyles>
                 {testimonials.map(testimonial => (
-                    <Testimonial key={testimonial.title} testimonial={testimonial} />
+                    <CardComponent key={testimonial.title} item={testimonial} />
                 ))}
             </TestimonialGridStyles>
         </TestimonialsPageStyles>

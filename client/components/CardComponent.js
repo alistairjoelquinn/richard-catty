@@ -3,14 +3,14 @@ import { Favorite, ShareOption } from 'grommet-icons';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 
-const Testimonial = ({ testimonial }) => {
+const CardComponent = ({ item }) => {
     return (
         <Card background="light-1">
             <CardHeader pad="medium">
-                {testimonial.title}
-                <Image src={testimonial.imageUrl} height="30" width={testimonial.squareImage ? '30' : '100%'} />
+                {item.title}
+                <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
             </CardHeader>
-            <CardBody pad="small">&quot;{testimonial.content}&quot;</CardBody>
+            <CardBody pad="small">&quot;{item.content}&quot;</CardBody>
             <CardFooter pad={{ horizontal: 'small' }} background="light-2">
                 <Button icon={<Favorite color="red" />} hoverIndicator />
                 <Button icon={<ShareOption color="plain" />} hoverIndicator />
@@ -19,8 +19,8 @@ const Testimonial = ({ testimonial }) => {
     );
 };
 
-Testimonial.propTypes = {
-    testimonial: PropTypes.object,
+CardComponent.propTypes = {
+    item: PropTypes.object,
 };
 
-export default Testimonial;
+export default CardComponent;

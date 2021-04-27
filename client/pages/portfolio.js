@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+import CardComponent from '../components/CardComponent';
+import portfolios from '../content/portfolios.json';
+
 const PortfolioGridStyles = styled.div`
     padding-top: 7vh;
     display: grid;
@@ -24,7 +27,7 @@ const PortfolioPage = () => {
         <PortfolioPageStyles>
             <PortfolioGridStyles>
                 {portfolios.map(portfolio => (
-                    <Portfolio key={portfolio.title} portfolio={portfolio} />
+                    <CardComponent key={portfolio.title} item={portfolio} />
                 ))}
             </PortfolioGridStyles>
         </PortfolioPageStyles>
