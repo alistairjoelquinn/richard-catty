@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+const PortfolioGridStyles = styled.div`
+    padding-top: 7vh;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    grid-auto-rows: 36vh;
+    gap: 3vw;
+`;
+
 const PortfolioPageStyles = styled.div`
     height: 100vh;
     width: 100vw;
@@ -12,7 +20,15 @@ const PortfolioPageStyles = styled.div`
 `;
 
 const PortfolioPage = () => {
-    return <PortfolioPageStyles></PortfolioPageStyles>;
+    return (
+        <PortfolioPageStyles>
+            <PortfolioGridStyles>
+                {portfolios.map(portfolio => (
+                    <Portfolio key={portfolio.title} portfolio={portfolio} />
+                ))}
+            </PortfolioGridStyles>
+        </PortfolioPageStyles>
+    );
 };
 
 export default PortfolioPage;
