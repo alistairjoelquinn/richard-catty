@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import CardComponent from '../components/CardComponent';
 import testimonials from '../content/testimonials.json';
+import { CardPageStyles } from '../components/styles/CardPageStyles';
 
 const TestimonialGridStyles = styled.div`
     padding-top: 7vh;
@@ -15,34 +16,19 @@ const TestimonialGridStyles = styled.div`
     }
 `;
 
-const TestimonialsPageStyles = styled.div`
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5vw;
-    padding: 0 5vw;
-    font-family: Cutive;
-    font-size: 2.2rem;
-    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8148_kxvkm8.jpg');
-    background-position: center;
-    background-size: cover;
-    div > header {
-        font-size: 2.7rem;
-        font-weight: bold;
-    }
-`;
-
 const TestimonialsPage = () => {
     return (
-        <TestimonialsPageStyles>
+        <CardPageStyles
+            image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8148_kxvkm8.jpg"
+            fontSize="2.2rem"
+            headerSize="2.7rem"
+        >
             <TestimonialGridStyles>
                 {testimonials.map(testimonial => (
-                    <CardComponent key={testimonial.title} item={testimonial} />
+                    <CardComponent key={testimonial.title} item={testimonial} showFooter={true} />
                 ))}
             </TestimonialGridStyles>
-        </TestimonialsPageStyles>
+        </CardPageStyles>
     );
 };
 
