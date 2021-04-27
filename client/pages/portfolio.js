@@ -21,7 +21,7 @@ const PortfolioPage = () => {
         >
             <PortfolioGridStyles>
                 {portfolios.map(portfolio => (
-                    <CardComponent key={portfolio.title} item={portfolio} showFooter={false} />
+                    <CardComponent key={portfolio.title} item={portfolio} showFooter={false} gradient />
                 ))}
             </PortfolioGridStyles>
         </CardPageStyles>

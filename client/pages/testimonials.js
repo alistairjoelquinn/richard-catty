@@ -25,7 +25,7 @@ const TestimonialsPage = () => {
         >
             <TestimonialGridStyles>
                 {testimonials.map(testimonial => (
-                    <CardComponent key={testimonial.title} item={testimonial} showFooter={true} />
+                    <CardComponent key={testimonial.title} item={testimonial} showFooter />
                 ))}
             </TestimonialGridStyles>
         </CardPageStyles>
