@@ -10,6 +10,17 @@ const PortfolioGridStyles = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 36vh;
     gap: 3vw;
+    div > span {
+        position: absolute;
+        border: none;
+        color: red;
+        font-weight: bolder;
+        padding: 20px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 6px;
+        width: 140px;
+    }
 `;
 
 const PortfolioPage = () => {
@@ -21,7 +32,10 @@ const PortfolioPage = () => {
         >
             <PortfolioGridStyles>
                 {portfolios.map(portfolio => (
-                    <CardComponent key={portfolio.title} item={portfolio} showFooter={false} gradient />
+                    <div key={portfolio.title}>
+                        <span>Read More</span>
+                        <CardComponent item={portfolio} showFooter={false} gradient headerPadding="small" />
+                    </div>
                 ))}
             </PortfolioGridStyles>
         </CardPageStyles>

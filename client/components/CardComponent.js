@@ -9,13 +9,13 @@ const GradientStyles = styled.div`
     height: 100%;
     width: 100%;
     z-index: 1;
-    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.001) 0%, rgba(248, 248, 248, 1) 75%);
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.001) 0%, rgba(248, 248, 248, 1) 80%);
 `;
 
-const CardComponent = ({ item, showFooter, gradient }) => {
+const CardComponent = ({ item, showFooter, gradient, headerPadding }) => {
     return (
-        <Card background="light-1">
-            <CardHeader pad="medium">
+        <Card background="light-1" style={{ height: '100%' }}>
+            <CardHeader pad={headerPadding}>
                 {item.title}
                 <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
             </CardHeader>
@@ -43,6 +43,7 @@ CardComponent.propTypes = {
     item: PropTypes.object,
     showFooter: PropTypes.bool,
     gradient: PropTypes.bool,
+    headerPadding: PropTypes.string,
 };
 
 export default CardComponent;
