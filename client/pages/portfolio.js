@@ -20,6 +20,8 @@ const GridItemStyles = styled.div`
     }
     span {
         position: absolute;
+        bottom: 0;
+        width: 100%;
         border: none;
         color: red;
         text-align: center;
@@ -28,7 +30,7 @@ const GridItemStyles = styled.div`
         font-size: 20px;
         cursor: pointer;
         border-radius: 6px;
-        z-index: 1;
+        z-index: 3;
     }
 `;
 

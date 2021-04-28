@@ -8,7 +8,7 @@ const GradientStyles = styled.div`
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.001) 0%, rgba(248, 248, 248, 1) 80%);
 `;
 
