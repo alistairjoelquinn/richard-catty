@@ -38,6 +38,16 @@ const HeaderStyles = styled.header`
             cursor: pointer;
         }
     }
+    @media (max-width: 1100px) {
+        h1 {
+            font-size: 4rem;
+        }
+    }
+    @media (max-width: 950px) {
+        h1 {
+            font-size: 3rem;
+        }
+    }
 `;
 
 const Header = () => {

@@ -14,6 +14,14 @@ const TestimonialGridStyles = styled.div`
         grid-row: 1 / 3;
         grid-column: 2 / 3;
     }
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 36vh;
+        div:nth-child(2) {
+            grid-row: auto;
+            grid-column: auto;
+        }
+    }
 `;
 
 const TestimonialsPage = () => {
@@ -25,7 +33,13 @@ const TestimonialsPage = () => {
         >
             <TestimonialGridStyles>
                 {testimonials.map(testimonial => (
-                    <CardComponent key={testimonial.title} item={testimonial} showFooter headerPadding="medium" />
+                    <CardComponent
+                        key={testimonial.title}
+                        item={testimonial}
+                        showFooter
+                        headerPadding="medium"
+                        bodyPadding="medium"
+                    />
                 ))}
             </TestimonialGridStyles>
         </CardPageStyles>

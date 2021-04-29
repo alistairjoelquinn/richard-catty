@@ -44,7 +44,13 @@ const PortfolioPage = () => {
             <PortfolioGridStyles>
                 {portfolios.map(portfolio => (
                     <GridItemStyles key={portfolio.title}>
-                        <CardComponent item={portfolio} showFooter={false} gradient headerPadding="small" />
+                        <CardComponent
+                            item={portfolio}
+                            showFooter={false}
+                            gradient
+                            headerPadding="small"
+                            bodyPadding="small"
+                        />
                         <span>Read More</span>
                     </GridItemStyles>
                 ))}
