@@ -9,9 +9,9 @@ export const CardPageStyles = styled.div`
     align-items: flex-start;
     justify-content: center;
     gap: 5vw;
-    padding: 6vw 5vw;
+    padding: 8vh 5vw;
     font-family: Cutive;
-    font-size: ${p => p.fontSize};
+    font-size: ${p => (p.testimonial ? '2.2rem' : p.fontSize)};
     background-image: url(${p => p.image});
     background-position: center;
     background-size: cover;
@@ -19,7 +19,17 @@ export const CardPageStyles = styled.div`
         font-size: ${p => p.headerSize};
         font-weight: bold;
     }
+    @media (max-width: 1200px) {
+        font-size: ${p => p.testimonial && '2rem'};
+    }
+    @media (max-width: 1100px) {
+        font-size: ${p => p.testimonial && '1.8rem'};
+    }
+    @media (max-width: 800px) {
+        font-size: ${p => p.testimonial && '2.2rem'};
+    }
     @media (max-width: 700px) {
         padding: 8vh 5vw;
+        font-size: ${p => (p.testimonial ? '2.2rem' : p.fontSize)};
     }
 `;

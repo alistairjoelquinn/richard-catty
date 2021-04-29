@@ -19,7 +19,7 @@ const CardComponent = ({ item, showFooter, gradient, headerPadding, bodyPadding 
                 {item.title}
                 <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
             </CardHeader>
-            <CardBody pad={bodyPadding}>
+            <CardBody pad={bodyPadding} style={{ paddingTop: 0 }}>
                 {gradient ? (
                     <div style={{ position: 'relative' }}>
                         <GradientStyles></GradientStyles>

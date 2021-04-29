@@ -10,7 +10,6 @@ const SideMenuStyles = styled.div`
     height: 100%;
     top: 0;
     right: 0;
-    /* width: 40%; */
     width: 500px;
     max-width: 100vw;
     bottom: 0;
