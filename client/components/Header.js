@@ -48,6 +48,11 @@ const HeaderStyles = styled.header`
             font-size: 3rem;
         }
     }
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
 `;
 
 const Header = () => {

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const CardPageStyles = styled.div`
+    position: fixed;
+    overflow-x: scroll;
     height: 100vh;
     width: 100vw;
     display: flex;
