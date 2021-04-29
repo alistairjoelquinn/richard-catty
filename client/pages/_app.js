@@ -24,9 +24,9 @@ const App = props => {
         <MenuStateProvider>
             <Page>
                 {transition.map(({ item: { Component, pageProps }, key, props }) => (
-                    <animated.h1 key={key} style={props}>
+                    <animated.div key={key} style={props}>
                         <Component {...pageProps} />
-                    </animated.h1>
+                    </animated.div>
                 ))}
             </Page>
         </MenuStateProvider>

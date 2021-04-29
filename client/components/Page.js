@@ -16,8 +16,10 @@ const Page = ({ children }) => {
             <Normalize />
             <GlobalStyles />
             <Typography />
-            <Header />
-            {children}
+            <div>
+                <Header />
+                {children}
+            </div>
         </>
     );
 };
