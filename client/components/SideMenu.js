@@ -10,8 +10,9 @@ const SideMenuStyles = styled.div`
     height: 100%;
     top: 0;
     right: 0;
-    width: 40%;
-    min-width: 500px;
+    /* width: 40%; */
+    width: 500px;
+    max-width: 100vw;
     bottom: 0;
     transform: translateX(${p => (p.open ? '0' : '100%')});
     transition: transform 0.5s;
