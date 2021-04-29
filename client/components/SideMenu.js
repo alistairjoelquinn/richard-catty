@@ -63,8 +63,8 @@ const SideMenu = () => {
                 </Link>
             </div>
             <div className="menu-item">
-                <Link href="/contact" className="menu-item">
-                    <span onClick={closeMenu}>Contact</span>
+                <Link href="/" className="menu-item">
+                    <span onClick={closeMenu}>Home</span>
                 </Link>
             </div>
         </SideMenuStyles>
