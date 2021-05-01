@@ -20,17 +20,20 @@ const GridItemStyles = styled.div`
     }
     span {
         position: absolute;
-        bottom: 0;
-        width: 100%;
-        border: none;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5%;
+        border: 1px solid red;
         color: red;
+        background-color: rgba(248, 248, 248, 1);
         text-align: center;
         font-weight: bolder;
-        padding: 20px;
+        padding: 10px;
         font-size: 20px;
         cursor: pointer;
         border-radius: 6px;
         z-index: 3;
+        margin: 0 auto;
     }
 `;
 
