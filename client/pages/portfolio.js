@@ -52,8 +52,6 @@ const PortfolioPage = () => {
         }))
     );
 
-    console.log('springs: ', springs);
-
     return (
         <CardPageStyles
             image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
