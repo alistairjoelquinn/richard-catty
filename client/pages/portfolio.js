@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import CardComponent from '../components/CardComponent';
 import portfolios from '../content/portfolios.json';
 import { CardPageStyles } from '../components/styles/CardPageStyles';
+import springValues from '../lib/animations/portfolioSprings.json';
+import { useSprings, animated } from 'react-spring';
 
 const PortfolioGridStyles = styled.div`
     padding-top: 7vh;
@@ -12,7 +14,7 @@ const PortfolioGridStyles = styled.div`
     gap: 3vw;
 `;
 
-const GridItemStyles = styled.div`
+const GridItemStyles = styled(animated.div)`
     position: relative;
     width: 40vw;
     & > div {
@@ -38,6 +40,20 @@ const GridItemStyles = styled.div`
 `;
 
 const PortfolioPage = () => {
+    const springs = useSprings(
+        springValues.length,
+        springValues.map(item => ({
+            from: {
+                ...item[0],
+            },
+            to: {
+                ...item[1],
+            },
+        }))
+    );
+
+    console.log('springs: ', springs);
+
     return (
         <CardPageStyles
             image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
@@ -45,10 +61,10 @@ const PortfolioPage = () => {
             headerSize="2.3rem"
         >
             <PortfolioGridStyles>
-                {portfolios.map(portfolio => (
-                    <GridItemStyles key={portfolio.title}>
+                {springs.map((spring, idx) => (
+                    <GridItemStyles key={portfolios[idx].title} style={spring}>
                         <CardComponent
-                            item={portfolio}
+                            item={portfolios[idx]}
                             showFooter={false}
                             gradient
                             headerPadding="small"
