@@ -14,17 +14,18 @@ const App = props => {
         },
     ];
 
-    const transition = useTransition(transitionItems, item => item.id, {
+    const transition = useTransition(transitionItems, {
         from: { opacity: 0 },
         enter: { opacity: 1 },
         leave: { opacity: 0 },
+        keys: item => item.id,
     });
 
     return (
         <MenuStateProvider>
             <Page>
-                {transition.map(({ item: { Component, pageProps }, key, props }) => (
-                    <animated.div key={key} style={props}>
+                {transition((styles, { Component, pageProps }) => (
+                    <animated.div style={styles}>
                         <Component {...pageProps} />
                     </animated.div>
                 ))}
