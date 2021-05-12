@@ -5,6 +5,7 @@ import CardComponent from '../components/CardComponent';
 import testimonials from '../content/testimonials.json';
 import springValues from '../lib/animations/testimonialSprings.json';
 import { CardPageStyles } from '../components/styles/CardPageStyles';
+import CardSpring from '../components/CardSpring';
 
 const TestimonialGridStyles = styled.div`
     padding-top: 7vh;
@@ -47,15 +48,17 @@ const TestimonialsPage = () => {
             headerSize="2.7rem"
         >
             <TestimonialGridStyles>
-                {springs.map((spring, idx) => {
+                {springs.map((styles, idx) => {
                     return (
-                        <animated.div key={testimonials[idx].title} style={spring}>
-                            <CardComponent
-                                item={testimonials[idx]}
-                                showFooter
-                                headerPadding="medium"
-                                bodyPadding="medium"
-                            />
+                        <animated.div key={testimonials[idx].title} style={styles}>
+                            <CardSpring>
+                                <CardComponent
+                                    item={testimonials[idx]}
+                                    showFooter
+                                    headerPadding="medium"
+                                    bodyPadding="medium"
+                                />
+                            </CardSpring>
                         </animated.div>
                     );
                 })}
