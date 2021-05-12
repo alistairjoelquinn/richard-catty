@@ -14,7 +14,7 @@ const GradientStyles = styled.div`
 
 const CardComponent = ({ item, showFooter, gradient, headerPadding, bodyPadding }) => {
     return (
-        <Card background="light-1" style={{ height: '100%' }}>
+        <Card background="light-1" style={{ height: '100%', userSelect: 'none' }}>
             <CardHeader pad={headerPadding}>
                 {item.title}
                 <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />

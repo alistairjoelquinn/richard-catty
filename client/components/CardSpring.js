@@ -5,13 +5,8 @@ import { useGesture } from 'react-use-gesture';
 
 import styles from './styles/card.module.css';
 
-const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 20;
-const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 20;
-
-const wheel = y => {
-    const imgHeight = window.innerWidth * 0.3 - 20;
-    return `translateY(${-imgHeight * (y < 0 ? 6 : 1) - (y % (imgHeight * 5))}px`;
-};
+const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 50;
+const calcY = (x, lx) => (x - lx - window.innerWidth / 2) / 50;
 
 const CardSpring = ({ children }) => {
     useEffect(() => {
@@ -34,10 +29,10 @@ const CardSpring = ({ children }) => {
         zoom: 0,
         x: 0,
         y: 0,
-        config: { mass: 5, tension: 150, friction: 40 },
+        config: { mass: 5, tension: 100, friction: 40 },
     }));
 
-    const [{ wheelY }, wheelApi] = useSpring(() => ({ wheelY: 0 }));
+    let [{ wheelY }, wheelApi] = useSpring(() => ({ wheelY: 0 }));
 
     useGesture(
         {
