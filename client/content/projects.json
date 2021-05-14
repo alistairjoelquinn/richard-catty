@@ -1,0 +1,40 @@
+[
+    {
+        "title": "Virunga National Park",
+        "content": "Virunga is Africa’s most bio-diverse national park and home to some of the world’s last remaining mountain gorillas. Situated in a conflict zone, the park relies on a dedicated team of rangers, who risk their lives to protect wildlife and local people. Virunga also fosters peace and prosperity through sustainable economic development and agriculture.",
+        "position": "Website Copywriter",
+        "since": "2020",
+        "responsibilities": [
+            "Researched informational pages on wildlife, habitats, park rangers, development projects and the park in general",
+            "Newsletters regarding orphaned mountain gorillas",
+            "News stories on recent events"
+        ],
+        "imageUrl": "/images/virunga.png",
+        "squareImage": true
+    },
+    {
+        "title": "The Fair Cottage",
+        "content": "The Fair Cottage is a Berlin based blog and online shop focused on sustainable surf, outdoor sports, gear and lifestyles. By only championing and partnering with environmentally friendly and transparent brands, TFC helps people find ways to reduce their impact on the environment whilst enjoying nature, the playground on which all outdoors sport relies.",
+        "position": "Chief Content Officer",
+        "since": "Since 2017",
+        "responsibilities": [
+            "Writing and editing of online articles",
+            "Establishing and developing brand voice",
+            "Maintaining editorial calendar"
+        ],
+        "imageUrl": "/images/TheFairCottage.png"
+    },
+    {
+        "title": "The Travel Almanac",
+        "content": "Founded in 2010, The Travel Almanac is the first true post-tourism publication. It focuses not only on the traditional notion of physical travel, but the ways in which movement and location permeate all aspects of contemporary life. Since its inception, The Travel Almanac has been influential in re-defining the genre of pop-culture publications by showcasing the creative world’s opinions on travel and its accoutrement.",
+        "position": "Writer and Editor",
+        "since": "April 2019",
+        "responsibilities": [
+            "Writing and editing of articles for online and print",
+            "Conducting and production of interviews for online and print",
+            "Sustainability as a main focus area"
+        ],
+        "imageUrl": "/images/travel-almanac.webp",
+        "squareImage": true
+    }
+]
