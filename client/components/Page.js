@@ -18,7 +18,6 @@ const Page = ({ children }) => {
                 <meta charset="UTF-8" />
                 <meta name="description" content={meta.description} />
                 {location && <meta property="og:url" content={location.href} />}
-                <meta property="og:image" content={meta.image || '/logo.svg'} />
                 <meta property="og:site_name" content={meta.title} key="ogsitename" />
                 <meta property="og:description" content={meta.description} key="ogdesc" />
             </Head>

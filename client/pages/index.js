@@ -35,6 +35,10 @@ const Home = () => {
             <Head>
                 <title>Richard Catty</title>
                 <meta property="og:title" content="Richard Catty" key="ogtitle" />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619116465/IMG_7997-3_rw78qh.jpg"
+                />
             </Head>
 
             <HomePageStyles>

@@ -32,6 +32,10 @@ const ProjectsPage = () => {
             <Head>
                 <title>Richard Catty - Projects</title>
                 <meta property="og:title" content="Richard Catty - Projects" key="ogtitle" />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200431/IMG_8101-3_rpodzj.jpg"
+                />
             </Head>
             <CardPageStyles
                 image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200431/IMG_8101-3_rpodzj.jpg"

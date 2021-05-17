@@ -18,6 +18,10 @@ const ServicesPage = () => {
             <Head>
                 <title>Richard Catty - Services</title>
                 <meta property="og:title" content="Richard Catty - Services" key="ogtitle" />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200419/IMG_8033-2_g3bw8f.jpg"
+                />
             </Head>
             <ServicesPageStyles></ServicesPageStyles>
         </>
