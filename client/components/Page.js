@@ -25,10 +25,6 @@ const Page = ({ children }) => {
                 {typeof window === 'object' && <meta property="twitter:url" content={location?.href} />}
                 <meta name="twitter:title" content={meta.title} />
                 <meta name="twitter:description" content={meta.description} />
-                <meta
-                    name="twitter:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200431/IMG_8101-3_rpodzj.jpg"
-                />
             </Head>
             <Normalize />
             <GlobalStyles />

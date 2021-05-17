@@ -62,6 +62,10 @@ const PortfolioPage = () => {
                     property="og:image"
                     content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
                 />
+                <meta
+                    name="twitter:image"
+                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
+                />
             </Head>
             <CardPageStyles
                 image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"

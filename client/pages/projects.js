@@ -36,6 +36,10 @@ const ProjectsPage = () => {
                     property="og:image"
                     content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200431/IMG_8101-3_rpodzj.jpg"
                 />
+                <meta
+                    name="twitter:image"
+                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200431/IMG_8101-3_rpodzj.jpg"
+                />
             </Head>
             <CardPageStyles
                 image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200431/IMG_8101-3_rpodzj.jpg"
