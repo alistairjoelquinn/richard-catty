@@ -17,6 +17,7 @@ const ServicesPage = () => {
         <>
             <Head>
                 <title>Richard Catty - Services</title>
+                <meta property="og:title" content="Richard Catty - Services" key="ogtitle" />
             </Head>
             <ServicesPageStyles></ServicesPageStyles>
         </>

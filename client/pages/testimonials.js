@@ -45,6 +45,7 @@ const TestimonialsPage = () => {
         <>
             <Head>
                 <title>Richard Catty - Testimonials</title>
+                <meta property="og:title" content="Richard Catty - Testimonials" key="ogtitle" />
             </Head>
             <CardPageStyles
                 image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8148_kxvkm8.jpg"

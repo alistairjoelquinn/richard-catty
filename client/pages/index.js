@@ -34,6 +34,7 @@ const Home = () => {
         <div>
             <Head>
                 <title>Richard Catty</title>
+                <meta property="og:title" content="Richard Catty" key="ogtitle" />
             </Head>
 
             <HomePageStyles>

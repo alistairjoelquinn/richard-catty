@@ -57,6 +57,7 @@ const PortfolioPage = () => {
         <>
             <Head>
                 <title>Richard Catty - Portfolio</title>
+                <meta property="og:title" content="Richard Catty - Portfolio" key="ogtitle" />
             </Head>
             <CardPageStyles
                 image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
