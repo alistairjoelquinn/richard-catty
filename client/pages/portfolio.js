@@ -70,6 +70,7 @@ const PortfolioPage = () => {
                                 item={portfolios[idx]}
                                 showFooter={false}
                                 gradient
+                                portfolio
                                 headerPadding="small"
                                 bodyPadding="small"
                             />
