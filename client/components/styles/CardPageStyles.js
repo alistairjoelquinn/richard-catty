@@ -11,10 +11,7 @@ export const CardPageStyles = styled.div`
     gap: 5vw;
     padding: 8vh 5vw;
     font-family: Cutive;
-    font-size: ${p => {
-        console.log('p: ', p);
-        return p.testimonial ? '2.2rem' : p.fontSize;
-    }};
+    font-size: ${p => (p.testimonial ? '2.2rem' : p.fontSize)};
     background-image: url(${p => p.image});
     background-position: center;
     background-size: cover;
