@@ -62,6 +62,7 @@ const PortfolioPage = () => {
                 image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
                 fontSize="1.5rem"
                 headerSize="2.3rem"
+                title="Eucalyptus"
             >
                 <PortfolioGridStyles>
                     {springs.map((spring, idx) => (

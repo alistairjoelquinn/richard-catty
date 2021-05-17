@@ -43,6 +43,7 @@ CardComponent.propTypes = {
     item: PropTypes.object,
     showFooter: PropTypes.bool,
     gradient: PropTypes.bool,
+    portfolio: PropTypes.bool,
     headerPadding: PropTypes.string,
     bodyPadding: PropTypes.string,
 };

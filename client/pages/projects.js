@@ -37,6 +37,7 @@ const ProjectsPage = () => {
                 fontSize="1.8rem"
                 projects
                 headerSize="2.7rem"
+                title="Dried Samaras"
             >
                 <ProjectGridStyles>
                     {projects.map(project => (

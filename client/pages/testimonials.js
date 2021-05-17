@@ -51,6 +51,7 @@ const TestimonialsPage = () => {
                 fontSize="2.2rem"
                 testimonial
                 headerSize="2.7rem"
+                title="Green Leaf"
             >
                 <TestimonialGridStyles>
                     {springs.map((styles, idx) => {

@@ -37,7 +37,7 @@ const Home = () => {
             </Head>
 
             <HomePageStyles>
-                <div className="image-container">
+                <div className="image-container" title="Pine Cone">
                     <TypingText />
                     <footer>
                         <Instagram />
