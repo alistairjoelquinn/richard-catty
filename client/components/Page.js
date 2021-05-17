@@ -17,7 +17,7 @@ const Page = ({ children }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta charset="UTF-8" />
                 <meta name="description" content={meta.description} />
-                {location && <meta property="og:url" content={location.href} />}
+                {typeof window === 'object' && <meta property="og:url" content={location?.href} />}
                 <meta property="og:site_name" content={meta.title} key="ogsitename" />
                 <meta property="og:description" content={meta.description} key="ogdesc" />
             </Head>
