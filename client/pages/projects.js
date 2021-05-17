@@ -15,7 +15,7 @@ const ProjectGridStyles = styled.div`
         grid-row: 1 / 3;
         grid-column: 2 / 3;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 950px) {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
         div:nth-child(2) {
@@ -33,7 +33,8 @@ const ProjectsPage = () => {
             </Head>
             <CardPageStyles
                 image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200431/IMG_8101-3_rpodzj.jpg"
-                fontSize="2rem"
+                fontSize="1.8rem"
+                projects
                 headerSize="2.7rem"
             >
                 <ProjectGridStyles>
