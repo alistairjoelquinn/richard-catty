@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import Head from 'next/head';
+import { useSprings, animated } from 'react-spring';
 
 import CardComponent from '../components/CardComponent';
-import portfolios from '../content/portfolios.json';
 import { CardPageStyles } from '../components/styles/CardPageStyles';
+import portfolios from '../content/portfolios.json';
 import springValues from '../lib/animations/portfolioSprings.json';
-import { useSprings, animated } from 'react-spring';
 
 const PortfolioGridStyles = styled.div`
     padding-top: 7vh;
@@ -53,26 +54,31 @@ const PortfolioPage = () => {
     );
 
     return (
-        <CardPageStyles
-            image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
-            fontSize="1.5rem"
-            headerSize="2.3rem"
-        >
-            <PortfolioGridStyles>
-                {springs.map((spring, idx) => (
-                    <GridItemStyles key={portfolios[idx].title} style={spring}>
-                        <CardComponent
-                            item={portfolios[idx]}
-                            showFooter={false}
-                            gradient
-                            headerPadding="small"
-                            bodyPadding="small"
-                        />
-                        <span>Read More</span>
-                    </GridItemStyles>
-                ))}
-            </PortfolioGridStyles>
-        </CardPageStyles>
+        <>
+            <Head>
+                <title>Richard Catty - Portfolio</title>
+            </Head>
+            <CardPageStyles
+                image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
+                fontSize="1.5rem"
+                headerSize="2.3rem"
+            >
+                <PortfolioGridStyles>
+                    {springs.map((spring, idx) => (
+                        <GridItemStyles key={portfolios[idx].title} style={spring}>
+                            <CardComponent
+                                item={portfolios[idx]}
+                                showFooter={false}
+                                gradient
+                                headerPadding="small"
+                                bodyPadding="small"
+                            />
+                            <span>Read More</span>
+                        </GridItemStyles>
+                    ))}
+                </PortfolioGridStyles>
+            </CardPageStyles>
+        </>
     );
 };
 

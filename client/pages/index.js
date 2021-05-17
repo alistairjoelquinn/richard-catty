@@ -34,7 +34,6 @@ const Home = () => {
         <div>
             <Head>
                 <title>Richard Catty</title>
-                <link rel="icon" href="/static/favicon.ico" />
             </Head>
 
             <HomePageStyles>

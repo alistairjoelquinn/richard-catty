@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 
 const ServicesPageStyles = styled.div`
@@ -12,7 +13,14 @@ const ServicesPageStyles = styled.div`
 `;
 
 const ServicesPage = () => {
-    return <ServicesPageStyles></ServicesPageStyles>;
+    return (
+        <>
+            <Head>
+                <title>Richard Catty - Services</title>
+            </Head>
+            <ServicesPageStyles></ServicesPageStyles>
+        </>
+    );
 };
 
 export default ServicesPage;

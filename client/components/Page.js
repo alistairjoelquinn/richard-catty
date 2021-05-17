@@ -12,6 +12,7 @@ const Page = ({ children }) => {
             <Head>
                 <link rel="preload" href="/static/CutiveMono-Regular.ttf" as="font" crossOrigin="" />
                 <link rel="preload" href="/static/MajorMonoDisplay-Regular.ttf" as="font" crossOrigin="" />
+                <link rel="icon" href="/static/favicon.ico" />
             </Head>
             <Normalize />
             <GlobalStyles />
