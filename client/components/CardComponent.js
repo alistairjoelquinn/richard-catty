@@ -23,10 +23,16 @@ const CardComponent = ({ item, showFooter, gradient, headerPadding, bodyPadding,
                 {gradient ? (
                     <div style={{ position: 'relative' }}>
                         <GradientStyles></GradientStyles>
-                        &quot;{item.content}&quot;
+                        {testimonial && '&quot;'}
+                        {item.content}
+                        {testimonial && '&quot;'}
                     </div>
                 ) : (
-                    <div>&quot;{item.content}&quot;</div>
+                    <div>
+                        {testimonial && '&quot;'}
+                        {item.content}
+                        {testimonial && '&quot;'}
+                    </div>
                 )}
             </CardBody>
             {showFooter && (
