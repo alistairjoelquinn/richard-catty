@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-import { useSprings, animated } from 'react-spring';
 
 import CardComponent from '../components/CardComponent';
 import { CardPageStyles } from '../components/styles/CardPageStyles';
 import portfolios from '../content/portfolios.json';
-import springValues from '../lib/animations/portfolioSprings.json';
 import SEO from '../components/SEO';
 import { portfolioPageImage } from '../content/mainPageImages.json';
 
@@ -16,7 +14,7 @@ const PortfolioGridStyles = styled.div`
     gap: 3vw;
 `;
 
-const GridItemStyles = styled(animated.div)`
+const GridItemStyles = styled.div`
     position: relative;
     width: 40vw;
     & > div {
@@ -42,27 +40,15 @@ const GridItemStyles = styled(animated.div)`
 `;
 
 const PortfolioPage = () => {
-    const springs = useSprings(
-        springValues.length,
-        springValues.map(item => ({
-            from: {
-                ...item[0],
-            },
-            to: {
-                ...item[1],
-            },
-        }))
-    );
-
     return (
         <>
             <SEO pageTitle="Richard Catty - Portfolio" pageImage={portfolioPageImage} />
             <CardPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem" title="Eucalyptus">
                 <PortfolioGridStyles>
-                    {springs.map((spring, idx) => (
-                        <GridItemStyles key={portfolios[idx].title} style={spring}>
+                    {portfolios.map((portfolio, idx) => (
+                        <GridItemStyles key={idx}>
                             <CardComponent
-                                item={portfolios[idx]}
+                                item={portfolio}
                                 showFooter={false}
                                 gradient
                                 portfolio

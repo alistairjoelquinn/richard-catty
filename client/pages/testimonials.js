@@ -1,11 +1,8 @@
 import styled from 'styled-components';
-import { useSprings, animated } from 'react-spring';
 
 import CardComponent from '../components/CardComponent';
 import testimonials from '../content/testimonials.json';
-import springValues from '../lib/animations/testimonialSprings.json';
 import { CardPageStyles } from '../components/styles/CardPageStyles';
-import CardSpring from '../components/CardSpring';
 import SEO from '../components/SEO';
 import { testimonialsPageImage } from '../content/mainPageImages.json';
 
@@ -30,18 +27,6 @@ const TestimonialGridStyles = styled.div`
 `;
 
 const TestimonialsPage = () => {
-    const springs = useSprings(
-        springValues.length,
-        springValues.map(item => ({
-            from: {
-                ...item[0],
-            },
-            to: {
-                ...item[1],
-            },
-        }))
-    );
-
     return (
         <>
             <SEO pageTitle="Richard Catty - Testimonials" pageImage={testimonialsPageImage} />
@@ -53,18 +38,16 @@ const TestimonialsPage = () => {
                 title="Green Leaf"
             >
                 <TestimonialGridStyles>
-                    {springs.map((styles, idx) => {
+                    {testimonials.map((testimonial, idx) => {
                         return (
-                            <animated.div key={testimonials[idx].title} style={styles}>
-                                <CardSpring>
-                                    <CardComponent
-                                        item={testimonials[idx]}
-                                        showFooter
-                                        headerPadding="medium"
-                                        bodyPadding="medium"
-                                    />
-                                </CardSpring>
-                            </animated.div>
+                            <div key={idx}>
+                                <CardComponent
+                                    item={testimonial}
+                                    showFooter
+                                    headerPadding="medium"
+                                    bodyPadding="medium"
+                                />
+                            </div>
                         );
                     })}
                 </TestimonialGridStyles>
