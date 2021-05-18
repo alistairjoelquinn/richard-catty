@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Head from 'next/head';
 import { useSprings, animated } from 'react-spring';
 
 import CardComponent from '../components/CardComponent';
 import { CardPageStyles } from '../components/styles/CardPageStyles';
 import portfolios from '../content/portfolios.json';
 import springValues from '../lib/animations/portfolioSprings.json';
+import SEO from '../components/SEO';
 
 const PortfolioGridStyles = styled.div`
     padding-top: 7vh;
@@ -40,6 +40,8 @@ const GridItemStyles = styled(animated.div)`
     }
 `;
 
+const pageImage = 'https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg';
+
 const PortfolioPage = () => {
     const springs = useSprings(
         springValues.length,
@@ -55,24 +57,8 @@ const PortfolioPage = () => {
 
     return (
         <>
-            <Head>
-                <title>Richard Catty - Portfolio</title>
-                <meta property="og:title" content="Richard Catty - Portfolio" key="ogtitle" />
-                <meta
-                    property="og:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
-                />
-                <meta
-                    name="twitter:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
-                />
-            </Head>
-            <CardPageStyles
-                image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg"
-                fontSize="1.5rem"
-                headerSize="2.3rem"
-                title="Eucalyptus"
-            >
+            <SEO pageTitle="Richard Catty - Portfolio" pageImage={pageImage} />
+            <CardPageStyles image={pageImage} fontSize="1.5rem" headerSize="2.3rem" title="Eucalyptus">
                 <PortfolioGridStyles>
                     {springs.map((spring, idx) => (
                         <GridItemStyles key={portfolios[idx].title} style={spring}>
