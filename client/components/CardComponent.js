@@ -12,9 +12,9 @@ const GradientStyles = styled.div`
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.001) 0%, rgba(248, 248, 248, 1) 80%);
 `;
 
-const CardComponent = ({ item, showFooter, gradient, headerPadding, bodyPadding, portfolio }) => {
+const CardComponent = ({ item, showFooter, gradient, headerPadding, bodyPadding, portfolio, testimonial }) => {
     return (
-        <Card background="light-1" style={{ userSelect: 'none', height: portfolio && '100%' }}>
+        <Card background="light-1" style={{ userSelect: 'none', height: (portfolio || testimonial) && '100%' }}>
             <CardHeader pad={headerPadding}>
                 {item.title}
                 <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
@@ -44,6 +44,7 @@ CardComponent.propTypes = {
     showFooter: PropTypes.bool,
     gradient: PropTypes.bool,
     portfolio: PropTypes.bool,
+    testimonial: PropTypes.bool,
     headerPadding: PropTypes.string,
     bodyPadding: PropTypes.string,
 };

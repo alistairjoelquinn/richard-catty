@@ -44,6 +44,7 @@ const TestimonialsPage = () => {
                                 <CardComponent
                                     item={testimonial}
                                     showFooter
+                                    testimonial
                                     headerPadding="medium"
                                     bodyPadding="medium"
                                 />
