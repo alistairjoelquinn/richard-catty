@@ -44,7 +44,7 @@ const ServicesPage = () => {
             </Head>
             <ServicesPageStyles>
                 <ul>
-                    <li>Services I provide. Please email for a quote.</li>
+                    <li>Get in touch to discuss your project.</li>
                     {services.map(service => (
                         <li key={service}>{service}</li>
                     ))}

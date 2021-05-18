@@ -23,7 +23,6 @@ const Page = ({ children }) => {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:domain" content="richard-catty.vercel.app" />
                 {typeof window === 'object' && <meta property="twitter:url" content={location?.href} />}
-                <meta name="twitter:title" content={meta.title} />
                 <meta name="twitter:description" content={meta.description} />
             </Head>
             <Normalize />

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Instagram, Linkedin, Mail } from 'grommet-icons';
 
 import TypingText from '../components/TypingText';
+import SEO from '../components/SEO';
 
 const HomePageStyles = styled.div`
     .image-container {
@@ -32,19 +33,10 @@ const HomePageStyles = styled.div`
 const Home = () => {
     return (
         <div>
-            <Head>
-                <title>Richard Catty</title>
-                <meta property="og:title" content="Richard Catty" key="ogtitle" />
-                <meta
-                    property="og:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619116465/IMG_7997-3_rw78qh.jpg"
-                />
-                <meta
-                    name="twitter:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619116465/IMG_7997-3_rw78qh.jpg"
-                />
-            </Head>
-
+            <SEO
+                pageTitle="Richard Catty"
+                pageImage="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619116465/IMG_7997-3_rw78qh.jpg"
+            />
             <HomePageStyles>
                 <div className="image-container" title="Pine Cone">
                     <TypingText />
