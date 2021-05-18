@@ -6,7 +6,8 @@ import testimonials from '../content/testimonials.json';
 import springValues from '../lib/animations/testimonialSprings.json';
 import { CardPageStyles } from '../components/styles/CardPageStyles';
 import CardSpring from '../components/CardSpring';
-import Head from 'next/head';
+import SEO from '../components/SEO';
+import { testimonialsPageImage } from '../content/mainPageImages.json';
 
 const TestimonialGridStyles = styled.div`
     padding-top: 7vh;
@@ -43,20 +44,9 @@ const TestimonialsPage = () => {
 
     return (
         <>
-            <Head>
-                <title>Richard Catty - Testimonials</title>
-                <meta property="og:title" content="Richard Catty - Testimonials" key="ogtitle" />
-                <meta
-                    property="og:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8148_kxvkm8.jpg"
-                />
-                <meta
-                    name="twitter:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8148_kxvkm8.jpg"
-                />
-            </Head>
+            <SEO pageTitle="Richard Catty - Testimonials" pageImage={testimonialsPageImage} />
             <CardPageStyles
-                image="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8148_kxvkm8.jpg"
+                image={testimonialsPageImage}
                 fontSize="2.2rem"
                 testimonial
                 headerSize="2.7rem"

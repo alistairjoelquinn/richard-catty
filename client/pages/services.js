@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import SEO from '../components/SEO';
 
+import SEO from '../components/SEO';
 import services from '../content/services.json';
 import { servicesPageImage } from '../content/mainPageImages.json';
 
