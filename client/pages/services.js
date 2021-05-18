@@ -1,7 +1,8 @@
-import Head from 'next/head';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 import services from '../content/services.json';
+import { servicesPageImage } from '../content/mainPageImages.json';
 
 const ServicesPageStyles = styled.div`
     height: 100vh;
@@ -11,7 +12,7 @@ const ServicesPageStyles = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     font-family: Cutive;
-    background-image: url('https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200419/IMG_8033-2_g3bw8f.jpg');
+    background-image: url(${servicesPageImage});
     background-position: top right;
     background-size: cover;
     ul {
@@ -30,18 +31,7 @@ const ServicesPageStyles = styled.div`
 const ServicesPage = () => {
     return (
         <>
-            <Head>
-                <title>Richard Catty - Services</title>
-                <meta property="og:title" content="Richard Catty - Services" key="ogtitle" />
-                <meta
-                    property="og:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200419/IMG_8033-2_g3bw8f.jpg"
-                />
-                <meta
-                    name="twitter:image"
-                    content="https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200419/IMG_8033-2_g3bw8f.jpg"
-                />
-            </Head>
+            <SEO pageTitle="Richard Catty - Services" pageImage={servicesPageImage} />
             <ServicesPageStyles>
                 <ul>
                     <li>Get in touch to discuss your project.</li>

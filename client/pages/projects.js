@@ -4,6 +4,7 @@ import { CardPageStyles } from '../components/styles/CardPageStyles';
 import CardComponent from '../components/CardComponent';
 import projects from '../content/projects.json';
 import SEO from '../components/SEO';
+import { projectsPageImage } from '../content/mainPageImages.json';
 
 const ProjectGridStyles = styled.div`
     padding-top: 7vh;
@@ -26,13 +27,17 @@ const ProjectGridStyles = styled.div`
     }
 `;
 
-const pageImage = 'https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200431/IMG_8101-3_rpodzj.jpg';
-
 const ProjectsPage = () => {
     return (
         <>
-            <SEO pageTitle="Richard Catty - Projects" pageImage={pageImage} />
-            <CardPageStyles image={pageImage} fontSize="1.8rem" projects headerSize="2.7rem" title="Dried Samaras">
+            <SEO pageTitle="Richard Catty - Projects" pageImage={projectsPageImage} />
+            <CardPageStyles
+                image={projectsPageImage}
+                fontSize="1.8rem"
+                projects
+                headerSize="2.7rem"
+                title="Dried Samaras"
+            >
                 <ProjectGridStyles>
                     {projects.map(project => (
                         <CardComponent
