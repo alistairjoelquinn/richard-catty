@@ -6,6 +6,7 @@ import { CardPageStyles } from '../components/styles/CardPageStyles';
 import portfolios from '../content/portfolios.json';
 import springValues from '../lib/animations/portfolioSprings.json';
 import SEO from '../components/SEO';
+import { portfolioPageImage } from '../content/mainPageImages.json';
 
 const PortfolioGridStyles = styled.div`
     padding-top: 7vh;
@@ -40,8 +41,6 @@ const GridItemStyles = styled(animated.div)`
     }
 `;
 
-const pageImage = 'https://res.cloudinary.com/dtirfwiy8/image/upload/q_10/v1619200424/IMG_8020_bhuyxi.jpg';
-
 const PortfolioPage = () => {
     const springs = useSprings(
         springValues.length,
@@ -57,8 +56,8 @@ const PortfolioPage = () => {
 
     return (
         <>
-            <SEO pageTitle="Richard Catty - Portfolio" pageImage={pageImage} />
-            <CardPageStyles image={pageImage} fontSize="1.5rem" headerSize="2.3rem" title="Eucalyptus">
+            <SEO pageTitle="Richard Catty - Portfolio" pageImage={portfolioPageImage} />
+            <CardPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem" title="Eucalyptus">
                 <PortfolioGridStyles>
                     {springs.map((spring, idx) => (
                         <GridItemStyles key={portfolios[idx].title} style={spring}>
