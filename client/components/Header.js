@@ -23,7 +23,6 @@ const HeaderStyles = styled.header`
         font-family: Cutive;
         font-weight: bold;
         font-size: 2rem;
-        /* padding-left: 0.3rem; */
     }
     h1 {
         font-family: 'MajorMono';
