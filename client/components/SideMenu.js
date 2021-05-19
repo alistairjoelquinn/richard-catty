@@ -42,31 +42,31 @@ const SideMenu = () => {
 
     return (
         <SideMenuStyles open={menuOpen}>
-            <div className="menu-item">
-                <Link href="/services" className="menu-item">
+            <Link href="/services" className="menu-item">
+                <div className="menu-item">
                     <span onClick={closeMenu}>Services</span>
-                </Link>
-            </div>
-            <div className="menu-item">
-                <Link href="/projects">
+                </div>
+            </Link>
+            <Link href="/projects">
+                <div className="menu-item">
                     <span onClick={closeMenu}>Projects</span>
-                </Link>
-            </div>
-            <div className="menu-item">
-                <Link href="/portfolio" className="menu-item">
+                </div>
+            </Link>
+            <Link href="/portfolio" className="menu-item">
+                <div className="menu-item">
                     <span onClick={closeMenu}>Portfolio</span>
-                </Link>
-            </div>
-            <div className="menu-item">
-                <Link href="/testimonials" className="menu-item">
+                </div>
+            </Link>
+            <Link href="/testimonials" className="menu-item">
+                <div className="menu-item">
                     <span onClick={closeMenu}>Testimonials</span>
-                </Link>
-            </div>
-            <div className="menu-item">
-                <Link href="/" className="menu-item">
+                </div>
+            </Link>
+            <Link href="/" className="menu-item">
+                <div className="menu-item">
                     <span onClick={closeMenu}>Home</span>
-                </Link>
-            </div>
+                </div>
+            </Link>
         </SideMenuStyles>
     );
 };
