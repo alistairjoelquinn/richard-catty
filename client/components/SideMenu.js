@@ -23,9 +23,9 @@ const SideMenuStyles = styled.div`
     justify-content: space-between;
     span {
         font-size: 3rem;
-        cursor: pointer;
     }
     .menu-item {
+        cursor: pointer;
         width: 100%;
         height: 100%;
         display: flex;
@@ -42,29 +42,29 @@ const SideMenu = () => {
 
     return (
         <SideMenuStyles open={menuOpen}>
-            <Link href="/services" className="menu-item">
-                <div className="menu-item">
-                    <span onClick={closeMenu}>Services</span>
+            <Link href="/services">
+                <div className="menu-item" onClick={closeMenu}>
+                    <span>Services</span>
                 </div>
             </Link>
             <Link href="/projects">
-                <div className="menu-item">
-                    <span onClick={closeMenu}>Projects</span>
+                <div className="menu-item" onClick={closeMenu}>
+                    <span>Projects</span>
                 </div>
             </Link>
-            <Link href="/portfolio" className="menu-item">
-                <div className="menu-item">
-                    <span onClick={closeMenu}>Portfolio</span>
+            <Link href="/portfolio">
+                <div className="menu-item" onClick={closeMenu}>
+                    <span>Portfolio</span>
                 </div>
             </Link>
-            <Link href="/testimonials" className="menu-item">
-                <div className="menu-item">
-                    <span onClick={closeMenu}>Testimonials</span>
+            <Link href="/testimonials">
+                <div className="menu-item" onClick={closeMenu}>
+                    <span>Testimonials</span>
                 </div>
             </Link>
-            <Link href="/" className="menu-item">
-                <div className="menu-item">
-                    <span onClick={closeMenu}>Home</span>
+            <Link href="/">
+                <div className="menu-item" onClick={closeMenu}>
+                    <span>Home</span>
                 </div>
             </Link>
         </SideMenuStyles>
