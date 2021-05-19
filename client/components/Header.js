@@ -69,14 +69,12 @@ const Header = () => {
 
     return (
         <HeaderStyles>
-            <div className="headerText">
-                <Link href="/">
-                    <>
-                        <h1 onClick={headerClickHandler}>RicHARd cAtty</h1>
-                        <div className="sub-heading">Eco-conscious Writer</div>
-                    </>
-                </Link>
-            </div>
+            <Link href="/">
+                <div className="headerText" onClick={headerClickHandler}>
+                    <h1>RicHARd cAtty</h1>
+                    <div className="sub-heading">Eco-conscious Writer</div>
+                </div>
+            </Link>
             <div className="icon" onClick={toggleMenu}>
                 <HeaderIcon />
             </div>
