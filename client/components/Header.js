@@ -15,12 +15,15 @@ const HeaderStyles = styled.header`
     div.headerText {
         display: flex;
         flex-direction: column;
-        h2 {
-            font-family: CutiveMono;
-            /* font-weight: bold; */
-            font-size: 3.5rem;
-            padding-left: 0.3rem;
+        h1 {
+            transform: translateX(-3px);
         }
+    }
+    .sub-heading {
+        font-family: Cutive;
+        font-weight: bold;
+        font-size: 2rem;
+        /* padding-left: 0.3rem; */
     }
     h1 {
         font-family: 'MajorMono';
@@ -68,7 +71,10 @@ const Header = () => {
         <HeaderStyles>
             <div className="headerText">
                 <Link href="/">
-                    <h1 onClick={headerClickHandler}>RicHARd cAtty - WRiteR</h1>
+                    <>
+                        <h1 onClick={headerClickHandler}>RicHARd cAtty</h1>
+                        <div className="sub-heading">Eco-conscious Writer</div>
+                    </>
                 </Link>
             </div>
             <div className="icon" onClick={toggleMenu}>
