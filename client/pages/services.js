@@ -16,13 +16,13 @@ const ServicesPageStyles = styled.div`
     background-position: top right;
     background-size: cover;
     ul {
-        padding: 15vh 5vw;
+        padding: 22vh 7.5rem;
         li {
             font-size: 2.5rem;
-            padding: 2rem;
+            padding: 1rem;
             &:nth-child(1) {
                 list-style-type: none;
-                transform: translateX(-4rem);
+                transform: translateX(-33px);
             }
         }
     }
