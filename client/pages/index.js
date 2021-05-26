@@ -38,8 +38,16 @@ const Home = () => {
                 <div className="image-container" title="Pine Cone">
                     <TypingText />
                     <footer>
-                        <Instagram />
-                        <Linkedin />
+                        <a href="https://www.instagram.com/cattycattycool/" target="_blank" rel="noreferrer noopener">
+                            <Instagram />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/richard-catty-062090159/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            <Linkedin />
+                        </a>
                         <Mail />
                     </footer>
                 </div>
