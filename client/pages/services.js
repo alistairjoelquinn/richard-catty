@@ -34,7 +34,7 @@ const ServicesPage = () => {
             <SEO pageTitle="Richard Catty - Services" pageImage={servicesPageImage} />
             <ServicesPageStyles>
                 <ul>
-                    <li>Get in touch to discuss your project.</li>
+                    <li>Get in touch to discuss your project</li>
                     {services.map(service => (
                         <li key={service}>{service}</li>
                     ))}
