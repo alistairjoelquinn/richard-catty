@@ -1,9 +1,12 @@
+import { useState } from 'react';
+import { animated, useTransition } from 'react-spring';
 import styled from 'styled-components';
 import { Instagram, Linkedin, Mail } from 'grommet-icons';
 
 import TypingText from '../components/TypingText';
 import SEO from '../components/SEO';
 import { indexPageImage } from '../content/mainPageImages.json';
+import Portal from '../components/Portal';
 
 const HomePageStyles = styled.div`
     .image-container {
@@ -30,7 +33,25 @@ const HomePageStyles = styled.div`
     }
 `;
 
+const ModalStyles = styled(animated.div)`
+    position: absolute;
+    top: 40vh;
+    z-index: 5;
+    background-color: #fff;
+    color: black;
+    font-size: 3rem;
+`;
+
 const Home = () => {
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const transition = useTransition(modalOpen, {
+        from: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
+    });
+    const pointerEvents = modalOpen ? 'all' : 'none';
+
     return (
         <div>
             <SEO pageTitle="Richard Catty" pageImage={indexPageImage} />
@@ -48,9 +69,23 @@ const Home = () => {
                         >
                             <Linkedin />
                         </a>
-                        <Mail />
+                        <Mail onClick={() => setModalOpen(true)} />
                     </footer>
                 </div>
+                {transition(
+                    (animation, item) =>
+                        item && (
+                            <Portal key={item}>
+                                <div className="modal" style={{ pointerEvents }}>
+                                    <ModalStyles className="modal-card" style={animation}>
+                                        <h1>richiecatty@googlemail.com</h1>
+                                        <p>{`( copied to clipboard )`}</p>
+                                        <button onClick={() => setModalOpen(false)}>X</button>
+                                    </ModalStyles>
+                                </div>
+                            </Portal>
+                        )
+                )}
             </HomePageStyles>
         </div>
     );
