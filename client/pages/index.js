@@ -33,13 +33,29 @@ const HomePageStyles = styled.div`
     }
 `;
 
-const ModalStyles = styled(animated.div)`
+const ModalContainerStyles = styled.div`
     position: absolute;
-    top: 40vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 5;
-    background-color: #fff;
     color: black;
-    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modal-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+    }
 `;
 
 const Home = () => {
@@ -76,13 +92,19 @@ const Home = () => {
                     (animation, item) =>
                         item && (
                             <Portal key={item}>
-                                <div className="modal" style={{ pointerEvents }}>
-                                    <ModalStyles className="modal-card" style={animation}>
-                                        <h1>richiecatty@googlemail.com</h1>
-                                        <p>{`( copied to clipboard )`}</p>
-                                        <button onClick={() => setModalOpen(false)}>X</button>
-                                    </ModalStyles>
-                                </div>
+                                <ModalContainerStyles
+                                    className="modal"
+                                    style={{ pointerEvents }}
+                                    onClick={() => setModalOpen(false)}
+                                >
+                                    <animated.div
+                                        className="modal-card"
+                                        style={animation}
+                                        onClick={e => e.stopPropagation()}
+                                    >
+                                        <h1>richiecatty@gmail.com</h1>
+                                    </animated.div>
+                                </ModalContainerStyles>
                             </Portal>
                         )
                 )}
