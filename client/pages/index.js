@@ -49,12 +49,11 @@ const ModalContainerStyles = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
+        font-family: Cutive;
         background: white;
         border-radius: 15px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        max-width: 400px;
-        width: 100%;
+        padding: 3rem;
     }
 `;
 
