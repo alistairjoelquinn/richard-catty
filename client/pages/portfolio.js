@@ -5,6 +5,7 @@ import PortfolioItem from '../components/PortfolioItem';
 import portfolios from '../content/portfolios.json';
 import SEO from '../components/SEO';
 import { portfolioPageImage } from '../content/mainPageImages.json';
+import { Card, CardBody } from 'grommet';
 
 const PortfolioPageStyles = styled.div`
     position: fixed;
@@ -45,17 +46,35 @@ const PortfolioGridStyles = styled.div`
     div:nth-child(4) {
         grid-area: 4 / 1 / 5 / 2;
     }
+    div.selected-text {
+        grid-area: 1 / 2 / 5 / 3;
+        background-color: transparent;
+    }
 `;
 
 const PortfolioPage = () => {
+    const [showText, setShowText] = useState(null);
+
+    const displayItemTextHandler = item => {
+        console.log('loggy woggy');
+        setShowText(item);
+    };
+
     return (
         <>
             <SEO pageTitle="Richard Catty - Portfolio" pageImage={portfolioPageImage} />
             <PortfolioPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem">
                 <PortfolioGridStyles>
                     {portfolios.map((portfolio, idx) => (
-                        <PortfolioItem key={idx} item={portfolio} />
+                        <PortfolioItem key={idx} item={portfolio} displayItemTextHandler={displayItemTextHandler} />
                     ))}
+                    {showText && (
+                        <div className="selected-text">
+                            <Card background="light-1" pad="medium">
+                                <CardBody>{showText.content}</CardBody>
+                            </Card>
+                        </div>
+                    )}
                 </PortfolioGridStyles>
             </PortfolioPageStyles>
         </>

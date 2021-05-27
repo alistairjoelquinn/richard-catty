@@ -34,20 +34,25 @@ const ReadMoreTextStyles = styled.div`
 const ContainerStyles = styled.div`
     transition: transform 0.3s linear;
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
     a {
         text-decoration: none;
     }
 `;
 
-const PortfolioItem = ({ item }) => {
+const PortfolioItem = ({ item, displayItemTextHandler }) => {
     const [readMore, setReadMore] = useState(false);
+
+    const readMoreHandler = item => {
+        setReadMore(true);
+        displayItemTextHandler(item);
+    };
 
     return (
         <ContainerStyles>
             <a href={item.url} target="_blank" rel="noreferrer noopener">
-                <Card background="light-1" style={{ position: 'relative' }} onMouseOver={() => setReadMore(true)}>
+                <Card background="light-1" style={{ position: 'relative' }} onMouseOver={() => readMoreHandler(item)}>
                     {readMore && (
                         <ReadMoreTextStyles>
                             <span>Read More</span>
@@ -65,6 +70,7 @@ const PortfolioItem = ({ item }) => {
 
 PortfolioItem.propTypes = {
     item: PropTypes.object,
+    displayItemTextHandler: PropTypes.func,
 };
 
 export default PortfolioItem;
