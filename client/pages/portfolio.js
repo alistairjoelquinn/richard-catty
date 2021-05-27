@@ -83,7 +83,7 @@ const PortfolioPage = () => {
                                 item && (
                                     <animated.div className="selected-text" style={{ ...animation, maxWidth: '40vw' }}>
                                         <Card background="light-1" pad="medium">
-                                            <CardHeader pad="small">{showText.title}</CardHeader>
+                                            <CardHeader style={{ paddingBottom: '1rem' }}>{showText.title}</CardHeader>
                                             <CardBody
                                                 style={{
                                                     display: 'flex',
