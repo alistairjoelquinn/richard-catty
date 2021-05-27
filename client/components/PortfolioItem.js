@@ -31,16 +31,6 @@ const ReadMoreTextStyles = styled.div`
     }
 `;
 
-const ContainerStyles = styled.div`
-    transition: transform 0.3s linear;
-    &:hover {
-        transform: scale(1.1);
-    }
-    a {
-        text-decoration: none;
-    }
-`;
-
 const PortfolioItem = ({ item, displayItemTextHandler }) => {
     const [readMore, setReadMore] = useState(false);
 
@@ -50,7 +40,7 @@ const PortfolioItem = ({ item, displayItemTextHandler }) => {
     };
 
     return (
-        <ContainerStyles onMouseLeave={() => displayItemTextHandler(null)}>
+        <div onMouseLeave={() => displayItemTextHandler(null)}>
             <a href={item.url} target="_blank" rel="noreferrer noopener">
                 <Card
                     background="light-1"
@@ -68,7 +58,7 @@ const PortfolioItem = ({ item, displayItemTextHandler }) => {
                     </CardHeader>
                 </Card>
             </a>
-        </ContainerStyles>
+        </div>
     );
 };
 

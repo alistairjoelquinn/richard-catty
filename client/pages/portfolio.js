@@ -36,7 +36,6 @@ const PortfolioGridStyles = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 3vw;
     div {
-        height: 100%;
         a {
             text-decoration: none;
         }
@@ -56,8 +55,6 @@ const PortfolioGridStyles = styled.div`
     div.selected-text {
         position: absolute;
         left: 50vw;
-        height: 50vh;
-        background-color: transparent;
     }
 `;
 
