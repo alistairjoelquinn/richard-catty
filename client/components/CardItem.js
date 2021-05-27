@@ -32,7 +32,7 @@ const ReadMoreTextStyles = styled.div`
     }
 `;
 
-const PortfolioItem = ({ item, displayItemTextHandler }) => {
+const PortfolioItem = ({ item, displayItemTextHandler, portfolio }) => {
     const [readMore, setReadMore] = useState(false);
 
     const readMoreHandler = item => {
@@ -48,11 +48,7 @@ const PortfolioItem = ({ item, displayItemTextHandler }) => {
                     style={{ position: 'relative', width: '100%' }}
                     onMouseEnter={() => readMoreHandler(item)}
                 >
-                    {readMore && (
-                        <ReadMoreTextStyles>
-                            <span>Read More</span>
-                        </ReadMoreTextStyles>
-                    )}
+                    {readMore && <ReadMoreTextStyles>{portfolio && <span>Read More</span>}</ReadMoreTextStyles>}
                     <CardHeader pad="small" style={{ cursor: 'pointer' }} title={item.title}>
                         {item.title}
                         <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
@@ -66,6 +62,7 @@ const PortfolioItem = ({ item, displayItemTextHandler }) => {
 PortfolioItem.propTypes = {
     item: PropTypes.object,
     displayItemTextHandler: PropTypes.func,
+    portfolio: PropTypes.bool,
 };
 
 export default PortfolioItem;
