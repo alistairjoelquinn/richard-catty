@@ -11,7 +11,7 @@ const PortfolioPageStyles = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 5vw;
     padding: 8vh 5vw;
@@ -27,7 +27,6 @@ const PortfolioPageStyles = styled.div`
 `;
 
 const PortfolioGridStyles = styled.div`
-    height: 100%;
     display: grid;
     justify-content: center;
     align-items: center;
