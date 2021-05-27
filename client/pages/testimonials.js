@@ -23,13 +23,14 @@ const TestimonialsPage = () => {
         <>
             <SEO pageTitle="Richard Catty - Testimonials" pageImage={testimonialsPageImage} />
             <CardPageStyles image={testimonialsPageImage} fontSize="2.2rem" headerSize="2.7rem">
-                <CardGridStyles>
+                <CardGridStyles testimonial>
                     {testimonials.map((testimonial, idx) => (
                         <CardItem
                             key={idx}
                             item={testimonial}
                             displayItemTextHandler={displayItemTextHandler}
                             style={{ width: '50vw' }}
+                            testimonial
                         />
                     ))}
                     {showText &&

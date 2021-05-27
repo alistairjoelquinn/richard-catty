@@ -46,6 +46,6 @@ export const CardGridStyles = styled.div`
     }
     div.selected-text {
         position: absolute;
-        left: 50vw;
+        left: ${p => (p.testimonial ? '38vw' : '50vw')};
     }
 `;
