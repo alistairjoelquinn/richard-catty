@@ -81,7 +81,7 @@ const PortfolioPage = () => {
                         transition(
                             (animation, item) =>
                                 item && (
-                                    <animated.div className="selected-text" style={{ ...animation, maxWidth: '35vw' }}>
+                                    <animated.div className="selected-text" style={{ ...animation, maxWidth: '40vw' }}>
                                         <Card background="light-1" pad="medium">
                                             <CardHeader pad="small">{showText.title}</CardHeader>
                                             <CardBody

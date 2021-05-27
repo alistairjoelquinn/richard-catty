@@ -21,6 +21,7 @@ const ReadMoreTextStyles = styled.div`
     box-shadow: none;
     &:hover {
         backdrop-filter: blur(3px);
+        background-color: rgba(255, 255, 255, 0.6);
         span {
             opacity: 1;
         }
