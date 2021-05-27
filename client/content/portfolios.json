@@ -1,10 +1,19 @@
 [
+
     {
-        "title": "Virunga’s Mountain Gorilla Families",
-        "publisher": "Virunga",
-        "content": "Mountain gorillas live in family units, also known as troops, led by a dominant silverback. While there may be other silverbacks within a troop, all gorillas are subordinate to the dominant silverback, who directs troop activities and retains mating rights over females. Mature females regularly migrate between families to improve reproductive chances and avoid inbreeding. Mountain gorilla conservation would be challenging without habituation of gorilla families. This painstaking process involves Rangers and trackers gradually increasing the duration and proximity of troop visits until the gorillas no longer perceive human observers as a threat. Age, sex, and unique noseprints are then logged as part of the identification process.",
-        "url": "https://virunga.org/wildlife/primates/mountain-gorillas/families/",
-        "imageUrl": "/images/virunga.png",
+        "title": "Bali Syndrome",
+        "publisher": "The Travel Almanac",
+        "content": "The proliferation of package holidays and massive hotel complexes, crammed tightly into the tourist enclaves of once unspoiled utopias, has altered the face of small scale ‘exotic’ tourism. It has, for the most part, been completely eaten up. Consumed by a global industry that unashamedly pimps out en-tire countries in thirty second YouTube adverts and feverishly ferries consumers between borders like cash loaded freight containers. This mass approach to tourism, while highly profitable for a select few, can have a profoundly negative impact not only on local people, whose needs are rarely considered in the planning of exotic resort developments, but also on the authenticity of tourist experiences.",
+        "url": "/bali_syndrome.pdf",
+        "imageUrl": "/images/travel-almanac.webp",
+        "squareImage": true
+    },
+    {
+        "title": "The Future We Choose",
+        "publisher": "The Travel Almanac",
+        "content": "It’s all about “The Future We Choose”, so goes the title of an inspiring book, which offers guidance on how to overcome the predominant, fatalistic climate narratives and replace them with something more progressive. Co-authored by Costa Rican diplomat and environmentalist Christiana Figueres and Tom Rivett-Carnac, climate lobbyist and former buddhist monk, the book follows on from their unprecedented achievement in brokering 2016’s Paris Climate Accord, when 195 nations agreed to limit future global warming to well below 2℃, an unrivaled example of collaborative diplomacy. The sort mankind needs in abundance if it is to win the battle against rapid climate change.",
+        "url": "/the_future_we_choose.pdf",
+        "imageUrl": "/images/travel-almanac.webp",
         "squareImage": true
     },
     {
@@ -15,19 +24,11 @@
         "imageUrl": "/images/TheFairCottage.png"
     },
     {
-        "title": "The Future We Choose",
-        "publisher": "The Travel Almanac",
-        "content": "It’s all about “The Future We Choose”, so goes the title of an inspiring book, which offers guidance on how to overcome the predominant, fatalistic climate narratives and replace them with something more progressive. Co-authored by Costa Rican diplomat and environmentalist Christiana Figueres and Tom Rivett-Carnac, climate lobbyist and former buddhist monk, the book follows on from their unprecedented achievement in brokering 2016’s Paris Climate Accord, when 195 nations agreed to limit future global warming to well below 2℃, an unrivaled example of collaborative diplomacy. The sort mankind needs in abundance if it is to win the battle against rapid climate change.",
-        "url": "/static/the_future_we_choose.pdf",
-        "imageUrl": "/images/travel-almanac.webp",
-        "squareImage": true
-    },
-    {
-        "title": "Bali Syndrome",
-        "publisher": "The Travel Almanac",
-        "content": "The proliferation of package holidays and massive hotel complexes, crammed tightly into the tourist enclaves of once unspoiled utopias, has altered the face of small scale ‘exotic’ tourism. It has, for the most part, been completely eaten up. Consumed by a global industry that unashamedly pimps out en-tire countries in thirty second YouTube adverts and feverishly ferries consumers between borders like cash loaded freight containers. This mass approach to tourism, while highly profitable for a select few, can have a profoundly negative impact not only on local people, whose needs are rarely considered in the planning of exotic resort developments, but also on the authenticity of tourist experiences.",
-        "url": "/static/bali_syndrome.pdf",
-        "imageUrl": "/images/travel-almanac.webp",
+        "title": "Virunga’s Mountain Gorilla Families",
+        "publisher": "Virunga",
+        "content": "Mountain gorillas live in family units, also known as troops, led by a dominant silverback. While there may be other silverbacks within a troop, all gorillas are subordinate to the dominant silverback, who directs troop activities and retains mating rights over females. Mature females regularly migrate between families to improve reproductive chances and avoid inbreeding. Mountain gorilla conservation would be challenging without habituation of gorilla families. This painstaking process involves Rangers and trackers gradually increasing the duration and proximity of troop visits until the gorillas no longer perceive human observers as a threat. Age, sex, and unique noseprints are then logged as part of the identification process.",
+        "url": "https://virunga.org/wildlife/primates/mountain-gorillas/families/",
+        "imageUrl": "/images/virunga.png",
         "squareImage": true
     }
 ]

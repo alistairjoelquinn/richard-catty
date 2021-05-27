@@ -36,6 +36,9 @@ const ContainerStyles = styled.div`
     &:hover {
         transform: scale(1.2);
     }
+    a {
+        text-decoration: none;
+    }
 `;
 
 const PortfolioItem = ({ item }) => {
@@ -43,17 +46,19 @@ const PortfolioItem = ({ item }) => {
 
     return (
         <ContainerStyles>
-            <Card background="light-1" style={{ position: 'relative' }} onMouseOver={() => setReadMore(true)}>
-                {readMore && (
-                    <ReadMoreTextStyles>
-                        <span>Read More</span>
-                    </ReadMoreTextStyles>
-                )}
-                <CardHeader pad="small" style={{ cursor: 'pointer' }} title={item.title}>
-                    {item.title}
-                    <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
-                </CardHeader>
-            </Card>
+            <a href={item.url} target="_blank" rel="noreferrer noopener">
+                <Card background="light-1" style={{ position: 'relative' }} onMouseOver={() => setReadMore(true)}>
+                    {readMore && (
+                        <ReadMoreTextStyles>
+                            <span>Read More</span>
+                        </ReadMoreTextStyles>
+                    )}
+                    <CardHeader pad="small" style={{ cursor: 'pointer' }} title={item.title}>
+                        {item.title}
+                        <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
+                    </CardHeader>
+                </Card>
+            </a>
         </ContainerStyles>
     );
 };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 
 import PortfolioItem from '../components/PortfolioItem';
 import portfolios from '../content/portfolios.json';
