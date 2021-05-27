@@ -50,9 +50,13 @@ const PortfolioItem = ({ item, displayItemTextHandler }) => {
     };
 
     return (
-        <ContainerStyles>
+        <ContainerStyles onMouseLeave={() => displayItemTextHandler(null)}>
             <a href={item.url} target="_blank" rel="noreferrer noopener">
-                <Card background="light-1" style={{ position: 'relative' }} onMouseOver={() => readMoreHandler(item)}>
+                <Card
+                    background="light-1"
+                    style={{ position: 'relative', width: '100%' }}
+                    onMouseEnter={() => readMoreHandler(item)}
+                >
                     {readMore && (
                         <ReadMoreTextStyles>
                             <span>Read More</span>

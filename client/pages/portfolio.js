@@ -34,6 +34,9 @@ const PortfolioGridStyles = styled.div`
     align-items: center;
     grid-template-columns: 1fr 1fr;
     gap: 3vw;
+    div {
+        height: 100%;
+    }
     div:nth-child(1) {
         grid-area: 1 / 1 / 2 / 2;
     }
@@ -69,9 +72,11 @@ const PortfolioPage = () => {
                         <PortfolioItem key={idx} item={portfolio} displayItemTextHandler={displayItemTextHandler} />
                     ))}
                     {showText && (
-                        <div className="selected-text">
+                        <div className="selected-text" style={{ maxWidth: '35vw' }}>
                             <Card background="light-1" pad="medium">
-                                <CardBody>{showText.content}</CardBody>
+                                <CardBody style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    {showText.content}
+                                </CardBody>
                             </Card>
                         </div>
                     )}
