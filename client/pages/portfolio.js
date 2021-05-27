@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import { animated, useTransition } from 'react-spring';
 
 import PortfolioItem from '../components/PortfolioItem';
 import portfolios from '../content/portfolios.json';
 import SEO from '../components/SEO';
 import { portfolioPageImage } from '../content/mainPageImages.json';
-import { Card, CardBody } from 'grommet';
+import { Card, CardBody, CardHeader } from 'grommet';
 
 const PortfolioPageStyles = styled.div`
     position: fixed;
@@ -36,6 +37,9 @@ const PortfolioGridStyles = styled.div`
     gap: 3vw;
     div {
         height: 100%;
+        a {
+            text-decoration: none;
+        }
     }
     div:nth-child(1) {
         grid-area: 1 / 1 / 2 / 2;
@@ -50,7 +54,9 @@ const PortfolioGridStyles = styled.div`
         grid-area: 4 / 1 / 5 / 2;
     }
     div.selected-text {
-        grid-area: 1 / 2 / 5 / 3;
+        position: absolute;
+        left: 50vw;
+        height: 50vh;
         background-color: transparent;
     }
 `;
@@ -58,10 +64,13 @@ const PortfolioGridStyles = styled.div`
 const PortfolioPage = () => {
     const [showText, setShowText] = useState(null);
 
-    const displayItemTextHandler = item => {
-        console.log('loggy woggy');
-        setShowText(item);
-    };
+    const displayItemTextHandler = item => setShowText(item);
+
+    const transition = useTransition(showText, {
+        from: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
+    });
 
     return (
         <>
@@ -71,15 +80,26 @@ const PortfolioPage = () => {
                     {portfolios.map((portfolio, idx) => (
                         <PortfolioItem key={idx} item={portfolio} displayItemTextHandler={displayItemTextHandler} />
                     ))}
-                    {showText && (
-                        <div className="selected-text" style={{ maxWidth: '35vw' }}>
-                            <Card background="light-1" pad="medium">
-                                <CardBody style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                    {showText.content}
-                                </CardBody>
-                            </Card>
-                        </div>
-                    )}
+                    {showText &&
+                        transition(
+                            (animation, item) =>
+                                item && (
+                                    <animated.div className="selected-text" style={{ ...animation, maxWidth: '35vw' }}>
+                                        <Card background="light-1" pad="medium">
+                                            <CardHeader pad="small">{showText.title}</CardHeader>
+                                            <CardBody
+                                                style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                }}
+                                            >
+                                                {showText.content}
+                                            </CardBody>
+                                        </Card>
+                                    </animated.div>
+                                )
+                        )}
                 </PortfolioGridStyles>
             </PortfolioPageStyles>
         </>
