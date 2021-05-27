@@ -50,7 +50,7 @@ const PortfolioPage = () => {
     return (
         <>
             <SEO pageTitle="Richard Catty - Portfolio" pageImage={portfolioPageImage} />
-            <PortfolioPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem" title="Eucalyptus">
+            <PortfolioPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem">
                 <PortfolioGridStyles>
                     {portfolios.map((portfolio, idx) => (
                         <PortfolioItem key={idx} item={portfolio} />

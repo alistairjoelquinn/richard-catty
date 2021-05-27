@@ -18,8 +18,9 @@ const ReadMoreTextStyles = styled.div`
     color: #1f1f1f;
     cursor: pointer;
     transition: backdrop-filter 0.2s linear;
+    box-shadow: none;
     &:hover {
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(3px);
         span {
             opacity: 1;
         }
