@@ -1,54 +1,53 @@
-import styled from 'styled-components';
+import { useState } from 'react';
+import { animated, useTransition } from 'react-spring';
+import { Card, CardBody, CardHeader } from 'grommet';
 
-import { CardPageStyles } from '../components/styles/CardPageStyles';
-import CardComponent from '../components/CardComponent';
+import CardItem from '../components/CardItem';
 import projects from '../content/projects.json';
 import SEO from '../components/SEO';
 import { projectsPageImage } from '../content/mainPageImages.json';
-
-const ProjectGridStyles = styled.div`
-    padding-top: 7vh;
-    display: grid;
-    grid-template-columns: 1.8fr 1fr;
-    grid-auto-rows: 36vh;
-    gap: 3vw;
-    div:nth-child(2) {
-        grid-row: 1 / 3;
-        grid-column: 2 / 3;
-        margin: auto;
-    }
-    @media (max-width: 950px) {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-        div:nth-child(2) {
-            grid-row: auto;
-            grid-column: auto;
-        }
-    }
-`;
+import { CardGridStyles, CardPageStyles } from '../components/styles/CardPageStyles';
 
 const ProjectsPage = () => {
+    const [showText, setShowText] = useState(null);
+
+    const displayItemTextHandler = item => setShowText(item);
+
+    const transition = useTransition(showText, {
+        from: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
+    });
+
     return (
         <>
-            <SEO pageTitle="Richard Catty - Projects" pageImage={projectsPageImage} />
-            <CardPageStyles
-                image={projectsPageImage}
-                fontSize="1.8rem"
-                projects
-                headerSize="2.7rem"
-                title="Dried Samaras"
-            >
-                <ProjectGridStyles>
-                    {projects.map(project => (
-                        <CardComponent
-                            key={project.title}
-                            item={project}
-                            showFooter={false}
-                            headerPadding="medium"
-                            bodyPadding="medium"
-                        />
+            <SEO pageTitle="Richard Catty - Portfolio" pageImage={projectsPageImage} />
+            <CardPageStyles image={projectsPageImage} fontSize="1.5rem" headerSize="2.3rem">
+                <CardGridStyles>
+                    {projects.map((project, idx) => (
+                        <CardItem key={idx} item={project} displayItemTextHandler={displayItemTextHandler} />
                     ))}
-                </ProjectGridStyles>
+                    {showText &&
+                        transition(
+                            (animation, item) =>
+                                item && (
+                                    <animated.div className="selected-text" style={{ ...animation, maxWidth: '40vw' }}>
+                                        <Card background="light-1" pad="medium">
+                                            <CardHeader style={{ paddingBottom: '1rem' }}>{showText.title}</CardHeader>
+                                            <CardBody
+                                                style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                }}
+                                            >
+                                                {showText.content}
+                                            </CardBody>
+                                        </Card>
+                                    </animated.div>
+                                )
+                        )}
+                </CardGridStyles>
             </CardPageStyles>
         </>
     );

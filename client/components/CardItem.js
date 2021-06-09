@@ -32,7 +32,7 @@ const ReadMoreTextStyles = styled.div`
     }
 `;
 
-const PortfolioItem = ({ item, displayItemTextHandler }) => {
+const CardItem = ({ item, displayItemTextHandler }) => {
     const [readMore, setReadMore] = useState(false);
 
     const readMoreHandler = item => {
@@ -63,9 +63,9 @@ const PortfolioItem = ({ item, displayItemTextHandler }) => {
     );
 };
 
-PortfolioItem.propTypes = {
+CardItem.propTypes = {
     item: PropTypes.object,
     displayItemTextHandler: PropTypes.func,
 };
 
-export default PortfolioItem;
+export default CardItem;
