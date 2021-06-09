@@ -25,7 +25,7 @@ const PortfolioPage = () => {
             <CardPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem">
                 <CardGridStyles>
                     {portfolios.map((portfolio, idx) => (
-                        <CardItem key={idx} item={portfolio} displayItemTextHandler={displayItemTextHandler} porfolio />
+                        <CardItem key={idx} item={portfolio} displayItemTextHandler={displayItemTextHandler} />
                     ))}
                     {showText &&
                         transition(

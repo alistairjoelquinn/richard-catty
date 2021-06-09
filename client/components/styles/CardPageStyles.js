@@ -49,3 +49,43 @@ export const CardGridStyles = styled.div`
         left: ${p => (p.testimonial ? '38vw' : '50vw')};
     }
 `;
+
+export const ProjectsGridStyles = styled.div`
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 3vw;
+    div {
+        a {
+            text-decoration: none;
+        }
+    }
+    div:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    div:nth-child(2) {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    div:nth-child(3) {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    div.selected-text {
+        position: absolute;
+        left: ${p => (p.testimonial ? '38vw' : '50vw')};
+    }
+`;
+
+export const CardItemStyles = styled.div`
+    width: 100%;
+    display: ${p => (p.responsibilities ? 'auto' : 'flex')};
+    align-items: flex-start;
+    padding-top: 1rem;
+    h3 {
+        vertical-align: bottom;
+    }
+    h3:first-child {
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+`;

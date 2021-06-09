@@ -6,7 +6,7 @@ import CardItem from '../components/CardItem';
 import projects from '../content/projects.json';
 import SEO from '../components/SEO';
 import { projectsPageImage } from '../content/mainPageImages.json';
-import { CardGridStyles, CardPageStyles } from '../components/styles/CardPageStyles';
+import { ProjectsGridStyles, CardPageStyles, CardItemStyles } from '../components/styles/CardPageStyles';
 
 const ProjectsPage = () => {
     const [showText, setShowText] = useState(null);
@@ -21,9 +21,9 @@ const ProjectsPage = () => {
 
     return (
         <>
-            <SEO pageTitle="Richard Catty - Portfolio" pageImage={projectsPageImage} />
+            <SEO pageTitle="Richard Catty - Projects" pageImage={projectsPageImage} />
             <CardPageStyles image={projectsPageImage} fontSize="1.5rem" headerSize="2.3rem">
-                <CardGridStyles>
+                <ProjectsGridStyles>
                     {projects.map((project, idx) => (
                         <CardItem key={idx} item={project} displayItemTextHandler={displayItemTextHandler} />
                     ))}
@@ -42,12 +42,28 @@ const ProjectsPage = () => {
                                                 }}
                                             >
                                                 {showText.content}
+                                                <CardItemStyles>
+                                                    <h3>Position:</h3>
+                                                    <h3>{showText.position}</h3>
+                                                </CardItemStyles>
+                                                <CardItemStyles>
+                                                    <h3>Since:</h3>
+                                                    <h3>{showText.since}</h3>
+                                                </CardItemStyles>
+                                                <CardItemStyles responsibilities>
+                                                    <h3>Responsibilities:</h3>
+                                                    <ul>
+                                                        {showText.responsibilities.map((item, idx) => (
+                                                            <li key={idx}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                </CardItemStyles>
                                             </CardBody>
                                         </Card>
                                     </animated.div>
                                 )
                         )}
-                </CardGridStyles>
+                </ProjectsGridStyles>
             </CardPageStyles>
         </>
     );
