@@ -10,6 +10,7 @@
             "News stories on recent events"
         ],
         "imageUrl": "/images/virunga.png",
+        "url": "https://virunga.org/",
         "squareImage": true
     },
     {
@@ -22,6 +23,7 @@
             "Establishing and developing brand voice",
             "Maintaining editorial calendar"
         ],
+        "url": "https://thefaircottage.com/",
         "imageUrl": "/images/TheFairCottage.png"
     },
     {
@@ -35,6 +37,7 @@
             "Sustainability as a main focus area"
         ],
         "imageUrl": "/images/travel-almanac.webp",
+        "url": "https://www.travel-almanac.com/",
         "squareImage": true
     }
 ]
