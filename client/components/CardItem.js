@@ -41,7 +41,7 @@ const CardItem = ({ item, displayItemTextHandler }) => {
     };
 
     return (
-        <div>
+        <div onMouseLeave={() => displayItemTextHandler(null)}>
             <a href={item.url} target="_blank" rel="noreferrer noopener">
                 <Card
                     background="light-1"

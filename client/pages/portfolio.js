@@ -23,7 +23,7 @@ const PortfolioPage = () => {
         <>
             <SEO pageTitle="Richard Catty - Portfolio" pageImage={portfolioPageImage} />
             <CardPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem">
-                <CardGridStyles>
+                <CardGridStyles portfolio>
                     {portfolios.map((portfolio, idx) => (
                         <CardItem key={idx} item={portfolio} displayItemTextHandler={displayItemTextHandler} />
                     ))}

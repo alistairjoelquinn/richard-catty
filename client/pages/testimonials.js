@@ -48,6 +48,17 @@ const TestimonialsPage = () => {
                                                 }}
                                             >
                                                 {showText.content}
+                                                <div
+                                                    style={{
+                                                        fontWeight: 'bold',
+                                                        fontSize: '1.5rem',
+                                                        width: '100%',
+                                                        textAlign: 'end',
+                                                        paddingTop: '1rem',
+                                                    }}
+                                                >
+                                                    {showText.who}
+                                                </div>
                                             </CardBody>
                                         </Card>
                                     </animated.div>

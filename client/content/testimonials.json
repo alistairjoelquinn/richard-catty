@@ -4,19 +4,22 @@
         "content": "Richard is a very talented writer. His passion for conservation and wildlife is evident through his work. He is a pleasure to work with - enthusiastic, flexible, and patient - I would highly recommend him.",
         "imageUrl": "/images/virunga.png",
         "squareImage": true,
-        "url": "https://virunga.org/"
+        "url": "https://virunga.org/",
+        "who": "Hanna Cooper - Head of Digital"
     },
     {
         "title": "The Fair Cottage",
         "imageUrl": "/images/TheFairCottage.png",
         "content": "My connection with Rich was founded in 2017 on our mutual interest in nature, sustainability and social affairs. Since then, Rich has helped create a solid editorial voice for TFC and produced a diverse library of optimised web content, showing passion and dedication to any given task - I feel very fortunate to partner with him.",
-        "url": "https://thefaircottage.com/"
+        "url": "https://thefaircottage.com/",
+        "who": "Eloy Padilla - Founder"
     },
     {
         "title": "The Travel Almanac",
         "content": "Richard’s open minded approach to a variety of topics and his ability to describe and express complex contexts in a precise and sophisticated fashion has made him an invaluable asset to our team. Adhering to often challenging timeframes, Richard’s reliable eye for detail refines not only his own work, but that of other contributors too.",
         "imageUrl": "/images/travel-almanac.webp",
         "squareImage": true,
-        "url": "https://www.travel-almanac.com/"
+        "url": "https://www.travel-almanac.com/",
+        "who": "Paul Kominek - Creative Director"
     }
 ]
