@@ -17,6 +17,14 @@ const TypingStyles = styled.div`
         top: 15vh;
     }
     @media screen and (max-width: 500px) {
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+    @media screen and (max-width: 500px) and (max-height: 700px) {
+        font-size: 2rem;
+        line-height: 2.8rem;
+    }
+    @media screen and (max-width: 500px) and (max-height: 600px) {
         font-size: 1.7rem;
         line-height: 2.4rem;
     }
