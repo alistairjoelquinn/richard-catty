@@ -16,6 +16,10 @@ const TypingStyles = styled.div`
     @media screen and (max-width: 700px) {
         top: 15vh;
     }
+    @media screen and (max-width: 500px) {
+        font-size: 1.7rem;
+        line-height: 2.4rem;
+    }
 `;
 
 const TypingText = () => {

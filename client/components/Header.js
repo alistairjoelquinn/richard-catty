@@ -61,6 +61,11 @@ const HeaderStyles = styled.header`
         }
         padding: 1rem 3rem;
     }
+    @media (max-width: 376px) {
+        h1 {
+            font-size: 1.7rem;
+        }
+    }
 `;
 
 const Header = () => {
