@@ -60,6 +60,14 @@ const ModalContainerStyles = styled.div`
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         padding: 3rem;
     }
+    @media screen and (max-width: 900px) {
+        .modal-card {
+            padding: 2rem;
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
 `;
 
 const Home = () => {
@@ -106,7 +114,7 @@ const Home = () => {
                                         style={animation}
                                         onClick={e => e.stopPropagation()}
                                     >
-                                        <h1>richiecatty@gmail.com</h1>
+                                        <h1 className="email">richiecatty@gmail.com</h1>
                                     </animated.div>
                                 </ModalContainerStyles>
                             </Portal>

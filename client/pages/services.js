@@ -26,6 +26,9 @@ const ServicesPageStyles = styled.div`
             }
         }
     }
+    @media screen and (max-width: 800px) {
+        background-position: top left;
+    }
 `;
 
 const ServicesPage = () => {
