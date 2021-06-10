@@ -4,12 +4,18 @@ import styled from 'styled-components';
 const TypingStyles = styled.div`
     position: absolute;
     top: 27vh;
-    left: 5rem;
+    padding: 0 5rem;
     z-index: 10;
     color: black;
     font-family: Cutive;
     font-size: 2.5rem;
     line-height: 3.5rem;
+    @media screen and (max-width: 900px) {
+        font-size: 2rem;
+    }
+    @media screen and (max-width: 700px) {
+        top: 15vh;
+    }
 `;
 
 const TypingText = () => {

@@ -50,10 +50,16 @@ const HeaderStyles = styled.header`
             font-size: 3rem;
         }
     }
-    @media (max-width: 600px) {
-        h1 {
-            font-size: 1.5rem;
+    @media (max-width: 700px) {
+        .sub-heading {
+            display: none;
         }
+    }
+    @media (max-width: 550px) {
+        h1 {
+            font-size: 2rem;
+        }
+        padding: 1rem 3rem;
     }
 `;
 

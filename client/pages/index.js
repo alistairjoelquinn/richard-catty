@@ -31,6 +31,11 @@ const HomePageStyles = styled.div`
             }
         }
     }
+    @media screen and (max-width: 900px) {
+        .image-container {
+            background-position: top left;
+        }
+    }
 `;
 
 const ModalContainerStyles = styled.div`
