@@ -19,6 +19,9 @@ export const CardPageStyles = styled.div`
         font-size: ${p => p.headerSize};
         font-weight: bold;
     }
+    @media screen and (max-width: 800px) {
+        background-position: center center;
+    }
 `;
 
 export const CardGridStyles = styled.div`
