@@ -28,6 +28,11 @@ const TypingStyles = styled.div`
         font-size: 1.7rem;
         line-height: 2.4rem;
     }
+    @media screen and (orientation: landscape) and (max-width: 900px) {
+        top: 27vh;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
     @media screen and (orientation: landscape) and (max-width: 600px) {
         top: 27vh;
         font-size: 1.2rem;
