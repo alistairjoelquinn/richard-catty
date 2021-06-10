@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
+import { isMobile, isTablet } from 'react-device-detect';
 
 import CardItem from '../components/CardItem';
 import projects from '../content/projects.json';
@@ -23,7 +24,7 @@ const ProjectsPage = () => {
         <>
             <SEO pageTitle="Richard Catty - Projects" pageImage={projectsPageImage} />
             <CardPageStyles image={projectsPageImage} fontSize="1.5rem" headerSize="2.3rem">
-                <CardGridStyles>
+                <CardGridStyles isMobile={isMobile} isTablet={isTablet}>
                     {projects.map((project, idx) => (
                         <CardItem key={idx} item={project} displayItemTextHandler={displayItemTextHandler} />
                     ))}

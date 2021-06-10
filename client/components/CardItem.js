@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { useState } from 'react';
+import { isMobile, isTablet } from 'react-device-detect';
 
 const ReadMoreTextStyles = styled.div`
     position: absolute;
@@ -46,9 +47,22 @@ const CardItem = ({ item, displayItemTextHandler }) => {
                 <Card
                     background="light-1"
                     style={{ position: 'relative', width: '100%' }}
-                    onMouseEnter={() => readMoreHandler(item)}
+                    onMouseEnter={() => {
+                        if (isMobile || isTablet) {
+                            return;
+                        } else {
+                            readMoreHandler(item);
+                        }
+                    }}
+                    onClick={() => {
+                        if (isMobile || isTablet) {
+                            readMoreHandler(item);
+                        } else {
+                            return;
+                        }
+                    }}
                 >
-                    {readMore && (
+                    {readMore && !isMobile && !isTablet && (
                         <ReadMoreTextStyles>
                             <span>Read More</span>
                         </ReadMoreTextStyles>
