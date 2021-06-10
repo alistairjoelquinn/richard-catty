@@ -15,6 +15,7 @@ const ServicesPageStyles = styled.div`
     background-image: url(${servicesPageImage});
     background-position: top right;
     background-size: cover;
+    overflow: hidden;
     ul {
         padding: 22vh 7.5rem;
         li {
@@ -28,6 +29,13 @@ const ServicesPageStyles = styled.div`
     }
     @media screen and (max-width: 800px) {
         background-position: top left;
+    }
+    @media screen and (orientation: landscape) and (max-width: 800px) {
+        ul {
+            li {
+                font-size: 1.5rem;
+            }
+        }
     }
 `;
 

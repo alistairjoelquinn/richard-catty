@@ -66,6 +66,9 @@ const HeaderStyles = styled.header`
             font-size: 1.7rem;
         }
     }
+    @media screen and (orientation: landscape) and (max-width: 800px) {
+        padding-bottom: 2rem;
+    }
 `;
 
 const Header = () => {
