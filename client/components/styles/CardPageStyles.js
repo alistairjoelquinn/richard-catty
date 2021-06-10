@@ -21,35 +21,6 @@ export const CardPageStyles = styled.div`
     }
 `;
 
-// export const CardGridStyles = styled.div`
-//     display: grid;
-//     justify-content: center;
-//     align-items: center;
-//     grid-template-columns: 1fr 1fr;
-//     gap: 3vw;
-//     div {
-//         a {
-//             text-decoration: none;
-//         }
-//     }
-//     div:nth-child(1) {
-//         grid-area: 1 / 1 / 2 / 2;
-//     }
-//     div:nth-child(2) {
-//         grid-area: 2 / 1 / 3 / 2;
-//     }
-//     div:nth-child(3) {
-//         grid-area: 3 / 1 / 4 / 2;
-//     }
-//     div:nth-child(4) {
-//         grid-area: 4 / 1 / 5 / 2;
-//     }
-//     div.selected-text {
-//         position: absolute;
-//         left: ${p => (p.testimonial ? '38vw' : '50vw')};
-//     }
-// `;
-
 export const CardGridStyles = styled.div`
     display: grid;
     justify-content: center;
