@@ -48,11 +48,7 @@ const CardItem = ({ item, displayItemTextHandler }) => {
                     background="light-1"
                     style={{ position: 'relative', width: '100%' }}
                     onMouseEnter={() => {
-                        if (isMobile || isTablet) {
-                            return;
-                        } else {
-                            readMoreHandler(item);
-                        }
+                        readMoreHandler(item);
                     }}
                     onClick={() => {
                         if (isMobile || isTablet) {
