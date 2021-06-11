@@ -46,7 +46,7 @@ export const CardGridStyles = styled.div`
     }
     div.selected-text {
         position: absolute;
-        left: ${p => (p.portfolio ? (p.isMobile || p.isTablet ? '5vw' : '50vw') : '38vw')};
+        left: ${p => (p.isMobile || p.isTablet ? '5vw' : p.portfolio ? '50vw' : '38vw')};
     }
 `;
 
