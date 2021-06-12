@@ -26,7 +26,9 @@ const ProjectsPage = () => {
             <CardPageStyles image={projectsPageImage} fontSize="1.5rem" headerSize="2.3rem">
                 <CardGridStyles isMobile={isMobile} isTablet={isTablet}>
                     {projects.map((project, idx) => (
-                        <CardItem key={idx} item={project} displayItemTextHandler={displayItemTextHandler} />
+                        <CardWrapper url={project.url}>
+                            <CardItem key={idx} item={project} displayItemTextHandler={displayItemTextHandler} />
+                        </CardWrapper>
                     ))}
                     {showText &&
                         transition(

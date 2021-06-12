@@ -43,32 +43,30 @@ const CardItem = ({ item, displayItemTextHandler }) => {
 
     return (
         <div onMouseLeave={() => displayItemTextHandler(null)}>
-            <a href={item.url} target="_blank" rel="noreferrer noopener">
-                <Card
-                    background="light-1"
-                    style={{ position: 'relative', width: '100%' }}
-                    onMouseEnter={() => {
+            <Card
+                background="light-1"
+                style={{ position: 'relative', width: '100%' }}
+                onMouseEnter={() => {
+                    readMoreHandler(item);
+                }}
+                onClick={() => {
+                    if (isMobile || isTablet) {
                         readMoreHandler(item);
-                    }}
-                    onClick={() => {
-                        if (isMobile || isTablet) {
-                            readMoreHandler(item);
-                        } else {
-                            return;
-                        }
-                    }}
-                >
-                    {readMore && !isMobile && !isTablet && (
-                        <ReadMoreTextStyles>
-                            <span>Read More</span>
-                        </ReadMoreTextStyles>
-                    )}
-                    <CardHeader pad="small" style={{ cursor: 'pointer' }} title={item.title}>
-                        {item.title}
-                        <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
-                    </CardHeader>
-                </Card>
-            </a>
+                    } else {
+                        return;
+                    }
+                }}
+            >
+                {readMore && !isMobile && !isTablet && (
+                    <ReadMoreTextStyles>
+                        <span>Read More</span>
+                    </ReadMoreTextStyles>
+                )}
+                <CardHeader pad="small" style={{ cursor: 'pointer' }} title={item.title}>
+                    {item.title}
+                    <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
+                </CardHeader>
+            </Card>
         </div>
     );
 };
