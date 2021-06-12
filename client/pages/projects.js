@@ -35,36 +35,43 @@ const ProjectsPage = () => {
                         transition(
                             (animation, item) =>
                                 item && (
-                                    <animated.div className="selected-text" style={{ ...animation, maxWidth: '40vw' }}>
-                                        <Card background="light-1" pad="medium">
-                                            <CardHeader style={{ paddingBottom: '1rem' }}>{showText.title}</CardHeader>
-                                            <CardBody
-                                                style={{
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                }}
-                                            >
-                                                {showText.content}
-                                                <CardItemStyles>
-                                                    <h3>Position:</h3>
-                                                    <h3>{showText.position}</h3>
-                                                </CardItemStyles>
-                                                <CardItemStyles>
-                                                    <h3>Since:</h3>
-                                                    <h3>{showText.since}</h3>
-                                                </CardItemStyles>
-                                                <CardItemStyles responsibilities>
-                                                    <h3>Responsibilities:</h3>
-                                                    <ul>
-                                                        {showText.responsibilities.map((item, idx) => (
-                                                            <li key={idx}>{item}</li>
-                                                        ))}
-                                                    </ul>
-                                                </CardItemStyles>
-                                            </CardBody>
-                                        </Card>
-                                    </animated.div>
+                                    <div className={isMobile || isTablet ? 'mobile-text-container' : ''}>
+                                        <animated.div
+                                            className="selected-text"
+                                            style={{ ...animation, maxWidth: isMobile || isTablet ? '100%' : '40vw' }}
+                                        >
+                                            <Card background="light-1" pad="medium">
+                                                <CardHeader style={{ paddingBottom: '1rem' }}>
+                                                    {showText.title}
+                                                </CardHeader>
+                                                <CardBody
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                    }}
+                                                >
+                                                    {showText.content}
+                                                    <CardItemStyles>
+                                                        <h3>Position:</h3>
+                                                        <h3>{showText.position}</h3>
+                                                    </CardItemStyles>
+                                                    <CardItemStyles>
+                                                        <h3>Since:</h3>
+                                                        <h3>{showText.since}</h3>
+                                                    </CardItemStyles>
+                                                    <CardItemStyles responsibilities>
+                                                        <h3>Responsibilities:</h3>
+                                                        <ul>
+                                                            {showText.responsibilities.map((item, idx) => (
+                                                                <li key={idx}>{item}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </CardItemStyles>
+                                                </CardBody>
+                                            </Card>
+                                        </animated.div>
+                                    </div>
                                 )
                         )}
                 </CardGridStyles>
