@@ -44,18 +44,6 @@ export const CardGridStyles = styled.div`
     div:nth-child(3) {
         grid-area: 3 / 1 / 4 / 2;
     }
-    div.mobile-text-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
     div.selected-text {
         position: absolute;
         top: ${p => (p.isMobile || p.isTablet ? '15vh' : 'auto')};
