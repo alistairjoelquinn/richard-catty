@@ -4,6 +4,7 @@ import { Card, CardBody, CardHeader } from 'grommet';
 import { isMobile, isTablet } from 'react-device-detect';
 
 import CardItem from '../components/CardItem';
+import CardWrapper from '../components/CardWrapper';
 import projects from '../content/projects.json';
 import SEO from '../components/SEO';
 import { projectsPageImage } from '../content/mainPageImages.json';
@@ -26,8 +27,8 @@ const ProjectsPage = () => {
             <CardPageStyles image={projectsPageImage} fontSize="1.5rem" headerSize="2.3rem">
                 <CardGridStyles isMobile={isMobile} isTablet={isTablet}>
                     {projects.map((project, idx) => (
-                        <CardWrapper url={project.url}>
-                            <CardItem key={idx} item={project} displayItemTextHandler={displayItemTextHandler} />
+                        <CardWrapper key={idx} url={project.url}>
+                            <CardItem item={project} displayItemTextHandler={displayItemTextHandler} />
                         </CardWrapper>
                     ))}
                     {showText &&
