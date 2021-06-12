@@ -8,7 +8,7 @@ import CardWrapper from '../components/CardWrapper';
 import projects from '../content/projects.json';
 import SEO from '../components/SEO';
 import { projectsPageImage } from '../content/mainPageImages.json';
-import { CardGridStyles, CardPageStyles, CardItemStyles } from '../components/styles/CardPageStyles';
+import { CardGridStyles, CardPageStyles, CardItemStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
 
 const ProjectsPage = () => {
     const [showText, setShowText] = useState(null);
@@ -65,6 +65,11 @@ const ProjectsPage = () => {
                                                         ))}
                                                     </ul>
                                                 </CardItemStyles>
+                                                {(isMobile || isTablet) && (
+                                                    <CardLinkStyles>
+                                                        <a href={showText.url}>Read More</a>
+                                                    </CardLinkStyles>
+                                                )}
                                             </CardBody>
                                         </Card>
                                     </animated.div>

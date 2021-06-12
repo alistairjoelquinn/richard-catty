@@ -68,3 +68,14 @@ export const CardItemStyles = styled.div`
         margin-right: 1rem;
     }
 `;
+
+export const CardLinkStyles = styled.div`
+    width: 100%;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    &:visited {
+        color: black;
+    }
+`;
