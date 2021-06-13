@@ -77,7 +77,10 @@ export const CardLinkStyles = styled.div`
     font-weight: bold;
     display: flex;
     justify-content: space-evenly;
-    a:visited {
+    a {
         color: black;
+        &:visited {
+            color: black;
+        }
     }
 `;
