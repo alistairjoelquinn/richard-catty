@@ -32,7 +32,6 @@ const TestimonialsPage = () => {
                                 item={testimonial}
                                 displayItemTextHandler={displayItemTextHandler}
                                 style={{ width: '50vw' }}
-                                testimonial
                             />
                         </CardWrapper>
                     ))}
