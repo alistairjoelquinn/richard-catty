@@ -75,6 +75,8 @@ export const CardLinkStyles = styled.div`
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
+    display: flex;
+    justify-content: space-evenly;
     &:visited {
         color: black;
     }

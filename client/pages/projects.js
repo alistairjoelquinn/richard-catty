@@ -67,7 +67,10 @@ const ProjectsPage = () => {
                                                 </CardItemStyles>
                                                 {(isMobile || isTablet) && (
                                                     <CardLinkStyles>
-                                                        <a href={showText.url}>Read More</a>
+                                                        <div onTouchEnd={() => location.replace(showText.url)}>
+                                                            Read More
+                                                        </div>
+                                                        <div onTouchEnd={() => setShowText(null)}>Close</div>
                                                     </CardLinkStyles>
                                                 )}
                                             </CardBody>
