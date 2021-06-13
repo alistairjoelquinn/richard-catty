@@ -52,9 +52,9 @@ const PortfolioPage = () => {
                                             </CardBody>
                                             {(isMobile || isTablet) && (
                                                 <CardLinkStyles>
-                                                    <div onTouchEnd={() => location.replace(showText.url)}>
+                                                    <a href={showText.url} target="_blank" rel="noreferrer noopener">
                                                         Read More
-                                                    </div>
+                                                    </a>
                                                     <div onTouchEnd={() => setShowText(null)}>Close</div>
                                                 </CardLinkStyles>
                                             )}
