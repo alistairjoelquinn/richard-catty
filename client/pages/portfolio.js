@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
+import { isMobile, isTablet } from 'react-device-detect';
 
 import CardItem from '../components/CardItem';
+import CardWrapper from '../components/CardWrapper';
 import portfolios from '../content/portfolios.json';
 import SEO from '../components/SEO';
 import { portfolioPageImage } from '../content/mainPageImages.json';
-import { CardGridStyles, CardPageStyles } from '../components/styles/CardPageStyles';
+import { CardGridStyles, CardPageStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
 
 const PortfolioPage = () => {
     const [showText, setShowText] = useState(null);
@@ -23,15 +25,20 @@ const PortfolioPage = () => {
         <>
             <SEO pageTitle="Richard Catty - Portfolio" pageImage={portfolioPageImage} />
             <CardPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem">
-                <CardGridStyles portfolio>
+                <CardGridStyles portfolio isMobile={isMobile} isTablet={isTablet}>
                     {portfolios.map((portfolio, idx) => (
-                        <CardItem key={idx} item={portfolio} displayItemTextHandler={displayItemTextHandler} />
+                        <CardWrapper key={idx} url={portfolio.url}>
+                            <CardItem item={portfolio} displayItemTextHandler={displayItemTextHandler} />
+                        </CardWrapper>
                     ))}
                     {showText &&
                         transition(
                             (animation, item) =>
                                 item && (
-                                    <animated.div className="selected-text" style={{ ...animation, maxWidth: '40vw' }}>
+                                    <animated.div
+                                        className="selected-text"
+                                        style={{ ...animation, maxWidth: isMobile || isTablet ? '100%' : '40vw' }}
+                                    >
                                         <Card background="light-1" pad="medium">
                                             <CardHeader style={{ paddingBottom: '1rem' }}>{showText.title}</CardHeader>
                                             <CardBody
@@ -43,6 +50,14 @@ const PortfolioPage = () => {
                                             >
                                                 {showText.content}
                                             </CardBody>
+                                            {(isMobile || isTablet) && (
+                                                <CardLinkStyles>
+                                                    <div onTouchEnd={() => location.replace(showText.url)}>
+                                                        Read More
+                                                    </div>
+                                                    <div onTouchEnd={() => setShowText(null)}>Close</div>
+                                                </CardLinkStyles>
+                                            )}
                                         </Card>
                                     </animated.div>
                                 )
