@@ -46,16 +46,8 @@ const CardItem = ({ item, displayItemTextHandler }) => {
             <Card
                 background="light-1"
                 style={{ position: 'relative', width: '100%' }}
-                onMouseEnter={() => {
-                    readMoreHandler(item);
-                }}
-                onTouchEnd={() => {
-                    if (isMobile || isTablet) {
-                        readMoreHandler(item);
-                    } else {
-                        return;
-                    }
-                }}
+                onMouseEnter={() => readMoreHandler(item)}
+                onTouchEnd={() => readMoreHandler(item)}
             >
                 {readMore && !isMobile && !isTablet && (
                     <ReadMoreTextStyles>

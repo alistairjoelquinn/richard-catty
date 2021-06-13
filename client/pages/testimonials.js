@@ -28,11 +28,7 @@ const TestimonialsPage = () => {
                 <CardGridStyles testimonial isMobile={isMobile} isTablet={isTablet}>
                     {testimonials.map((testimonial, idx) => (
                         <CardWrapper key={idx} url={testimonial.url}>
-                            <CardItem
-                                item={testimonial}
-                                displayItemTextHandler={displayItemTextHandler}
-                                style={{ width: '50vw' }}
-                            />
+                            <CardItem item={testimonial} displayItemTextHandler={displayItemTextHandler} />
                         </CardWrapper>
                     ))}
                     {showText &&
