@@ -49,7 +49,7 @@ const CardItem = ({ item, displayItemTextHandler }) => {
                 onMouseEnter={() => {
                     readMoreHandler(item);
                 }}
-                onClick={() => {
+                onTouchEnd={() => {
                     if (isMobile || isTablet) {
                         readMoreHandler(item);
                     } else {
