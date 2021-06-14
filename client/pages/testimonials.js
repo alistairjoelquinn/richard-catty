@@ -13,11 +13,7 @@ import { testimonialsPageImage } from '../content/mainPageImages.json';
 const TestimonialsPage = () => {
     const [showText, setShowText] = useState(null);
 
-    const displayItemTextHandler = item => {
-        console.log('item passed to parent: ', item);
-        setShowText(item);
-        console.log('showText: ', showText);
-    };
+    const displayItemTextHandler = item => setShowText(item);
 
     const transition = useTransition(showText, {
         from: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
