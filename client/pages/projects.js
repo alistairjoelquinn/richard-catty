@@ -35,7 +35,13 @@ const ProjectsPage = () => {
                         transition(
                             (animation, item) =>
                                 item && (
-                                    <animated.div className="selected-text" style={animation}>
+                                    <animated.div
+                                        className="selected-text"
+                                        style={{
+                                            ...animation,
+                                            zIndex: 11,
+                                        }}
+                                    >
                                         <Card background="light-1" pad="medium">
                                             <CardHeader style={{ paddingBottom: '1rem' }}>{showText.title}</CardHeader>
                                             <CardBody
