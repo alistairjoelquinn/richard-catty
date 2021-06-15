@@ -37,11 +37,10 @@ const ProjectsPage = () => {
                                 item && (
                                     <animated.div
                                         className="selected-text"
+                                        id="selected-text"
                                         style={{
                                             ...animation,
                                             zIndex: 11,
-                                            boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-                                            borderRadius: '15px',
                                         }}
                                     >
                                         <Card background="light-1" pad="medium">

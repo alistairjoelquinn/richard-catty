@@ -45,7 +45,7 @@ export const CardGridStyles = styled.div`
     div:nth-child(3) {
         grid-area: 3 / 1 / 4 / 2;
     }
-    div.selected-text {
+    .selected-text {
         position: absolute;
         top: ${p => (p.isMobile || p.isTablet ? '0' : p.projects ? '25vh' : 'auto')};
         right: ${p => (p.isMobile || p.isTablet ? '0' : 'auto')};
@@ -56,6 +56,8 @@ export const CardGridStyles = styled.div`
         justify-content: center;
         margin: ${p => (p.isMobile || p.isTablet ? '0 10vw' : 'auto')};
         overflow: scroll;
+        /* box-shadow: ${p => (p.isMobile ? 'none' : '0 4px 8px 0 rgba(0, 0, 0, 0.2)')}; */
+        border-radius: 15px;
         & > div {
             max-width: ${p => (!p.isMobile || !p.isTablet ? '45vw' : 'auto')};
         }
