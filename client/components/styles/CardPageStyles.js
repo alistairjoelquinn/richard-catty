@@ -30,6 +30,7 @@ export const CardGridStyles = styled.div`
     align-items: center;
     grid-template-columns: 1fr;
     gap: 3vw;
+    background-color: transparent;
     div {
         a {
             text-decoration: none;
