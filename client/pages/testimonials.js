@@ -37,7 +37,11 @@ const TestimonialsPage = () => {
                                 item && (
                                     <animated.div
                                         className="selected-text"
-                                        style={{ ...animation, maxWidth: isMobile || isTablet ? '100%' : '40vw' }}
+                                        style={{
+                                            ...animation,
+                                            maxWidth: isMobile || isTablet ? '100%' : '40vw',
+                                            zIndex: 11,
+                                        }}
                                     >
                                         <Card background="light-1" pad="medium">
                                             <CardHeader style={{ paddingBottom: '1rem' }}>{showText.title}</CardHeader>

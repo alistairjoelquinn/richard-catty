@@ -53,6 +53,16 @@ export const CardGridStyles = styled.div`
         height: 100vh;
         width: 100vw;
     }
+    @media screen and (max-width: 1200px) {
+        div.selected-text {
+            left: ${p => (p.isMobile || p.isTablet ? '0' : p.portfolio ? '60vw' : '45vw')};
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        div.selected-text {
+            left: ${p => (p.isMobile || p.isTablet ? '0' : p.portfolio ? '60vw' : '50vw')};
+        }
+    }
 `;
 
 export const CardItemStyles = styled.div`
