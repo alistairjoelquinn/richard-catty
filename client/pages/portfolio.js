@@ -44,23 +44,29 @@ const PortfolioPage = () => {
                                     >
                                         <Card background="light-1" pad="medium">
                                             <CardHeader style={{ paddingBottom: '1rem' }}>{showText.title}</CardHeader>
-                                            <CardBody
-                                                style={{
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                }}
-                                            >
-                                                {showText.content}
-                                            </CardBody>
-                                            {(isMobile || isTablet) && (
-                                                <CardLinkStyles>
-                                                    <a href={showText.url} target="_blank" rel="noreferrer noopener">
-                                                        Read More
-                                                    </a>
-                                                    <div onTouchEnd={() => setShowText(null)}>Close</div>
-                                                </CardLinkStyles>
-                                            )}
+                                            <div>
+                                                <CardBody
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                    }}
+                                                >
+                                                    {showText.content}
+                                                </CardBody>
+                                                {(isMobile || isTablet) && (
+                                                    <CardLinkStyles>
+                                                        <a
+                                                            href={showText.url}
+                                                            target="_blank"
+                                                            rel="noreferrer noopener"
+                                                        >
+                                                            Read More
+                                                        </a>
+                                                        <div onTouchEnd={() => setShowText(null)}>Close</div>
+                                                    </CardLinkStyles>
+                                                )}
+                                            </div>
                                         </Card>
                                     </animated.div>
                                 )

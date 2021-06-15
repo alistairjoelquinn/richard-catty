@@ -56,7 +56,7 @@ export const CardGridStyles = styled.div`
         justify-content: center;
         margin: ${p => (p.isMobile || p.isTablet ? '0 10vw' : 'auto')};
         overflow: scroll;
-        /* box-shadow: ${p => (p.isMobile ? 'none' : '0 4px 8px 0 rgba(0, 0, 0, 0.2)')}; */
+        box-shadow: ${p => (p.isMobile ? 'none' : '0 4px 8px 0 rgba(0, 0, 0, 0.2)')};
         border-radius: 15px;
         & > div {
             max-width: ${p => (!p.isMobile || !p.isTablet ? '45vw' : 'auto')};
@@ -88,7 +88,7 @@ export const CardGridStyles = styled.div`
             & > div {
                 max-height: 70vh;
                 overflow: scroll;
-                padding-top: 40vh;
+                padding-top: 10vh;
                 position: relative;
                 header {
                     position: absolute;

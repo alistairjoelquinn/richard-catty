@@ -45,43 +45,45 @@ const ProjectsPage = () => {
                                     >
                                         <Card background="light-1" pad="medium">
                                             <CardHeader style={{ paddingBottom: '1rem' }}>{showText.title}</CardHeader>
-                                            <CardBody
-                                                style={{
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                }}
-                                            >
-                                                {showText.content}
-                                                <CardItemStyles>
-                                                    <h3>Position:</h3>
-                                                    <h3>{showText.position}</h3>
-                                                </CardItemStyles>
-                                                <CardItemStyles>
-                                                    <h3>Since:</h3>
-                                                    <h3>{showText.since}</h3>
-                                                </CardItemStyles>
-                                                <CardItemStyles responsibilities>
-                                                    <h3>Responsibilities:</h3>
-                                                    <ul>
-                                                        {showText.responsibilities.map((item, idx) => (
-                                                            <li key={idx}>{item}</li>
-                                                        ))}
-                                                    </ul>
-                                                </CardItemStyles>
-                                                {(isMobile || isTablet) && (
-                                                    <CardLinkStyles>
-                                                        <a
-                                                            href={showText.url}
-                                                            target="_blank"
-                                                            rel="noreferrer noopener"
-                                                        >
-                                                            Read More
-                                                        </a>
-                                                        <div onTouchEnd={() => setShowText(null)}>Close</div>
-                                                    </CardLinkStyles>
-                                                )}
-                                            </CardBody>
+                                            <div>
+                                                <CardBody
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                    }}
+                                                >
+                                                    {showText.content}
+                                                    <CardItemStyles>
+                                                        <h3>Position:</h3>
+                                                        <h3>{showText.position}</h3>
+                                                    </CardItemStyles>
+                                                    <CardItemStyles>
+                                                        <h3>Since:</h3>
+                                                        <h3>{showText.since}</h3>
+                                                    </CardItemStyles>
+                                                    <CardItemStyles responsibilities>
+                                                        <h3>Responsibilities:</h3>
+                                                        <ul>
+                                                            {showText.responsibilities.map((item, idx) => (
+                                                                <li key={idx}>{item}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </CardItemStyles>
+                                                    {(isMobile || isTablet) && (
+                                                        <CardLinkStyles>
+                                                            <a
+                                                                href={showText.url}
+                                                                target="_blank"
+                                                                rel="noreferrer noopener"
+                                                            >
+                                                                Read More
+                                                            </a>
+                                                            <div onTouchEnd={() => setShowText(null)}>Close</div>
+                                                        </CardLinkStyles>
+                                                    )}
+                                                </CardBody>
+                                            </div>
                                         </Card>
                                     </animated.div>
                                 )
