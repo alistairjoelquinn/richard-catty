@@ -42,7 +42,7 @@ const CardItem = ({ item, displayItemTextHandler }) => {
     };
 
     return (
-        <div>
+        <div onMouseLeave={() => !isMobile && !isTablet && displayItemTextHandler(null)}>
             <Card
                 background="light-1"
                 style={{ position: 'relative', width: '100%' }}

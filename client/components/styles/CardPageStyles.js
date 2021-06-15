@@ -75,7 +75,7 @@ export const CardGridStyles = styled.div`
             left: ${p => (p.isMobile || p.isTablet ? '0' : '40vw')};
             top: ${p => (p.isMobile || p.isTablet ? '0' : p.projects ? '20vh' : '25vh')};
             div {
-                max-width: ${p => (p.isMobile || p.isTablet ? 'auto' : '55vw')};
+                max-width: ${p => (p.isMobile || p.isTablet ? '80vw' : '55vw')};
             }
         }
     }
