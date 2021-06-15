@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CardPageStyles = styled.div`
     position: fixed;
-    overflow-x: scroll;
+    overflow-y: scroll;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -54,7 +54,8 @@ export const CardGridStyles = styled.div`
         align-items: center;
         justify-content: center;
         margin: ${p => (p.isMobile || p.isTablet ? '0 10vw' : 'auto')};
-        div {
+        overflow: scroll;
+        & > div {
             max-width: ${p => (!p.isMobile || !p.isTablet ? '45vw' : 'auto')};
         }
     }
@@ -76,6 +77,20 @@ export const CardGridStyles = styled.div`
             top: ${p => (p.isMobile || p.isTablet ? '0' : p.projects ? '20vh' : '25vh')};
             div {
                 max-width: ${p => (p.isMobile || p.isTablet ? '80vw' : '55vw')};
+            }
+        }
+    }
+    @media screen and (max-width: 500px) and (max-height: 700px) {
+        div.selected-text {
+            & > div {
+                max-height: 70vh;
+                overflow: scroll;
+                padding-top: 40vh;
+                position: relative;
+                header {
+                    position: absolute;
+                    top: 1rem;
+                }
             }
         }
     }
