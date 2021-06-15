@@ -52,6 +52,10 @@ export const CardGridStyles = styled.div`
         left: ${p => (p.isMobile || p.isTablet ? '0' : p.portfolio ? '50vw' : '38vw')};
         height: 100vh;
         width: 100vw;
+        div {
+            max-width: ${p => (p.isMobile || p.isTablet ? '100%' : '40vw')};
+            z-index: 11;
+        }
     }
     @media screen and (max-width: 1200px) {
         div.selected-text {
@@ -60,7 +64,12 @@ export const CardGridStyles = styled.div`
     }
     @media screen and (max-width: 1100px) {
         div.selected-text {
-            left: ${p => (p.isMobile || p.isTablet ? '0' : p.portfolio ? '60vw' : '50vw')};
+            left: ${p => (p.isMobile || p.isTablet ? '0' : '50vw')};
+        }
+    }
+    @media screen and (max-width: 950px) {
+        div.selected-text {
+            left: ${p => (p.isMobile || p.isTablet ? '0' : '40vw')};
         }
     }
 `;
