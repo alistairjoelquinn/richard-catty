@@ -25,7 +25,7 @@ const ProjectsPage = () => {
         <>
             <SEO pageTitle="Richard Catty - Projects" pageImage={projectsPageImage} />
             <CardPageStyles image={projectsPageImage} fontSize="1.5rem" headerSize="2.3rem">
-                <CardGridStyles isMobile={isMobile} isTablet={isTablet}>
+                <CardGridStyles isMobile={isMobile} isTablet={isTablet} projects>
                     {projects.map((project, idx) => (
                         <CardWrapper key={idx} url={project.url}>
                             <CardItem item={project} displayItemTextHandler={displayItemTextHandler} />

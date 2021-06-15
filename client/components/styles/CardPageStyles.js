@@ -46,23 +46,26 @@ export const CardGridStyles = styled.div`
     }
     div.selected-text {
         position: absolute;
-        top: 'auto';
-        bottom: ${p => (p.isMobile || p.isTablet ? '0' : 'auto')};
+        top: ${p => (p.isMobile || p.isTablet ? '0' : p.projects ? '25vh' : 'auto')};
         right: ${p => (p.isMobile || p.isTablet ? '0' : 'auto')};
         left: ${p => (p.isMobile || p.isTablet ? '0' : p.portfolio ? '50vw' : '38vw')};
-        height: 100vh;
-        /* width: 100vw; */
+        bottom: ${p => (p.isMobile || p.isTablet ? '0' : 'auto')};
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 10vw;
-    }
-    @media screen and (max-width: 1200px) {
-        div.selected-text {
-            left: ${p => (p.isMobile || p.isTablet ? '0' : p.portfolio ? '60vw' : '45vw')};
+        margin: ${p => (p.isMobile || p.isTablet ? '0 10vw' : 'auto')};
+        div {
+            max-width: ${p => (!p.isMobile || !p.isTablet ? '45vw' : 'auto')};
         }
     }
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1300px) {
+        height: auto;
+        div.selected-text {
+            left: ${p => (p.isMobile || p.isTablet ? '0' : '45vw')};
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        height: auto;
         div.selected-text {
             left: ${p => (p.isMobile || p.isTablet ? '0' : '50vw')};
         }
@@ -70,9 +73,9 @@ export const CardGridStyles = styled.div`
     @media screen and (max-width: 950px) {
         div.selected-text {
             left: ${p => (p.isMobile || p.isTablet ? '0' : '40vw')};
-            top: ${p => (p.isMobile || p.isTablet ? 'auto' : '25vh')};
+            top: ${p => (p.isMobile || p.isTablet ? '0' : p.projects ? '20vh' : '25vh')};
             div {
-                max-width: ${p => (p.isMobile || p.isTablet ? '100%' : '55vw')};
+                max-width: ${p => (p.isMobile || p.isTablet ? 'auto' : '55vw')};
             }
         }
     }
