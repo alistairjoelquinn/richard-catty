@@ -2,15 +2,29 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
 import { isMobile, isTablet } from 'react-device-detect';
+import { useQuery, gql } from '@apollo/client';
 
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
-import portfolios from '../content/portfolios.json';
 import SEO from '../components/SEO';
 import { portfolioPageImage } from '../content/mainPageImages.json';
 import { CardGridStyles, CardPageStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
 
+const GET_PORTFOLIOS_QUERY = gql`
+    query {
+        allPortfolio {
+            title
+            publisher
+            content
+            url
+            imageUrl
+            squareImage
+        }
+    }
+`;
+
 const PortfolioPage = () => {
+    const { loading, error, data } = useQuery(GET_PORTFOLIOS_QUERY);
     const [showText, setShowText] = useState(null);
 
     const displayItemTextHandler = item => setShowText(item);
@@ -20,6 +34,11 @@ const PortfolioPage = () => {
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
         leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
     });
+
+    if (loading) return null;
+    if (error) return null;
+
+    const portfolios = data.allPortfolio;
 
     return (
         <>

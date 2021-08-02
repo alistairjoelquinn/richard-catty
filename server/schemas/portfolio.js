@@ -27,5 +27,17 @@ export default {
             type: 'string',
             description: 'What is the web link to the piece'
         },
+        {
+            name: 'imageUrl',
+            title: 'Image Url',
+            type: 'string',
+            description: 'Ignore this - just the publishers logo'
+        },
+        {
+            name: 'squareImage',
+            title: 'Square Image',
+            type: 'boolean',
+            description: 'Ignore this - just for the image formatting'
+        }
     ]
 }
