@@ -9,7 +9,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.1",
     "babel-plugin-styled-components": "^1.12.0",
+    "graphql": "^15.5.1",
     "grommet": "^2.17.1",
     "grommet-icons": "^4.5.0",
     "next": "^10.1.3",

@@ -1,9 +1,16 @@
 import PropTypes from 'prop-types';
 import { useTransition, animated } from 'react-spring';
+import { ApolloProvider } from '@apollo/client/react';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 import { MenuStateProvider } from '../components/contexts/MenuProvider';
 
 import Page from '../components/Page';
+
+const client = new ApolloClient({
+    uri: process.env.NEXT_PUBLIC_SANITY_URL,
+    cache: new InMemoryCache(),
+});
 
 const App = props => {
     const transitionItems = [
@@ -22,15 +29,17 @@ const App = props => {
     });
 
     return (
-        <MenuStateProvider>
-            <Page>
-                {transition((styles, { Component, pageProps }) => (
-                    <animated.div style={styles}>
-                        <Component {...pageProps} />
-                    </animated.div>
-                ))}
-            </Page>
-        </MenuStateProvider>
+        <ApolloProvider client={client}>
+            <MenuStateProvider>
+                <Page>
+                    {transition((styles, { Component, pageProps }) => (
+                        <animated.div style={styles}>
+                            <Component {...pageProps} />
+                        </animated.div>
+                    ))}
+                </Page>
+            </MenuStateProvider>
+        </ApolloProvider>
     );
 };
 
