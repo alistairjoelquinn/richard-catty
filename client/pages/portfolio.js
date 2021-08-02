@@ -40,8 +40,6 @@ const PortfolioPage = () => {
 
     const portfolios = data.allPortfolio;
 
-    console.log('portfolios: ', portfolios);
-
     return (
         <>
             <SEO pageTitle="Richard Catty - Portfolio" pageImage={portfolioPageImage} />
