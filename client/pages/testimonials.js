@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
 import { isMobile, isTablet } from 'react-device-detect';
+import { useQuery, gql } from '@apollo/client';
 
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
@@ -10,8 +11,22 @@ import { CardGridStyles, CardPageStyles, CardLinkStyles } from '../components/st
 import SEO from '../components/SEO';
 import { testimonialsPageImage } from '../content/mainPageImages.json';
 
+const GET_TESTIMONIALS_QUERY = gql`
+    query {
+        allTestimonial {
+            title
+            content
+            url
+            who
+        }
+    }
+`;
+
 const TestimonialsPage = () => {
+    const { data } = useQuery(GET_TESTIMONIALS_QUERY);
     const [showText, setShowText] = useState(null);
+
+    console.log('data: ', data);
 
     const displayItemTextHandler = item => setShowText(item);
 
