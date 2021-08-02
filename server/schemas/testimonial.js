@@ -16,6 +16,18 @@ export default {
             description: 'What did they say'
         },
         {
+            name: 'imageUrl',
+            title: 'Image Url',
+            type: 'string',
+            description: 'Ignore this - URL for the company logo'
+        },
+        {
+            name: 'squareImage',
+            title: 'Square Image',
+            type: 'boolean',
+            description: 'Ignore this as well'
+        },
+        {
             name: 'url',
             title: 'Website URL',
             type: 'string',

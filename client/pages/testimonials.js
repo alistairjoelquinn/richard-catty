@@ -6,7 +6,6 @@ import { useQuery, gql } from '@apollo/client';
 
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
-import testimonials from '../content/testimonials.json';
 import { CardGridStyles, CardPageStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
 import SEO from '../components/SEO';
 import { testimonialsPageImage } from '../content/mainPageImages.json';
@@ -17,16 +16,16 @@ const GET_TESTIMONIALS_QUERY = gql`
             title
             content
             url
+            squareImage
             who
+            imageUrl
         }
     }
 `;
 
 const TestimonialsPage = () => {
-    const { data } = useQuery(GET_TESTIMONIALS_QUERY);
+    const { loading, error, data } = useQuery(GET_TESTIMONIALS_QUERY);
     const [showText, setShowText] = useState(null);
-
-    console.log('data: ', data);
 
     const displayItemTextHandler = item => setShowText(item);
 
@@ -35,6 +34,11 @@ const TestimonialsPage = () => {
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
         leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
     });
+
+    if (loading) return null;
+    if (error) return null;
+
+    const testimonials = data.allTestimonial;
 
     return (
         <>
