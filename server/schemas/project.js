@@ -37,7 +37,7 @@ export default {
             of: [
                 { type: 'string' }
             ],
-            description: 'What are you responsibilities on this project?'
+            description: 'What are you responsibilities on this project? One field per responsibility.'
         },
         {
             name: 'url',

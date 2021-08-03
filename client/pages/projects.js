@@ -2,15 +2,31 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
 import { isMobile, isTablet } from 'react-device-detect';
+import { useQuery, gql } from '@apollo/client';
 
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
-import projects from '../content/projects.json';
 import SEO from '../components/SEO';
 import { projectsPageImage } from '../content/mainPageImages.json';
 import { CardGridStyles, CardPageStyles, CardItemStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
 
+const GET_PROJECTS_QUERY = gql`
+    query {
+        allProject {
+            title
+            content
+            position
+            since
+            responsibilities
+            url
+            imageUrl
+            squareImage
+        }
+    }
+`;
+
 const ProjectsPage = () => {
+    const { loading, error, data } = useQuery(GET_PROJECTS_QUERY);
     const [showText, setShowText] = useState(null);
 
     const displayItemTextHandler = item => setShowText(item);
@@ -20,6 +36,11 @@ const ProjectsPage = () => {
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
         leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
     });
+
+    if (loading) return null;
+    if (error) return null;
+
+    const projects = data.allProject;
 
     return (
         <>
