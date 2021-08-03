@@ -1,8 +1,16 @@
 import styled from 'styled-components';
+import { useQuery, gql } from '@apollo/client';
 
 import SEO from '../components/SEO';
-import services from '../content/services.json';
 import { servicesPageImage } from '../content/mainPageImages.json';
+
+const GET_SERVICES_QUERY = gql`
+    query {
+        allService {
+            services
+        }
+    }
+`;
 
 const ServicesPageStyles = styled.div`
     height: 100vh;
@@ -40,6 +48,13 @@ const ServicesPageStyles = styled.div`
 `;
 
 const ServicesPage = () => {
+    const { loading, error, data } = useQuery(GET_SERVICES_QUERY);
+
+    if (loading) return null;
+    if (error) return null;
+
+    const services = data.allService[0].services;
+
     return (
         <>
             <SEO pageTitle="Richard Catty - Services" pageImage={servicesPageImage} />

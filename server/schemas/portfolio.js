@@ -40,4 +40,4 @@ export default {
             description: 'Ignore this - just for the image formatting'
         }
     ]
-}
+};

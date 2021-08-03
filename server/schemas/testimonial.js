@@ -40,4 +40,4 @@ export default {
             description: 'Who gave the testimonial'
         },
     ]
-}
+};
