@@ -1,7 +1,10 @@
+import { GiFullFolder as icon } from 'react-icons/gi';
+
 export default {
     name: 'portfolio',
     title: 'Portfolio',
     type: 'document',
+    icon,
     fields: [
         {
             name: 'title',

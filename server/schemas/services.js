@@ -1,7 +1,10 @@
+import { FaPenFancy as icon } from 'react-icons/fa'
+
 export default {
     name: 'service',
     title: 'Service',
     type: 'document',
+    icon,
     fields: [{
         name: 'services',
         title: 'Services',

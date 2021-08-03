@@ -1,7 +1,10 @@
+import { GiPublicSpeaker as icon } from 'react-icons/gi';
+
 export default {
     name: 'testimonial',
     title: 'Testimonial',
     type: 'document',
+    icon,
     fields: [
         {
             name: 'title',
