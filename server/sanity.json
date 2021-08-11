@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "catty-cms"
+    "name": "richard-catty-cms"
   },
   "api": {
-    "projectId": "wx52huh5",
+    "projectId": "nws32v1a",
     "dataset": "production"
   },
   "plugins": [
