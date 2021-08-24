@@ -50,15 +50,15 @@ const TypingText = () => {
                 <br />
                 <Typist.Delay ms={300} />
                 sustainability-focused writer,
-                <Typist.Delay ms={500} /> my values and drive
+                <Typist.Delay ms={500} /> my values
                 <br />
-                to protect the planet is translated into
+                and drive to protect the planet are
                 <br />
                 <Typist.Delay ms={300} />
-                well-researched,
-                <Typist.Delay ms={500} /> engaging and SEO-optimised
+                translated into well-researched,
+                <Typist.Delay ms={500} /> engaging and
                 <br />
-                copy,
+                SEO-optimised copy,
                 <Typist.Delay ms={300} /> content and articles...
             </Typist>
         </TypingStyles>
