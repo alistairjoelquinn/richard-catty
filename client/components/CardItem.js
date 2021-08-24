@@ -56,7 +56,7 @@ const CardItem = ({ item, displayItemTextHandler }) => {
                 )}
                 <CardHeader pad="small" style={{ cursor: 'pointer' }} title={item.title}>
                     {item.title}
-                    <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} />
+                    <Image src={item.imageUrl} height="30" width={item.squareImage ? '30' : '100%'} alt={item.title} />
                 </CardHeader>
             </Card>
         </div>
