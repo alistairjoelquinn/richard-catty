@@ -118,7 +118,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            services: data.allProject,
+            projects: data.allProject,
         },
     };
 }
