@@ -44,9 +44,8 @@ const TypingText = () => {
     return (
         <TypingStyles>
             <Typist avgTypingDelay={50}>
-                <Typist.Delay ms={1000} />I only work on projects I&apos;m passionate
+                <Typist.Delay ms={1000} />I only work on projects I believe in.
                 <br />
-                about.
                 <Typist.Delay ms={400} /> As an environment, conservation and
                 <br />
                 <Typist.Delay ms={300} />
