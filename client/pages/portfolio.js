@@ -2,13 +2,15 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
 import { isMobile, isTablet } from 'react-device-detect';
-import { useQuery, gql } from '@apollo/client';
+import { gql } from '@apollo/client';
+import PropTypes from 'prop-types';
 
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
 import SEO from '../components/SEO';
 import { portfolioPageImage } from '../content/mainPageImages.json';
 import { CardGridStyles, CardPageStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
+import { client } from './_app';
 
 const GET_PORTFOLIOS_QUERY = gql`
     query {
@@ -23,8 +25,7 @@ const GET_PORTFOLIOS_QUERY = gql`
     }
 `;
 
-const PortfolioPage = () => {
-    const { loading, error, data } = useQuery(GET_PORTFOLIOS_QUERY);
+const PortfolioPage = ({ portfolios }) => {
     const [showText, setShowText] = useState(null);
 
     const displayItemTextHandler = item => setShowText(item);
@@ -34,11 +35,6 @@ const PortfolioPage = () => {
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
         leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
     });
-
-    if (loading) return null;
-    if (error) return null;
-
-    const portfolios = data.allPortfolio;
 
     return (
         <>
@@ -94,6 +90,22 @@ const PortfolioPage = () => {
             </CardPageStyles>
         </>
     );
+};
+
+export async function getStaticProps() {
+    const { data } = await client.query({
+        query: GET_PORTFOLIOS_QUERY,
+    });
+
+    return {
+        props: {
+            portfolios: data.allPortfolio,
+        },
+    };
+}
+
+PortfolioPage.propTypes = {
+    portfolios: PropTypes.array,
 };
 
 export default PortfolioPage;
