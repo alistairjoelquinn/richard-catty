@@ -46,17 +46,17 @@ const TypingText = () => {
             <Typist avgTypingDelay={50}>
                 <Typist.Delay ms={1000} />I only work on projects I believe in.
                 <br />
-                <Typist.Delay ms={400} /> As an environment, conservation and
+                <Typist.Delay ms={400} /> As an environment-, conservation- and
                 <br />
                 <Typist.Delay ms={300} />
-                sustainability focused copywriter,
-                <Typist.Delay ms={500} /> my drive
+                sustainability-focused writer,
+                <Typist.Delay ms={500} /> my values and drive
                 <br />
                 to protect the planet is translated into
                 <br />
                 <Typist.Delay ms={300} />
-                well researched,
-                <Typist.Delay ms={500} /> engaging and SEO optimised
+                well-researched,
+                <Typist.Delay ms={500} /> engaging and SEO-optimised
                 <br />
                 copy,
                 <Typist.Delay ms={300} /> content and articles...
