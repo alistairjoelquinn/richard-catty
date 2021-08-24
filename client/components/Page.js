@@ -16,6 +16,7 @@ const Page = ({ children }) => {
                 <link rel="icon" href="/static/favicon.ico" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta charset="UTF-8" />
+                <meta name="title" content={meta.title} />
                 <meta name="description" content={meta.description} />
                 {typeof window === 'object' && <meta property="og:url" content={location?.href} />}
                 <meta property="og:site_name" content={meta.title} key="ogsitename" />
