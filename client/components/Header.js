@@ -85,7 +85,7 @@ const Header = () => {
             <Link href="/">
                 <div className="headerText" onClick={headerClickHandler}>
                     <h1>RicHARd cAtty</h1>
-                    <div className="sub-heading">Eco-conscious Writer</div>
+                    <div className="sub-heading">Eco-conscious Writer | Berlin</div>
                 </div>
             </Link>
             <div className="icon" onClick={toggleMenu}>
