@@ -8,9 +8,11 @@ import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
 
 const GET_META_QUERY = gql`
-    allMeta {
-        title
-        description
+    query {
+        allMeta {
+            title
+            description
+        }
     }
 `;
 
@@ -21,8 +23,6 @@ const Page = ({ children }) => {
     if (error) return null;
 
     const meta = data.allMeta[0];
-
-    console.log('meta: ', meta);
 
     return (
         <>
