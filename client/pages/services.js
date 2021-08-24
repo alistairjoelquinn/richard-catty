@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import { useQuery, gql } from '@apollo/client';
+import PropTypes from 'prop-types';
+import { gql } from '@apollo/client';
 
 import SEO from '../components/SEO';
 import { servicesPageImage } from '../content/mainPageImages.json';
+import { client } from './_app';
 
 const GET_SERVICES_QUERY = gql`
     query {
@@ -47,14 +49,7 @@ const ServicesPageStyles = styled.div`
     }
 `;
 
-const ServicesPage = () => {
-    const { loading, error, data } = useQuery(GET_SERVICES_QUERY);
-
-    if (loading) return null;
-    if (error) return null;
-
-    const services = data.allService[0].services;
-
+const ServicesPage = ({ services }) => {
     return (
         <>
             <SEO pageTitle="Richard Catty - Services" pageImage={servicesPageImage} />
@@ -68,6 +63,22 @@ const ServicesPage = () => {
             </ServicesPageStyles>
         </>
     );
+};
+
+export async function getStaticProps() {
+    const { data } = await client.query({
+        query: GET_SERVICES_QUERY,
+    });
+
+    return {
+        props: {
+            services: data.allService[0].services,
+        },
+    };
+}
+
+ServicesPage.propTypes = {
+    services: PropTypes.array,
 };
 
 export default ServicesPage;

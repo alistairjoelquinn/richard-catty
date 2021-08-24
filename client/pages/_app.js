@@ -7,7 +7,7 @@ import { MenuStateProvider } from '../components/contexts/MenuProvider';
 
 import Page from '../components/Page';
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
     uri: process.env.NEXT_PUBLIC_SANITY_URL,
     cache: new InMemoryCache(),
 });
