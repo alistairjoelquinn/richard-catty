@@ -110,7 +110,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            services: data.allTestimonial,
+            testimonials: data.allTestimonial,
         },
     };
 }
