@@ -2,13 +2,15 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
 import { isMobile, isTablet } from 'react-device-detect';
-import { useQuery, gql } from '@apollo/client';
+import { gql } from '@apollo/client';
+import PropTypes from 'prop-types';
 
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
 import SEO from '../components/SEO';
 import { projectsPageImage } from '../content/mainPageImages.json';
 import { CardGridStyles, CardPageStyles, CardItemStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
+import { client } from './_app';
 
 const GET_PROJECTS_QUERY = gql`
     query {
@@ -25,8 +27,7 @@ const GET_PROJECTS_QUERY = gql`
     }
 `;
 
-const ProjectsPage = () => {
-    const { loading, error, data } = useQuery(GET_PROJECTS_QUERY);
+const ProjectsPage = ({ projects }) => {
     const [showText, setShowText] = useState(null);
 
     const displayItemTextHandler = item => setShowText(item);
@@ -36,11 +37,6 @@ const ProjectsPage = () => {
         enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
         leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
     });
-
-    if (loading) return null;
-    if (error) return null;
-
-    const projects = data.allProject;
 
     return (
         <>
@@ -113,6 +109,22 @@ const ProjectsPage = () => {
             </CardPageStyles>
         </>
     );
+};
+
+export async function getStaticProps() {
+    const { data } = await client.query({
+        query: GET_PROJECTS_QUERY,
+    });
+
+    return {
+        props: {
+            services: data.allProject,
+        },
+    };
+}
+
+ProjectsPage.propTypes = {
+    projects: PropTypes.array,
 };
 
 export default ProjectsPage;
