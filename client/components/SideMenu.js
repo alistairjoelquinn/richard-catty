@@ -42,6 +42,11 @@ const SideMenu = () => {
 
     return (
         <SideMenuStyles open={menuOpen}>
+            <Link href="/">
+                <div className="menu-item" onClick={closeMenu}>
+                    <span>Home</span>
+                </div>
+            </Link>
             <Link href="/services">
                 <div className="menu-item" onClick={closeMenu}>
                     <span>Services</span>
@@ -60,11 +65,6 @@ const SideMenu = () => {
             <Link href="/testimonials">
                 <div className="menu-item" onClick={closeMenu}>
                     <span>Testimonials</span>
-                </div>
-            </Link>
-            <Link href="/">
-                <div className="menu-item" onClick={closeMenu}>
-                    <span>Home</span>
                 </div>
             </Link>
         </SideMenuStyles>
