@@ -29,7 +29,7 @@ const Page = ({ children }) => {
             <Head>
                 <link rel="preload" href="/static/CutiveMono-Regular.ttf" as="font" crossOrigin="" />
                 <link rel="preload" href="/static/MajorMonoDisplay-Regular.ttf" as="font" crossOrigin="" />
-                <link rel="icon" href="/static/favicon.ico" />
+                <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta charset="UTF-8" />
                 <meta name="title" content={meta.title} />
