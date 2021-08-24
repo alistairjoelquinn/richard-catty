@@ -6,10 +6,11 @@ import testimonial from './testimonial';
 import portfolio from './portfolio';
 import services from './services';
 import project from './project';
+import meta from './meta';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    testimonial, portfolio, services, project
+    testimonial, portfolio, services, project, meta
   ]),
 });

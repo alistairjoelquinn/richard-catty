@@ -1,13 +1,29 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { Normalize } from 'styled-normalize';
+import { useQuery, gql } from '@apollo/client';
 
 import Header from './Header';
 import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
-import meta from '../content/metadata.json';
+
+const GET_META_QUERY = gql`
+    allMeta {
+        title
+        description
+    }
+`;
 
 const Page = ({ children }) => {
+    const { loading, error, data } = useQuery(GET_META_QUERY);
+
+    if (loading) return null;
+    if (error) return null;
+
+    const meta = data.allMeta[0];
+
+    console.log('meta: ', meta);
+
     return (
         <>
             <Head>
