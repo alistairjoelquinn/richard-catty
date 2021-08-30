@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { Normalize } from 'styled-normalize';
-import { useQuery, gql } from '@apollo/client';
+import { gql } from '@apollo/client';
 
 import Header from './Header';
 import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
+import { client } from '../pages/_app';
 
 const GET_META_QUERY = gql`
     query {
@@ -16,14 +17,7 @@ const GET_META_QUERY = gql`
     }
 `;
 
-const Page = ({ children }) => {
-    const { loading, error, data } = useQuery(GET_META_QUERY);
-
-    if (loading) return null;
-    if (error) return null;
-
-    const meta = data.allMeta[0];
-
+const Page = ({ children, meta }) => {
     return (
         <>
             <Head>
@@ -52,8 +46,21 @@ const Page = ({ children }) => {
     );
 };
 
+export async function getStaticProps() {
+    const { data } = await client.query({
+        query: GET_META_QUERY,
+    });
+
+    return {
+        props: {
+            meta: data.allMeta[0],
+        },
+    };
+}
+
 Page.propTypes = {
     children: PropTypes.any,
+    meta: PropTypes.object,
 };
 
 export default Page;
