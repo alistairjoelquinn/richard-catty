@@ -22,10 +22,14 @@ const GET_TESTIMONIALS_QUERY = gql`
             who
             imageUrl
         }
+        Meta(id: "7ffdab14-f9f5-47f2-926e-fa6c751007de") {
+            metaTitle
+            metaDescription
+        }
     }
 `;
 
-const TestimonialsPage = ({ testimonials }) => {
+const TestimonialsPage = ({ testimonials, metadata }) => {
     const [showText, setShowText] = useState(null);
 
     const displayItemTextHandler = item => setShowText(item);
@@ -38,7 +42,7 @@ const TestimonialsPage = ({ testimonials }) => {
 
     return (
         <>
-            <SEO pageTitle="Richard Catty - Testimonials" pageImage={testimonialsPageImage} />
+            <SEO meta={metadata} pageImage={testimonialsPageImage} />
             <CardPageStyles image={testimonialsPageImage} fontSize="2.2rem" headerSize="2.7rem">
                 <CardGridStyles testimonial isMobile={isMobile} isTablet={isTablet}>
                     {testimonials.map((testimonial, idx) => (
@@ -111,12 +115,14 @@ export async function getStaticProps() {
     return {
         props: {
             testimonials: data.allTestimonial,
+            metadata: data.Meta,
         },
     };
 }
 
 TestimonialsPage.propTypes = {
     testimonials: PropTypes.array,
+    metadata: PropTypes.object,
 };
 
 export default TestimonialsPage;

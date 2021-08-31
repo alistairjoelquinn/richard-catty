@@ -13,12 +13,6 @@ export default {
             description: 'What page is this the metadata for?'
         },
         {
-            name: 'id',
-            title: 'Data ID',
-            type: 'string',
-            description: 'ignore this, id to identify correct metadata for each page when building the application'
-        },
-        {
             name: 'metaTitle',
             title: 'Title',
             type: 'string',
