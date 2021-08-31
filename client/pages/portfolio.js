@@ -22,10 +22,14 @@ const GET_PORTFOLIOS_QUERY = gql`
             imageUrl
             squareImage
         }
+        Meta(id: "d48a00bf-da19-4492-9d92-fc12540fc0ea") {
+            metaTitle
+            metaDescription
+        }
     }
 `;
 
-const PortfolioPage = ({ portfolios }) => {
+const PortfolioPage = ({ portfolios, metadata }) => {
     const [showText, setShowText] = useState(null);
 
     const displayItemTextHandler = item => setShowText(item);
@@ -38,7 +42,7 @@ const PortfolioPage = ({ portfolios }) => {
 
     return (
         <>
-            <SEO pageTitle="Richard Catty - Portfolio" pageImage={portfolioPageImage} />
+            <SEO meta={metadata} pageImage={portfolioPageImage} />
             <CardPageStyles image={portfolioPageImage} fontSize="1.5rem" headerSize="2.3rem">
                 <CardGridStyles portfolio isMobile={isMobile} isTablet={isTablet}>
                     {portfolios.map((portfolio, idx) => (
@@ -100,12 +104,14 @@ export async function getStaticProps() {
     return {
         props: {
             portfolios: data.allPortfolio,
+            metadata: data.Meta,
         },
     };
 }
 
 PortfolioPage.propTypes = {
     portfolios: PropTypes.array,
+    metadata: PropTypes.object,
 };
 
 export default PortfolioPage;

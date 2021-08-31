@@ -83,7 +83,6 @@ const ModalContainerStyles = styled.div`
 `;
 
 const Home = ({ metadata }) => {
-    console.log('metadata: ', metadata);
     const [modalOpen, setModalOpen] = useState(false);
 
     const transition = useTransition(modalOpen, {
