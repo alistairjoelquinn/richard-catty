@@ -24,10 +24,14 @@ const GET_PROJECTS_QUERY = gql`
             imageUrl
             squareImage
         }
+        Meta(id: "333915a4-7eb2-4640-8976-006097ed05a7") {
+            metaTitle
+            metaDescription
+        }
     }
 `;
 
-const ProjectsPage = ({ projects }) => {
+const ProjectsPage = ({ projects, metadata }) => {
     const [showText, setShowText] = useState(null);
 
     const displayItemTextHandler = item => setShowText(item);
@@ -40,7 +44,7 @@ const ProjectsPage = ({ projects }) => {
 
     return (
         <>
-            <SEO pageTitle="Richard Catty - Projects" pageImage={projectsPageImage} />
+            <SEO meta={metadata} pageImage={projectsPageImage} />
             <CardPageStyles image={projectsPageImage} fontSize="1.5rem" headerSize="2.3rem">
                 <CardGridStyles isMobile={isMobile} isTablet={isTablet} projects>
                     {projects.map((project, idx) => (
@@ -119,12 +123,14 @@ export async function getStaticProps() {
     return {
         props: {
             projects: data.allProject,
+            metadata: data.Meta,
         },
     };
 }
 
 ProjectsPage.propTypes = {
     projects: PropTypes.array,
+    metadata: PropTypes.object,
 };
 
 export default ProjectsPage;
