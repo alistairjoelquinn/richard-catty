@@ -2,11 +2,23 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import styled from 'styled-components';
 import { Instagram, Linkedin, Mail } from 'grommet-icons';
+import PropTypes from 'prop-types';
 
 import TypingText from '../components/TypingText';
 import SEO from '../components/SEO';
 import { indexPageImage } from '../content/mainPageImages.json';
 import Portal from '../components/Portal';
+import { gql } from '@apollo/client';
+import { client } from './_app';
+
+const GET_META_QUERY = gql`
+    query {
+        Meta(id: "f74041b0-cd85-4b73-9a1b-874da7f458f9") {
+            metaTitle
+            metaDescription
+        }
+    }
+`;
 
 const HomePageStyles = styled.div`
     .image-container {
@@ -71,6 +83,7 @@ const ModalContainerStyles = styled.div`
 `;
 
 const Home = ({ metadata }) => {
+    console.log('metadata: ', metadata);
     const [modalOpen, setModalOpen] = useState(false);
 
     const transition = useTransition(modalOpen, {
@@ -123,6 +136,22 @@ const Home = ({ metadata }) => {
             </HomePageStyles>
         </div>
     );
+};
+
+export async function getStaticProps() {
+    const { data } = await client.query({
+        query: GET_META_QUERY,
+    });
+
+    return {
+        props: {
+            metadata: data.Meta,
+        },
+    };
+}
+
+Home.propTypes = {
+    metadata: PropTypes.object,
 };
 
 export default Home;
