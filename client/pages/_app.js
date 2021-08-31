@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useTransition, animated } from 'react-spring';
 import { ApolloProvider } from '@apollo/client/react';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
 import { MenuStateProvider } from '../components/contexts/MenuProvider';
 
@@ -12,7 +12,18 @@ export const client = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
+const GET_META_QUERY = gql`
+    query {
+        allMeta {
+            title
+            description
+        }
+    }
+`;
+
 const App = props => {
+    console.log('props.meta: ', props.meta);
+
     const transitionItems = [
         {
             id: props.router.route,
@@ -30,7 +41,7 @@ const App = props => {
 
     return (
         <ApolloProvider client={client}>
-            <MenuStateProvider>
+            <MenuStateProvider meta={props.meta}>
                 <Page>
                     {transition((styles, { Component, pageProps }) => (
                         <animated.div style={styles}>
@@ -52,10 +63,23 @@ App.getInitialProps = async ({ Component, ctx }) => {
     return { pageProps };
 };
 
+export async function getStaticProps() {
+    const { data } = await client.query({
+        query: GET_META_QUERY,
+    });
+
+    return {
+        props: {
+            meta: data.allMeta[0],
+        },
+    };
+}
+
 App.propTypes = {
     Component: PropTypes.any,
     pageProps: PropTypes.any,
     router: PropTypes.object,
+    meta: PropTypes.object,
 };
 
 export default App;

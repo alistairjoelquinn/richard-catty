@@ -56,6 +56,18 @@ export default {
             title: 'Square Image',
             type: 'boolean',
             description: 'Ignore this - just for the image formatting'
-        }
+        },
+        {
+            name: 'metaTitle',
+            title: 'Project Page Meta Title',
+            type: 'string',
+            description: 'What should the metadata title be for the project page?'
+        },
+        {
+            name: 'metaDescription',
+            title: 'Project Page Meta Description',
+            type: 'string',
+            description: 'What should the metadata description be for the project page?'
+        },
     ]
 };

@@ -41,6 +41,18 @@ export default {
             title: 'Square Image',
             type: 'boolean',
             description: 'Ignore this - just for the image formatting'
-        }
+        },
+        {
+            name: 'metaTitle',
+            title: 'Portfolio Page Meta Title',
+            type: 'string',
+            description: 'What should the metadata title be for the portfolio page?'
+        },
+        {
+            name: 'metaDescription',
+            title: 'Portfolio Page Meta Description',
+            type: 'string',
+            description: 'What should the metadata description be for the portfolio page?'
+        },
     ]
 };

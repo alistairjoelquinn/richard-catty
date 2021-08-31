@@ -1,23 +1,16 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { Normalize } from 'styled-normalize';
-import { gql } from '@apollo/client';
 
+import { useMenu } from './contexts/MenuProvider';
 import Header from './Header';
 import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
-import { client } from '../pages/_app';
 
-const GET_META_QUERY = gql`
-    query {
-        allMeta {
-            title
-            description
-        }
-    }
-`;
+const Page = ({ children }) => {
+    const { pageMeta: meta } = useMenu();
+    console.log('pageMeta: ', meta);
 
-const Page = ({ children, meta }) => {
     return (
         <>
             <Head>
@@ -45,18 +38,6 @@ const Page = ({ children, meta }) => {
         </>
     );
 };
-
-export async function getStaticProps() {
-    const { data } = await client.query({
-        query: GET_META_QUERY,
-    });
-
-    return {
-        props: {
-            meta: data.allMeta[0],
-        },
-    };
-}
 
 Page.propTypes = {
     children: PropTypes.any,
