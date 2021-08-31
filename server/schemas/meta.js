@@ -2,7 +2,7 @@ import { CgNametag as icon } from 'react-icons/cg';
 
 export default {
     name: 'meta',
-    title: 'Meta',
+    title: 'Home Page Metadata',
     type: 'document',
     icon,
     fields: [
