@@ -42,17 +42,5 @@ export default {
             type: 'string',
             description: 'Who gave the testimonial'
         },
-        {
-            name: 'metaTitle',
-            title: 'Testimonial Page Meta Title',
-            type: 'string',
-            description: 'What should the metadata title be for the testimonial page?'
-        },
-        {
-            name: 'metaDescription',
-            title: 'Testimonial Page Meta Description',
-            type: 'string',
-            description: 'What should the metadata description be for the testimonial page?'
-        },
     ]
 };

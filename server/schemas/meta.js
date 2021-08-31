@@ -7,16 +7,22 @@ export default {
     icon,
     fields: [
         {
+            name: 'page',
+            title: 'Page',
+            type: 'string',
+            description: 'What page is this the metadata for?'
+        },
+        {
             name: 'title',
             title: 'Title',
             type: 'string',
-            description: 'What should the metadata title be?'
+            description: 'What should the metadata title value be?'
         },
         {
             name: 'description',
             title: 'Description',
             type: 'string',
-            description: 'What should the metadata description be?'
+            description: 'What should the metadata description value be?'
         },
 
     ]
