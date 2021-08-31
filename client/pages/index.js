@@ -70,7 +70,7 @@ const ModalContainerStyles = styled.div`
     }
 `;
 
-const Home = () => {
+const Home = ({ metadata }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     const transition = useTransition(modalOpen, {
@@ -82,7 +82,7 @@ const Home = () => {
 
     return (
         <div>
-            <SEO pageTitle="Richard Catty" pageImage={indexPageImage} />
+            <SEO meta={metadata} pageImage={indexPageImage} />
             <HomePageStyles>
                 <div className="image-container" title="Pine Cone">
                     <TypingText />

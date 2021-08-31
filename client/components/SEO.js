@@ -1,20 +1,30 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-const SEO = ({ pageTitle, pageImage }) => {
+const SEO = ({ meta, pageImage }) => {
     return (
         <Head>
-            <title>{pageTitle}</title>
-            <meta property="og:title" content={pageTitle} key="ogtitle" />
-            <meta name="twitter:title" content={pageTitle} />
+            <title>{meta.title}</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="title" content={meta.title} />
+            <meta name="description" content={meta.description} />
+            <meta property="og:title" content={meta.title} key="ogtitle" />
             <meta property="og:image" content={pageImage} />
+            <meta property="og:site_name" content={meta.title} key="ogsitename" />
+            <meta property="og:description" content={meta.description} key="ogdesc" />
+            {typeof window === 'object' && <meta property="og:url" content={location?.href} />}
+            <meta name="twitter:title" content={meta.title} />
             <meta name="twitter:image" content={pageImage} />
+            <meta name="twitter:description" content={meta.description} />
+            <meta name="twitter:card" content="summary_large_image" />
+            {typeof window === 'object' && <meta name="twitter:domain" content={location?.href} />}
+            {typeof window === 'object' && <meta name="twitter:url" content={location?.href} />}
         </Head>
     );
 };
 
 SEO.propTypes = {
-    pageTitle: PropTypes.string,
+    meta: PropTypes.object,
     pageImage: PropTypes.string,
 };
 
