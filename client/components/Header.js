@@ -15,7 +15,7 @@ const HeaderStyles = styled.header`
     div.headerText {
         display: flex;
         flex-direction: column;
-        h1 {
+        p {
             transform: translateX(-3px);
         }
     }
@@ -24,11 +24,12 @@ const HeaderStyles = styled.header`
         font-weight: bold;
         font-size: 2rem;
     }
-    h1 {
+    p {
         font-family: 'MajorMono';
         font-size: 5rem;
         letter-spacing: 0.4rem;
         cursor: pointer;
+        margin: 0;
     }
     div.icon {
         height: 100%;
@@ -41,12 +42,12 @@ const HeaderStyles = styled.header`
         }
     }
     @media (max-width: 1100px) {
-        h1 {
+        p {
             font-size: 4rem;
         }
     }
     @media (max-width: 950px) {
-        h1 {
+        p {
             font-size: 3rem;
         }
     }
@@ -56,13 +57,13 @@ const HeaderStyles = styled.header`
         }
     }
     @media (max-width: 550px) {
-        h1 {
+        p {
             font-size: 2rem;
         }
         padding: 1rem 3rem;
     }
     @media (max-width: 376px) {
-        h1 {
+        p {
             font-size: 1.7rem;
         }
     }
@@ -84,7 +85,7 @@ const Header = () => {
         <HeaderStyles>
             <Link href="/">
                 <div className="headerText" onClick={headerClickHandler}>
-                    <h1>RicHARd cAtty</h1>
+                    <p>RicHARd cAtty</p>
                     <div className="sub-heading">Eco-conscious Writer | Berlin</div>
                 </div>
             </Link>
