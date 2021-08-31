@@ -11,6 +11,10 @@ const GET_SERVICES_QUERY = gql`
         allService {
             services
         }
+        Meta(id: "e5b86fe6-6ded-411f-86e9-885b9fd36581") {
+            metaTitle
+            metaDescription
+        }
     }
 `;
 
@@ -49,10 +53,10 @@ const ServicesPageStyles = styled.div`
     }
 `;
 
-const ServicesPage = ({ services }) => {
+const ServicesPage = ({ services, metadata }) => {
     return (
         <>
-            <SEO pageTitle="Richard Catty - Services" pageImage={servicesPageImage} />
+            <SEO meta={metadata} pageImage={servicesPageImage} />
             <ServicesPageStyles>
                 <ul>
                     <li>Get in touch to discuss your project</li>
@@ -73,12 +77,14 @@ export async function getStaticProps() {
     return {
         props: {
             services: data.allService[0].services,
+            metadata: data.Meta,
         },
     };
 }
 
 ServicesPage.propTypes = {
     services: PropTypes.array,
+    metadata: PropTypes.object,
 };
 
 export default ServicesPage;

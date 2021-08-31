@@ -2,15 +2,11 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { Normalize } from 'styled-normalize';
 
-import { useMenu } from './contexts/MenuProvider';
 import Header from './Header';
 import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
 
 const Page = ({ children }) => {
-    const { pageMeta: meta } = useMenu();
-    console.log('pageMeta: ', meta);
-
     return (
         <>
             <Head>
@@ -31,7 +27,6 @@ const Page = ({ children }) => {
 
 Page.propTypes = {
     children: PropTypes.any,
-    meta: PropTypes.object,
 };
 
 export default Page;
