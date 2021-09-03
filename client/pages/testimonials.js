@@ -107,7 +107,7 @@ const TestimonialsPage = ({ testimonials, metadata }) => {
     );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const { data } = await client.query({
         query: GET_TESTIMONIALS_QUERY,
     });
