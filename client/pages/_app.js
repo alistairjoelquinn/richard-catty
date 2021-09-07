@@ -6,6 +6,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { MenuStateProvider } from '../components/contexts/MenuProvider';
 
 import Page from '../components/Page';
+import Head from 'next/head';
 
 export const client = new ApolloClient({
     uri: process.env.NEXT_PUBLIC_SANITY_URL,
@@ -29,17 +30,48 @@ const App = props => {
     });
 
     return (
-        <ApolloProvider client={client}>
-            <MenuStateProvider>
-                <Page>
-                    {transition((styles, { Component, pageProps }) => (
-                        <animated.div style={styles}>
-                            <Component {...pageProps} />
-                        </animated.div>
-                    ))}
-                </Page>
-            </MenuStateProvider>
-        </ApolloProvider>
+        <>
+            <Head>
+                <title>Richard Catty | Eco-conscious Copy & Content Writer</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="title" content="Richard Catty | Eco-conscious Copy & Content Writer" />
+                <meta
+                    name="description"
+                    content="Berlin-based, freelance writer of copy, content and articles with a focus on the environment, conservation and sustainability."
+                />
+                <meta property="og:title" content="Richard Catty | Eco-conscious Copy & Content Writer" key="ogtitle" />
+                <meta
+                    property="og:site_name"
+                    content="Berlin-based, freelance writer of copy, content and articles with a focus on the environment, conservation and sustainability."
+                    key="ogsitename"
+                />
+                <meta
+                    property="og:description"
+                    content="Berlin-based, freelance writer of copy, content and articles with a focus on the environment, conservation and sustainability."
+                    key="ogdesc"
+                />
+                {typeof window === 'object' && <meta property="og:url" content="https://www.richardcatty.com/" />}
+                <meta name="twitter:title" content="Richard Catty | Eco-conscious Copy & Content Writer" />
+                <meta
+                    name="twitter:description"
+                    content="Berlin-based, freelance writer of copy, content and articles with a focus on the environment, conservation and sustainability."
+                />
+                <meta name="twitter:card" content="summary_large_image" />
+                {typeof window === 'object' && <meta name="twitter:domain" content="https://www.richardcatty.com/" />}
+                {typeof window === 'object' && <meta name="twitter:url" content="https://www.richardcatty.com/" />}
+            </Head>
+            <ApolloProvider client={client}>
+                <MenuStateProvider>
+                    <Page>
+                        {transition((styles, { Component, pageProps }) => (
+                            <animated.div style={styles}>
+                                <Component {...pageProps} />
+                            </animated.div>
+                        ))}
+                    </Page>
+                </MenuStateProvider>
+            </ApolloProvider>
+        </>
     );
 };
 
