@@ -137,7 +137,7 @@ const Home = ({ metadata }) => {
     );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const { data } = await client.query({
         query: GET_META_QUERY,
     });

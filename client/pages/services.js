@@ -69,7 +69,7 @@ const ServicesPage = ({ services, metadata }) => {
     );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const { data } = await client.query({
         query: GET_SERVICES_QUERY,
     });

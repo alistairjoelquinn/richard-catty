@@ -96,7 +96,7 @@ const PortfolioPage = ({ portfolios, metadata }) => {
     );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const { data } = await client.query({
         query: GET_PORTFOLIOS_QUERY,
     });

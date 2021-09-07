@@ -115,7 +115,7 @@ const ProjectsPage = ({ projects, metadata }) => {
     );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const { data } = await client.query({
         query: GET_PROJECTS_QUERY,
     });
