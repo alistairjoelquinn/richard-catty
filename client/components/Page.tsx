@@ -1,12 +1,11 @@
 import Head from 'next/head';
-import PropTypes from 'prop-types';
 import { Normalize } from 'styled-normalize';
 
 import Header from './Header';
 import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
 
-const Page = ({ children }) => {
+const Page: React.FC = function ({ children }) {
     return (
         <>
             <Head>
@@ -23,10 +22,6 @@ const Page = ({ children }) => {
             </div>
         </>
     );
-};
-
-Page.propTypes = {
-    children: PropTypes.any,
 };
 
 export default Page;
