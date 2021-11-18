@@ -1,8 +1,12 @@
 import styled from 'styled-components';
-import { useMenu } from './contexts/MenuProvider';
 import Link from 'next/link';
+import { useMenu } from './contexts/MenuProvider';
 
-const SideMenuStyles = styled.div`
+interface SideMenuProps {
+    open: boolean;
+}
+
+const SideMenuStyles = styled.div<SideMenuProps>`
     font-family: Cutive;
     padding: 10rem 20px 5rem 20px;
     background: #f5f5f5;
@@ -13,7 +17,7 @@ const SideMenuStyles = styled.div`
     width: 500px;
     max-width: 100vw;
     bottom: 0;
-    transform: translateX(${p => (p.open ? '0' : '100%')});
+    transform: translateX(${(p) => (p.open ? '0' : '100%')});
     transition: transform 0.5s;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
     z-index: 100;
@@ -42,27 +46,27 @@ const SideMenu = () => {
 
     return (
         <SideMenuStyles open={menuOpen}>
-            <Link href="/">
+            <Link passHref href="/">
                 <div className="menu-item" onClick={closeMenu}>
                     <span>Home</span>
                 </div>
             </Link>
-            <Link href="/services">
+            <Link passHref href="/services">
                 <div className="menu-item" onClick={closeMenu}>
                     <span>Services</span>
                 </div>
             </Link>
-            <Link href="/projects">
+            <Link passHref href="/projects">
                 <div className="menu-item" onClick={closeMenu}>
                     <span>Projects</span>
                 </div>
             </Link>
-            <Link href="/portfolio">
+            <Link passHref href="/portfolio">
                 <div className="menu-item" onClick={closeMenu}>
                     <span>Portfolio</span>
                 </div>
             </Link>
-            <Link href="/testimonials">
+            <Link passHref href="/testimonials">
                 <div className="menu-item" onClick={closeMenu}>
                     <span>Testimonials</span>
                 </div>
