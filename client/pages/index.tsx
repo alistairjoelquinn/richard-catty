@@ -2,13 +2,12 @@ import { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
 import styled from 'styled-components';
 import { Instagram, Linkedin, Mail } from 'grommet-icons';
-import PropTypes from 'prop-types';
+import { gql } from '@apollo/client';
 
 import TypingText from '../components/TypingText';
 import SEO from '../components/SEO';
 import { indexPageImage } from '../content/mainPageImages.json';
 import Portal from '../components/Portal';
-import { gql } from '@apollo/client';
 import { client } from './_app';
 
 const GET_META_QUERY = gql`
@@ -115,7 +114,7 @@ const Home = ({ metadata }) => {
                 {transition(
                     (animation, item) =>
                         item && (
-                            <Portal key={item}>
+                            <Portal key={`${item}!`}>
                                 <ModalContainerStyles
                                     className="modal"
                                     style={{ pointerEvents }}
@@ -124,13 +123,13 @@ const Home = ({ metadata }) => {
                                     <animated.div
                                         className="modal-card"
                                         style={animation}
-                                        onClick={e => e.stopPropagation()}
+                                        onClick={(e) => e.stopPropagation()}
                                     >
                                         <h1 className="email">richiecatty@gmail.com</h1>
                                     </animated.div>
                                 </ModalContainerStyles>
                             </Portal>
-                        )
+                        ),
                 )}
             </HomePageStyles>
         </div>
@@ -148,9 +147,5 @@ export async function getStaticProps() {
         },
     };
 }
-
-Home.propTypes = {
-    metadata: PropTypes.object,
-};
 
 export default Home;

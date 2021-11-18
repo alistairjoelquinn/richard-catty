@@ -1,15 +1,16 @@
 import { useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 
-const Portal = ({ children, parent }) => {
+const Portal: React.FC = ({ children }) => {
     const el = useMemo(() => document.createElement('div'), []);
 
     useEffect(() => {
-        const target = parent && parent.appendChild ? parent : document.body;
-        target.appendChild(el);
+        document.body.appendChild(el);
 
-        return () => target.removeChild(el);
-    }, [el, parent]);
+        return () => {
+            document.body.removeChild(el);
+        };
+    }, [el]);
 
     return createPortal(children, el);
 };
