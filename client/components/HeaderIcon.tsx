@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { useMenu } from '../components/contexts/MenuProvider';
+import { useMenu } from './contexts/MenuProvider';
 
 const HeaderIconStyles = styled.div`
     .nav-icon {
@@ -52,8 +52,8 @@ const HeaderIcon = () => {
     return (
         <HeaderIconStyles>
             <div className={menuOpen ? 'nav-icon open' : 'nav-icon'}>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
             </div>
         </HeaderIconStyles>
     );
