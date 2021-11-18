@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import Link from 'next/link';
+
 import { useMenu } from './contexts/MenuProvider';
 import SideMenu from './SideMenu';
 import HeaderIcon from './HeaderIcon';
-import Link from 'next/link';
 
 const HeaderStyles = styled.header`
     position: absolute;
@@ -83,7 +84,7 @@ const Header = () => {
 
     return (
         <HeaderStyles>
-            <Link href="/">
+            <Link passHref href="/">
                 <div className="headerText" onClick={headerClickHandler}>
                     <h4>RicHARd cAtty</h4>
                     <div className="sub-heading">Eco-conscious Writer | Berlin</div>

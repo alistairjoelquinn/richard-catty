@@ -3,12 +3,11 @@ import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
 import { isMobile, isTablet } from 'react-device-detect';
 import { gql } from '@apollo/client';
-import PropTypes from 'prop-types';
 
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
 import SEO from '../components/SEO';
-import { portfolioPageImage } from '../content/mainPageImages.json';
+import { portfolioPageImage } from '../content/mainPageImages';
 import { CardGridStyles, CardPageStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
 import { client } from './_app';
 
@@ -32,7 +31,7 @@ const GET_PORTFOLIOS_QUERY = gql`
 const PortfolioPage = ({ portfolios, metadata }) => {
     const [showText, setShowText] = useState(null);
 
-    const displayItemTextHandler = item => setShowText(item);
+    const displayItemTextHandler = (item) => setShowText(item);
 
     const transition = useTransition(showText, {
         from: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
@@ -88,7 +87,7 @@ const PortfolioPage = ({ portfolios, metadata }) => {
                                             </div>
                                         </Card>
                                     </animated.div>
-                                )
+                                ),
                         )}
                 </CardGridStyles>
             </CardPageStyles>
@@ -108,10 +107,5 @@ export async function getStaticProps() {
         },
     };
 }
-
-PortfolioPage.propTypes = {
-    portfolios: PropTypes.array,
-    metadata: PropTypes.object,
-};
 
 export default PortfolioPage;

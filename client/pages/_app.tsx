@@ -1,19 +1,19 @@
-import PropTypes from 'prop-types';
+import { AppProps } from 'next/app';
 import { useTransition, animated } from 'react-spring';
 import { ApolloProvider } from '@apollo/client/react';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
+import Head from 'next/head';
 import { MenuStateProvider } from '../components/contexts/MenuProvider';
 
 import Page from '../components/Page';
-import Head from 'next/head';
 
 export const client = new ApolloClient({
     uri: process.env.NEXT_PUBLIC_SANITY_URL,
     cache: new InMemoryCache(),
 });
 
-const App = props => {
+const App = (props: AppProps) => {
     const transitionItems = [
         {
             id: props.router.route,
@@ -26,7 +26,7 @@ const App = props => {
         from: { opacity: 0 },
         enter: { opacity: 1 },
         leave: { opacity: 0 },
-        keys: item => item.id,
+        keys: (item) => item.id,
     });
 
     return (
@@ -73,21 +73,6 @@ const App = props => {
             </ApolloProvider>
         </>
     );
-};
-
-App.getInitialProps = async ({ Component, ctx }) => {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-        pageProps = await Component.getInitialProps(ctx);
-    }
-    pageProps.query = ctx.query;
-    return { pageProps };
-};
-
-App.propTypes = {
-    Component: PropTypes.any,
-    pageProps: PropTypes.any,
-    router: PropTypes.object,
 };
 
 export default App;

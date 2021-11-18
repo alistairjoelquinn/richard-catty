@@ -1,7 +1,14 @@
-import { createContext, useContext, useState } from 'react';
-import PropTypes from 'prop-types';
+import { createContext, Dispatch, SetStateAction, useContext, useState } from 'react';
 
-const MenuStateContext = createContext();
+interface ContextInitial {
+    menuOpen?: boolean;
+    setMenuOpen?: Dispatch<SetStateAction<boolean>>;
+    toggleMenu?: () => void;
+    openMenu?: () => void;
+    closeMenu?: () => void;
+}
+
+const MenuStateContext = createContext<ContextInitial>({});
 
 const MenuStateProvider = ({ children }) => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -15,10 +22,6 @@ const MenuStateProvider = ({ children }) => {
             {children}
         </MenuStateContext.Provider>
     );
-};
-
-MenuStateProvider.propTypes = {
-    children: PropTypes.any,
 };
 
 const useMenu = () => useContext(MenuStateContext);

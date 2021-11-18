@@ -1,9 +1,9 @@
 import { Card, CardHeader } from 'grommet';
-import PropTypes from 'prop-types';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { isMobile, isTablet } from 'react-device-detect';
+import { CardItemModel } from '../models/card';
 
 const ReadMoreTextStyles = styled.div`
     position: absolute;
@@ -33,12 +33,17 @@ const ReadMoreTextStyles = styled.div`
     }
 `;
 
-const CardItem = ({ item, displayItemTextHandler }) => {
+interface CardItemProps {
+    item: CardItemModel;
+    displayItemTextHandler: (val: CardItemModel) => void;
+}
+
+const CardItem = ({ item, displayItemTextHandler }: CardItemProps) => {
     const [readMore, setReadMore] = useState(false);
 
-    const readMoreHandler = item => {
+    const readMoreHandler = (x: CardItemModel) => {
         setReadMore(true);
-        displayItemTextHandler(item);
+        displayItemTextHandler(x);
     };
 
     return (
@@ -61,11 +66,6 @@ const CardItem = ({ item, displayItemTextHandler }) => {
             </Card>
         </div>
     );
-};
-
-CardItem.propTypes = {
-    item: PropTypes.object,
-    displayItemTextHandler: PropTypes.func,
 };
 
 export default CardItem;

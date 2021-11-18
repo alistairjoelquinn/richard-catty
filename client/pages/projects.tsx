@@ -3,12 +3,11 @@ import { animated, useTransition } from 'react-spring';
 import { Card, CardBody, CardHeader } from 'grommet';
 import { isMobile, isTablet } from 'react-device-detect';
 import { gql } from '@apollo/client';
-import PropTypes from 'prop-types';
 
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
 import SEO from '../components/SEO';
-import { projectsPageImage } from '../content/mainPageImages.json';
+import { projectsPageImage } from '../content/mainPageImages';
 import { CardGridStyles, CardPageStyles, CardItemStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
 import { client } from './_app';
 
@@ -34,7 +33,7 @@ const GET_PROJECTS_QUERY = gql`
 const ProjectsPage = ({ projects, metadata }) => {
     const [showText, setShowText] = useState(null);
 
-    const displayItemTextHandler = item => setShowText(item);
+    const displayItemTextHandler = (item) => setShowText(item);
 
     const transition = useTransition(showText, {
         from: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
@@ -86,8 +85,8 @@ const ProjectsPage = ({ projects, metadata }) => {
                                                     <CardItemStyles responsibilities>
                                                         <h3>Responsibilities:</h3>
                                                         <ul>
-                                                            {showText.responsibilities.map((item, idx) => (
-                                                                <li key={idx}>{item}</li>
+                                                            {showText.responsibilities.map((it: string) => (
+                                                                <li key={it}>{it}</li>
                                                             ))}
                                                         </ul>
                                                     </CardItemStyles>
@@ -107,7 +106,7 @@ const ProjectsPage = ({ projects, metadata }) => {
                                             </div>
                                         </Card>
                                     </animated.div>
-                                )
+                                ),
                         )}
                 </CardGridStyles>
             </CardPageStyles>
@@ -127,10 +126,5 @@ export async function getStaticProps() {
         },
     };
 }
-
-ProjectsPage.propTypes = {
-    projects: PropTypes.array,
-    metadata: PropTypes.object,
-};
 
 export default ProjectsPage;
