@@ -1,6 +1,24 @@
 import styled from 'styled-components';
 
-export const CardPageStyles = styled.div`
+interface CardPageProps {
+    testimonial?: boolean;
+    fontSize?: string;
+    headerSize?: string;
+    image?: string;
+}
+
+interface CardGridProps {
+    portfolio?: boolean;
+    projects?: boolean;
+    isMobile?: boolean;
+    isTablet?: boolean;
+}
+
+interface CardItemProps {
+    responsibilities?: boolean;
+}
+
+export const CardPageStyles = styled.div<CardPageProps>`
     position: fixed;
     overflow-y: scroll;
     height: 100vh;
@@ -11,12 +29,12 @@ export const CardPageStyles = styled.div`
     gap: 5vw;
     padding: 8vh 5vw;
     font-family: Cutive;
-    font-size: ${p => (p.testimonial ? '2.2rem' : p.fontSize)};
-    background-image: url(${p => p.image});
+    font-size: ${(p) => (p.testimonial ? '2.2rem' : p.fontSize)};
+    background-image: url(${(p) => p.image});
     background-position: left center;
     background-size: cover;
     div > header {
-        font-size: ${p => p.headerSize};
+        font-size: ${(p) => p.headerSize};
         font-weight: bold;
     }
     @media screen and (max-width: 800px) {
@@ -24,7 +42,7 @@ export const CardPageStyles = styled.div`
     }
 `;
 
-export const CardGridStyles = styled.div`
+export const CardGridStyles = styled.div<CardGridProps>`
     display: grid;
     justify-content: center;
     align-items: center;
@@ -47,39 +65,39 @@ export const CardGridStyles = styled.div`
     }
     .selected-text {
         position: absolute;
-        top: ${p => (p.isMobile || p.isTablet ? '0' : p.projects ? '25vh' : 'auto')};
-        right: ${p => (p.isMobile || p.isTablet ? '0' : 'auto')};
-        left: ${p => (p.isMobile || p.isTablet ? '0' : p.portfolio ? '50vw' : '38vw')};
-        bottom: ${p => (p.isMobile || p.isTablet ? '0' : 'auto')};
+        top: ${(p) => (p.isMobile || p.isTablet ? '0' : p.projects ? '25vh' : 'auto')};
+        right: ${(p) => (p.isMobile || p.isTablet ? '0' : 'auto')};
+        left: ${(p) => (p.isMobile || p.isTablet ? '0' : p.portfolio ? '50vw' : '38vw')};
+        bottom: ${(p) => (p.isMobile || p.isTablet ? '0' : 'auto')};
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: ${p => (p.isMobile || p.isTablet ? '0 10vw' : 'auto')};
+        margin: ${(p) => (p.isMobile || p.isTablet ? '0 10vw' : 'auto')};
         overflow: scroll;
-        box-shadow: ${p => (p.isMobile ? 'none' : '0 4px 8px 0 rgba(0, 0, 0, 0.2)')};
+        box-shadow: ${(p) => (p.isMobile ? 'none' : '0 4px 8px 0 rgba(0, 0, 0, 0.2)')};
         border-radius: 15px;
         & > div {
-            max-width: ${p => (!p.isMobile || !p.isTablet ? '45vw' : 'auto')};
+            max-width: ${(p) => (!p.isMobile || !p.isTablet ? '45vw' : 'auto')};
         }
     }
     @media screen and (max-width: 1300px) {
         height: auto;
         div.selected-text {
-            left: ${p => (p.isMobile || p.isTablet ? '0' : '45vw')};
+            left: ${(p) => (p.isMobile || p.isTablet ? '0' : '45vw')};
         }
     }
     @media screen and (max-width: 1200px) {
         height: auto;
         div.selected-text {
-            left: ${p => (p.isMobile || p.isTablet ? '0' : '50vw')};
+            left: ${(p) => (p.isMobile || p.isTablet ? '0' : '50vw')};
         }
     }
     @media screen and (max-width: 950px) {
         div.selected-text {
-            left: ${p => (p.isMobile || p.isTablet ? '0' : '40vw')};
-            top: ${p => (p.isMobile || p.isTablet ? '0' : p.projects ? '20vh' : '25vh')};
+            left: ${(p) => (p.isMobile || p.isTablet ? '0' : '40vw')};
+            top: ${(p) => (p.isMobile || p.isTablet ? '0' : p.projects ? '20vh' : '25vh')};
             div {
-                max-width: ${p => (p.isMobile || p.isTablet ? '80vw' : '55vw')};
+                max-width: ${(p) => (p.isMobile || p.isTablet ? '80vw' : '55vw')};
             }
         }
     }
@@ -99,9 +117,9 @@ export const CardGridStyles = styled.div`
     }
 `;
 
-export const CardItemStyles = styled.div`
+export const CardItemStyles = styled.div<CardItemProps>`
     width: 100%;
-    display: ${p => (p.responsibilities ? 'auto' : 'flex')};
+    display: ${(p) => (p.responsibilities ? 'auto' : 'flex')};
     align-items: flex-start;
     padding-top: 1rem;
     h3 {
