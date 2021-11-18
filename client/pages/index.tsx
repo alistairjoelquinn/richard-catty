@@ -6,7 +6,7 @@ import { gql } from '@apollo/client';
 
 import TypingText from '../components/TypingText';
 import SEO from '../components/SEO';
-import { indexPageImage } from '../content/mainPageImages.json';
+import { indexPageImage } from '../content/mainPageImages';
 import Portal from '../components/Portal';
 import { client } from './_app';
 

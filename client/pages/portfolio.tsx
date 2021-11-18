@@ -7,7 +7,7 @@ import { gql } from '@apollo/client';
 import CardItem from '../components/CardItem';
 import CardWrapper from '../components/CardWrapper';
 import SEO from '../components/SEO';
-import { portfolioPageImage } from '../content/mainPageImages.json';
+import { portfolioPageImage } from '../content/mainPageImages';
 import { CardGridStyles, CardPageStyles, CardLinkStyles } from '../components/styles/CardPageStyles';
 import { client } from './_app';
 
