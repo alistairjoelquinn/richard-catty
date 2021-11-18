@@ -40,29 +40,27 @@ const TypingStyles = styled.div`
     }
 `;
 
-const TypingText = () => {
-    return (
-        <TypingStyles>
-            <Typist avgTypingDelay={50}>
-                <Typist.Delay ms={1000} />I only work on projects I believe in.
-                <br />
-                <Typist.Delay ms={400} /> As an environment-, conservation- and
-                <br />
-                <Typist.Delay ms={300} />
-                sustainability-focused writer,
-                <Typist.Delay ms={500} /> my values
-                <br />
-                and drive to protect the planet are
-                <br />
-                <Typist.Delay ms={300} />
-                translated into well-researched,
-                <Typist.Delay ms={500} /> engaging and
-                <br />
-                SEO-optimised copy,
-                <Typist.Delay ms={300} /> content and articles...
-            </Typist>
-        </TypingStyles>
-    );
-};
+const TypingText = () => (
+    <TypingStyles>
+        <Typist avgTypingDelay={50}>
+            <Typist.Delay ms={1000} />I only work on projects I believe in.
+            <br />
+            <Typist.Delay ms={400} /> As an environment-, conservation- and
+            <br />
+            <Typist.Delay ms={300} />
+            sustainability-focused writer,
+            <Typist.Delay ms={500} /> my values
+            <br />
+            and drive to protect the planet are
+            <br />
+            <Typist.Delay ms={300} />
+            translated into well-researched,
+            <Typist.Delay ms={500} /> engaging and
+            <br />
+            SEO-optimised copy,
+            <Typist.Delay ms={300} /> content and articles...
+        </Typist>
+    </TypingStyles>
+);
 
 export default TypingText;
