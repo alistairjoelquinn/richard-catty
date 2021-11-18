@@ -1,7 +1,11 @@
 import { isMobile, isTablet } from 'react-device-detect';
-import PropTypes from 'prop-types';
 
-const CardWrapper = ({ children, url }) =>
+interface CardWrapperProps {
+    url: string;
+    children: React.ReactElement;
+}
+
+const CardWrapper = ({ children, url }: CardWrapperProps) =>
     isMobile || isTablet ? (
         children
     ) : (
@@ -9,10 +13,5 @@ const CardWrapper = ({ children, url }) =>
             {children}
         </a>
     );
-
-CardWrapper.propTypes = {
-    children: PropTypes.any,
-    url: PropTypes.string,
-};
 
 export default CardWrapper;
