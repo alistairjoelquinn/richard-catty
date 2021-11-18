@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { gql } from '@apollo/client';
 
 import SEO from '../components/SEO';
-import { servicesPageImage } from '../content/mainPageImages.json';
+import { servicesPageImage } from '../content/mainPageImages';
 import { client } from './_app';
 
 const GET_SERVICES_QUERY = gql`
@@ -53,21 +52,19 @@ const ServicesPageStyles = styled.div`
     }
 `;
 
-const ServicesPage = ({ services, metadata }) => {
-    return (
-        <>
-            <SEO meta={metadata} pageImage={servicesPageImage} />
-            <ServicesPageStyles>
-                <ul>
-                    <li>Get in touch to discuss your project</li>
-                    {services.map(service => (
-                        <li key={service}>{service}</li>
-                    ))}
-                </ul>
-            </ServicesPageStyles>
-        </>
-    );
-};
+const ServicesPage = ({ services, metadata }) => (
+    <>
+        <SEO meta={metadata} pageImage={servicesPageImage} />
+        <ServicesPageStyles>
+            <ul>
+                <li>Get in touch to discuss your project</li>
+                {services.map((service) => (
+                    <li key={service}>{service}</li>
+                ))}
+            </ul>
+        </ServicesPageStyles>
+    </>
+);
 
 export async function getStaticProps() {
     const { data } = await client.query({
@@ -81,10 +78,5 @@ export async function getStaticProps() {
         },
     };
 }
-
-ServicesPage.propTypes = {
-    services: PropTypes.array,
-    metadata: PropTypes.object,
-};
 
 export default ServicesPage;

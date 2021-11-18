@@ -10,6 +10,7 @@ interface CardPageProps {
 interface CardGridProps {
     portfolio?: boolean;
     projects?: boolean;
+    testimonial?: boolean;
     isMobile?: boolean;
     isTablet?: boolean;
 }
