@@ -10,7 +10,11 @@ The hamburger menu opens the side navigation, which appears from the right. The 
 
 ![Side Nav](/md-images/side-nav.png)
 
-Each of the pages have their JSON content generated at build time using `getStatisProps` as the content changes infrequently. Content is being managed from the [Sanity.io](https://github.com/sanity-io/sanity) CMS. A web hook is being using so that whenever changes are made to the data in the CMS a rebuild is triggered.
+The Social Media icons on the home page take the user to their respective profiles, though the email icon opens a modal containing the contact email address. This is inserted into the DOM outwith the React application using a [portal](https://github.com/alistairjoelquinn/richard-catty/blob/main/client/components/Portal.tsx).
+
+![Modal Email](/md-images/portal.png)
+
+Each of the pages have their JSON content generated at build time using `getStatisProps` as the content changes infrequently. Content is being managed from the [Sanity.io](https://github.com/sanity-io/sanity) CMS. A web hook is being using triggering a whenever changes are made to the data in the CMS.
 
 On each page the user can hover over items. 
 
