@@ -14,7 +14,7 @@ The social media icons on the home page take the user to their respective profil
 
 ![Modal Email](/md-images/portal.png)
 
-Each of the pages have their JSON content generated at build time using `getStaticProps` as the content changes infrequently. A web hook is being used to trigger a rebuild whenever changes are made in the CMS. 
+Each of the pages have their JSON content generated at build time using `getStaticProps` as the content changes infrequently. A web hook is being used to trigger a rebuild whenever changes are made in the [CMS](https://github.com/alistairjoelquinn/richard-catty/tree/main/server). 
 
 The CMS has been built with [Sanity.io](https://github.com/sanity-io/sanity) and has a GraphQL API. Client side data fetching is being done with [Apollo Client](https://github.com/apollographql/apollo-client).
 
@@ -30,6 +30,6 @@ Most of the links are web links navigating the user to a particular organisation
 
 ![Portfolio Page Hover](/md-images/portfolio-card.png)
 
-The majority of the styling has been done using [Styled Components](https://github.com/styled-components), though the hovering card which appears on each page, and the home page icons are using [Grommet UI](https://github.com/grommet).
+The majority of the styling has been done using [Styled Components](https://github.com/styled-components), though the hovering card which appears on each page and the home page icons are using [Grommet UI](https://github.com/grommet).
 
 ![Project Page Hover](/md-images/projects-card.png)
