@@ -12,10 +12,14 @@ The hamburger menu opens the side navigation, which appears from the right. The 
 
 Each of the pages have their JSON content generated at build time using `getStatisProps` as the content changes infrequently. Content is being managed from the [Sanity.io](https://github.com/sanity-io/sanity) CMS. A web hook is being using so that whenever changes are made to the data in the CMS a rebuild is triggered.
 
-On each page the user can hover over items to read more
+On each page the user can hover over items. 
 
 ![Testimonials Page](/md-images/testimonials.png)
 
-The majority of the styling has been done using Styled Components, though the hovering card which appears on each page, and the home page icons are using [Grommet UI](https://github.com/grommet)
+When they hover a card appears giving the user a preview. Clicking on `Read More` takes the user to the link.
 
 ![Testimonials Page Hover](/md-images/testimonials-card.png)
+
+The majority of the styling has been done using Styled Components, though the hovering card which appears on each page, and the home page icons are using [Grommet UI](https://github.com/grommet)
+
+![Portfolio Page Hover](/md-images/portfolio-card.png)
