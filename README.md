@@ -1,6 +1,6 @@
 ## Richard Catty - Eco-conscious Writer
 
-This is the brochure website for writer [Richard Catty](https://www.richardcatty.com/). 
+This is the website for writer [Richard Catty](https://www.richardcatty.com/). 
 
 Client side the application has been built with Nextjs and TypeScript. When the user first lands on the home page they are welcomed with a paragraph being typed out using [React Typist](https://github.com/jstejada/react-typist).
 
