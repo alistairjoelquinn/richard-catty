@@ -6,6 +6,16 @@ Client side the application has been built with Nextjs and TypeScript. When the 
 
 ![Home Page Typing Text](/md-images/home-page.png)
 
-The hamburger menu opens the side navigation, which appears from the right. The [menu](https://github.com/alistairjoelquinn/richard-catty/blob/main/client/components/SideMenu.tsx) and the [icon](https://github.com/alistairjoelquinn/richard-catty/blob/main/client/components/HeaderIcon.tsx) are both animated using simple CSS transitions.
+The hamburger menu opens the side navigation, which appears from the right. The [menu](https://github.com/alistairjoelquinn/richard-catty/blob/main/client/components/SideMenu.tsx) and the [icon](https://github.com/alistairjoelquinn/richard-catty/blob/main/client/components/HeaderIcon.tsx) are both animated with simple CSS transitions.
 
 ![Side Nav](/md-images/side-nav.png)
+
+Each of the pages have their JSON content generated at build time using `getStatisProps` as the content changes infrequently. Content is being managed from the [Sanity.io](https://github.com/sanity-io/sanity) CMS. A web hook is being using so that whenever changes are made to the data in the CMS a rebuild is triggered.
+
+On each page the user can hover over items to read more
+
+![Testimonials Page](/md-images/testimonials.png)
+
+The majority of the styling has been done using Styled Components, though the hovering card which appears on each page, and the home page icons are using [Grommet UI](https://github.com/grommet)
+
+![Testimonials Page Hover](/md-images/testimonials-card.png)
