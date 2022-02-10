@@ -66,7 +66,7 @@ const ModalContainerStyles = styled.div`
         align-items: center;
         justify-content: space-evenly;
         font-family: Cutive;
-        background: white;
+        background: ${(p) => p.color};
         border-radius: 15px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         padding: 3rem;
@@ -94,7 +94,7 @@ const Home = ({ metadata }) => {
     return (
         <div>
             <SEO meta={metadata} pageImage={indexPageImage} />
-            <HomePageStyles>
+            <HomePageStyles color="blue">
                 <div className="image-container" title="Pine Cone">
                     <TypingText />
                     <footer>
